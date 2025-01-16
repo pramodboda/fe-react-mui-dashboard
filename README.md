@@ -10,3 +10,7 @@ This beautiful React Dashboard Demo Template is a modern, responsive, and highly
 - Easy Setup: Simple to integrate into your existing project with detailed documentation and installation guides.
 - Pre-built Pages: Includes demo pages like Dashboard, Analytics, User Profile, Settings, and more to kickstart your development process.
 - Performance Optimized: Designed to deliver smooth and fast performance even with large datasets.
+
+Whether you’re building a data-driven web application or an internal business tool, this React dashboard template provides all the necessary components to create a professional and dynamic user interface.
+
+Start building your next project today with this powerful and flexible dashboard template!
