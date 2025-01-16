@@ -14,3 +14,5 @@ This beautiful React Dashboard Demo Template is a modern, responsive, and highly
 Whether you’re building a data-driven web application or an internal business tool, this React dashboard template provides all the necessary components to create a professional and dynamic user interface.
 
 Start building your next project today with this powerful and flexible dashboard template!
+
+https://minimals.cc/dashboard
