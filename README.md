@@ -1,18 +1,50 @@
-# Front-end: React MUI Dashboard
-This beautiful React Dashboard Demo Template is a modern, responsive, and highly customizable admin panel, designed to simplify the development of your next web application. Built with React + MUI, it offers a sleek and beautiful user interface, perfect for managing and visualizing data in an engaging way.
+# React + TypeScript + Vite
 
-## Key Features:
-- Responsive Layout: Fully responsive design that works seamlessly on desktops, tablets, and mobile devices.
-- Data Visualization: Includes pre-built components for charts and graphs, making it easy to display data in a visually appealing way.
-- Modular Components: A collection of reusable, customizable components for cards, tables, forms, and notifications.
-- Modern UI Design: Clean, minimalistic, and user-friendly interface for an optimized user experience.
-- Theming Support: Built-in support for light and dark themes, with the ability to easily switch between them.
-- Easy Setup: Simple to integrate into your existing project with detailed documentation and installation guides.
-- Pre-built Pages: Includes demo pages like Dashboard, Analytics, User Profile, Settings, and more to kickstart your development process.
-- Performance Optimized: Designed to deliver smooth and fast performance even with large datasets.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Whether you’re building a data-driven web application or an internal business tool, this React dashboard template provides all the necessary components to create a professional and dynamic user interface.
+Currently, two official plugins are available:
 
-Start building your next project today with this powerful and flexible dashboard template!
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-https://minimals.cc/dashboard
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+
+- Configure the top-level `parserOptions` property like this:
+
+```js
+export default tseslint.config({
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
+
+- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
+- Optionally add `...tseslint.configs.stylisticTypeChecked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+
+```js
+// eslint.config.js
+import react from 'eslint-plugin-react'
+
+export default tseslint.config({
+  // Set the react version
+  settings: { react: { version: '18.3' } },
+  plugins: {
+    // Add the react plugin
+    react,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended rules
+    ...react.configs.recommended.rules,
+    ...react.configs['jsx-runtime'].rules,
+  },
+})
+```
