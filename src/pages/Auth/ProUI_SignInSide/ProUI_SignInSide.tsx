@@ -18,7 +18,10 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 import ProUI_ForgotPassword from "../../../components/ProUI_Elements/ProUI_ForgetPassword/ProUI_ForgetPassword";
-import { GoogleIcon, FacebookIcon } from '../../../components/ProUI_Elements/ProUI_CustomIcons/ProUI_CustomIcons';
+import {
+  GoogleIcon,
+  FacebookIcon,
+} from "../../../components/ProUI_Elements/ProUI_CustomIcons/ProUI_CustomIcons";
 
 const ProUI_SignInSide: React.FC = () => {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -26,7 +29,8 @@ const ProUI_SignInSide: React.FC = () => {
   // const [emailErrorMessage, setEmailErrorMessage] = React.useState('');
   // const [passwordError, setPasswordError] = React.useState(false);
   // const [passwordErrorMessage, setPasswordErrorMessage] = React.useState('');
-  const [openForgotPasswordDialog, setOpenForgotPasswordDialog] = React.useState(false);
+  const [openForgotPasswordDialog, setOpenForgotPasswordDialog] =
+    React.useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -41,7 +45,6 @@ const ProUI_SignInSide: React.FC = () => {
   ) => {
     event.preventDefault();
   };
-
 
   // const handleClickOpenForgotPasswordDialog = () => {
   //   setOpenForgotPasswordDialog(true);
@@ -96,17 +99,24 @@ const ProUI_SignInSide: React.FC = () => {
                 defaultValue="pramodboda@dev.com"
                 type="email"
                 // helperText="Incorrect entry."
-                // size="small"
+                size="small"
               />
               {/* <Box sx={{ textAlign: "right" }}>
                 <Typography variant="body2" sx={{ mb: 1 }}>
                   <Link href="#">Forgot your password?</Link>
                 </Typography>
               </Box> */}
-              
-              <ProUI_ForgotPassword open={openForgotPasswordDialog} handleClose={handleCloseForgotPasswordDialog} />
 
-              <FormControl sx={{ width: "100%" }} variant="outlined">
+              <ProUI_ForgotPassword
+                open={openForgotPasswordDialog}
+                handleClose={handleCloseForgotPasswordDialog}
+              />
+
+              <FormControl
+                sx={{ width: "100%" }}
+                variant="outlined"
+                size="small"
+              >
                 <InputLabel htmlFor="outlined-adornment-password">
                   Password
                 </InputLabel>
@@ -135,16 +145,33 @@ const ProUI_SignInSide: React.FC = () => {
                 />
               </FormControl>
             </Box>
-            <Button variant="contained" sx={{  mb: 3 }}>Sign in</Button>
-            <Typography variant="body2" sx={{ textAlign: "center"}}>
+            <Box
+              sx={{ mb: 3, backgroundColor: "#1e1e1e", borderRadius: "6px" }}
+            >
+              <Button
+                variant="contained"
+                sx={{
+                  backgroundColor: "inherit",
+                  width: "100%",
+                  color: "#f9f9f9",
+                  fontWeight: 700,
+                }}
+              >
+                Sign in
+              </Button>
+            </Box>
+            {/* <Button variant="contained" sx={{ mb: 3 }}>
+              Sign in
+            </Button> */}
+            <Typography variant="body2" sx={{ textAlign: "center" }}>
               Don't have an account? <Link href="#">Sign up</Link>
             </Typography>
-            <Divider sx={{  mt:2, mb: 2 }}>or</Divider>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+            <Divider sx={{ mt: 2, mb: 2 }}>or</Divider>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
               <Button
                 fullWidth
                 variant="outlined"
-                onClick={() => alert('Sign in with Google')}
+                onClick={() => alert("Sign in with Google")}
                 startIcon={<GoogleIcon />}
               >
                 Sign in with Google
@@ -152,7 +179,7 @@ const ProUI_SignInSide: React.FC = () => {
               <Button
                 fullWidth
                 variant="outlined"
-                onClick={() => alert('Sign in with Facebook')}
+                onClick={() => alert("Sign in with Facebook")}
                 startIcon={<FacebookIcon />}
               >
                 Sign in with Facebook

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { useAuth } from "../context/AuthContext";// Import the custom hook
+import { useAuth } from "../context/AuthContext"; // Import the custom hook
 import ProUI_SignInSide from "../pages/Auth/ProUI_SignInSide/ProUI_SignInSide";
 import { useSettingsDrawer } from "../context/SettingsDrawerContext"; // Import the custom hook
 import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
@@ -25,13 +25,15 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import Button from "@mui/material/Button";
 
-import SettingsTwoToneIcon from '@mui/icons-material/SettingsTwoTone';
+import SettingsTwoToneIcon from "@mui/icons-material/SettingsTwoTone";
 
 import SettingsDrawer from "../components/ProUI_Elements/SettingsDrawer/SettingsDrawer";
 import Footer_1 from "../components/ProUI_Elements/footer1/Footer_1";
-import ProUI_Typography from "../components/ProUI_Elements/Typography/ProUI_Typography";
+// import ProUI_Typography from "../components/ProUI_Elements/Typography/ProUI_Typography";
 import ProUI_UserAvatar from "../components/ProUI_Elements/ProUI_UserAvatar/ProUI_UserAvatar";
 // import SetThemeColor from "../features/settings/themeColor/SetThemeColor";
+
+import { blueGrey } from "@mui/material/colors";
 const drawerWidth = 240;
 
 const openedMixin = (theme: Theme): CSSObject => ({
@@ -138,7 +140,18 @@ export default function Dashboard() {
           <SettingsDrawer />
           {/* AppBar - Start */}
           <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="fixed" open={open}>
+            <AppBar
+              position="fixed"
+              open={open}
+              sx={{
+                // backgroundClip: "border-box",
+                // backdrop-filter:"blur(6px)",
+                backdropFilter: "saturate(200%) blur(30px)",
+                backgroundColor: "#f9f9f9", // Fixed AppBar color (does not change with primaryColor)
+
+                color: blueGrey[400],
+              }}
+            >
               <Toolbar>
                 <IconButton
                   color="inherit"
@@ -160,12 +173,16 @@ export default function Dashboard() {
                   component="div"
                   sx={{ flexGrow: 1 }}
                 >
-                  Mini variant drawer
+                  Codevik
                 </Typography>
-                <IconButton aria-label="settings" color="inherit" onClick={handleToggleSettingsDrawer}>
-                <SettingsTwoToneIcon/>
-                </IconButton >
-                <ProUI_UserAvatar/>
+                <IconButton
+                  aria-label="settings"
+                  color="inherit"
+                  onClick={handleToggleSettingsDrawer}
+                >
+                  <SettingsTwoToneIcon />
+                </IconButton>
+                <ProUI_UserAvatar />
                 <Button color="inherit" onClick={logout}>
                   Logout
                 </Button>
@@ -297,7 +314,7 @@ export default function Dashboard() {
 
               {/* <ProUI_Typography /> */}
               <Button variant="contained">Create New</Button>
-              <Typography sx={{ marginBottom: 2 }}>
+              <Typography variant="body2" sx={{ marginBottom: 2 }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Rhoncus dolor purus non enim praesent elementum facilisis leo
@@ -313,7 +330,7 @@ export default function Dashboard() {
                 lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
                 sapien faucibus et molestie ac.
               </Typography>
-              <Typography sx={{ marginBottom: 2 }}>
+              <Typography variant="body2" sx={{ marginBottom: 2 }}>
                 Consequat mauris nunc congue nisi vitae suscipit. Fringilla est
                 ullamcorper eget nulla facilisi etiam dignissim diam. Pulvinar
                 elementum integer enim neque volutpat ac tincidunt. Ornare
@@ -333,7 +350,7 @@ export default function Dashboard() {
           </Box>
         </Box>
       ) : (
-        <ProUI_SignInSide/>
+        <ProUI_SignInSide />
       )}
     </>
   );

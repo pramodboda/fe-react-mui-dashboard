@@ -11,7 +11,9 @@ const Footer_1: React.FC = () => {
       <Stack
         sx={{ bgcolor: "#fff", width: "100%", border: "1px solid red", p: 3 }}
       >
-        <Typography>{currentYear} ©Pramod Boda Inc.</Typography>
+        <Typography variant="body2">
+          {currentYear} © Developed by Pramod Boda Inc.
+        </Typography>
       </Stack>
     </>
   );

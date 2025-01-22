@@ -28,7 +28,7 @@ interface AuthProviderProps {
 // AuthProvider component with typing
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [authData, setAuthData] = useState<AuthContextType["authData"]>({
-    isAuthenticated: false,
+    isAuthenticated: true,
     user: null,
   });
 
