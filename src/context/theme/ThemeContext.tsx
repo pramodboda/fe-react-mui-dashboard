@@ -74,6 +74,15 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
         main: primaryColor, // Dynamically change the primary color
       },
     },
+    components: {
+      // Name of the component
+      MuiButtonBase: {
+        defaultProps: {
+          // The props to change the default for.
+          disableRipple: true, // No more ripple, on the whole application 💣!
+        },
+      },
+    },
   });
 
   return (
