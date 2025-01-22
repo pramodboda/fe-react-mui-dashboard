@@ -26,7 +26,7 @@ const ProUI_SignInSide: React.FC = () => {
   // const [emailErrorMessage, setEmailErrorMessage] = React.useState('');
   // const [passwordError, setPasswordError] = React.useState(false);
   // const [passwordErrorMessage, setPasswordErrorMessage] = React.useState('');
-  const [openForgotPasswordDailog, setOpenForgotPasswordDailog] = React.useState(false);
+  const [openForgotPasswordDialog, setOpenForgotPasswordDialog] = React.useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -43,12 +43,12 @@ const ProUI_SignInSide: React.FC = () => {
   };
 
 
-  const handleClickOpenForgotPasswordDailog = () => {
-    setOpenForgotPasswordDailog(true);
-  };
+  // const handleClickOpenForgotPasswordDialog = () => {
+  //   setOpenForgotPasswordDialog(true);
+  // };
 
-  const handleCloseForgotPasswordDailog = () => {
-    setOpenForgotPasswordDailog(false);
+  const handleCloseForgotPasswordDialog = () => {
+    setOpenForgotPasswordDialog(false);
   };
 
   // const handleLoginSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -103,7 +103,9 @@ const ProUI_SignInSide: React.FC = () => {
                   <Link href="#">Forgot your password?</Link>
                 </Typography>
               </Box> */}
-              <ProUI_ForgotPassword open={handleClickOpenForgotPasswordDailog} handleClose={handleCloseForgotPasswordDailog} />
+              
+              <ProUI_ForgotPassword open={openForgotPasswordDialog} handleClose={handleCloseForgotPasswordDialog} />
+
               <FormControl sx={{ width: "100%" }} variant="outlined">
                 <InputLabel htmlFor="outlined-adornment-password">
                   Password

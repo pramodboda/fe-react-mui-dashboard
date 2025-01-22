@@ -1,4 +1,4 @@
-import * as React from 'react';
+// import * as React from 'react';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -7,24 +7,24 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import OutlinedInput from '@mui/material/OutlinedInput';
 
-interface ForgotPasswordProps {
+interface ProUI_ForgotPasswordProps {
   open: boolean;
   handleClose: () => void;
 }
 
-export default function ForgotPassword({ open, handleClose }: ForgotPasswordProps) {
+export default function ProUI_ForgotPassword({ open, handleClose }: ProUI_ForgotPasswordProps) {
   return (
     <Dialog
       open={open}
       onClose={handleClose}
-      PaperProps={{
-        component: 'form',
-        onSubmit: (event: React.FormEvent<HTMLFormElement>) => {
-          event.preventDefault();
-          handleClose();
-        },
-        sx: { backgroundImage: 'none' },
-      }}
+    //   PaperProps={{
+    //     component: 'form',
+    //     onSubmit: (event: React.FormEvent<HTMLFormElement>) => {
+    //       event.preventDefault();
+    //       handleClose();
+    //     },
+    //     sx: { backgroundImage: 'none' },
+    //   }}
     >
       <DialogTitle>Reset password</DialogTitle>
       <DialogContent
