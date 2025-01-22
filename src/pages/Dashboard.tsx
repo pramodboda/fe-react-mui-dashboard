@@ -26,6 +26,8 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import Button from "@mui/material/Button";
 
+import SettingsTwoToneIcon from '@mui/icons-material/SettingsTwoTone';
+
 import SettingsDrawer from "../components/ProUI_Elements/SettingsDrawer/SettingsDrawer";
 import Footer_1 from "../components/ProUI_Elements/footer1/Footer_1";
 import ProUI_Typography from "../components/ProUI_Elements/Typography/ProUI_Typography";
@@ -160,9 +162,9 @@ export default function Dashboard() {
                 >
                   Mini variant drawer
                 </Typography>
-                <Button color="inherit" onClick={handleToggleSettingsDrawer}>
-                  Settings
-                </Button>
+                <IconButton aria-label="settings" color="inherit" onClick={handleToggleSettingsDrawer}>
+                <SettingsTwoToneIcon/>
+                </IconButton >
                 <Button color="inherit" onClick={logout}>
                   Logout
                 </Button>
@@ -292,7 +294,7 @@ export default function Dashboard() {
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
               <DrawerHeader />
 
-              <ProUI_Typography />
+              {/* <ProUI_Typography /> */}
               <Button variant="contained">Create New</Button>
               <Typography sx={{ marginBottom: 2 }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
