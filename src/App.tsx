@@ -1,4 +1,10 @@
-import { useState } from "react";
+// import { useState } from "react";
+
+// import { ThemeProvider } from "@mui/material/styles";
+import { AuthProvider } from "./context/AuthContext";
+import { ThemeProvider as MuiThemeProvider } from "./context/theme/ThemeContext";
+import { SettingsDrawerProvider } from "./context/SettingsDrawerContext";
+// import theme from "./styles/theme";
 
 import "./App.css";
 import Dashboard from "./pages/Dashboard";
@@ -7,8 +13,14 @@ import Dashboard from "./pages/Dashboard";
 function App() {
   return (
     <>
-      <Dashboard />
-      {/* <Signin_1 /> */}
+      <SettingsDrawerProvider>
+        <AuthProvider>
+          <MuiThemeProvider>
+            <Dashboard />
+            {/* <Signin_1 /> */}
+          </MuiThemeProvider>
+        </AuthProvider>
+      </SettingsDrawerProvider>
     </>
   );
 }

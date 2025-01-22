@@ -40,12 +40,11 @@ const Signin_1: React.FC = () => {
         </Box>
         <Box className="login-right">
           <Stack>
-            <Typography variant="h5" sx={{ fontWeight: "700" }} mb={2}>
+            <Typography variant="h5" sx={{ fontWeight: "700", mb: 6 }}>
               Sign in to your account
             </Typography>
 
-            <Box mb={4}>
-              {" "}
+            <Box sx={{ mb: 4 }}>
               <Alert severity="info">
                 Use "pramodboda@dev.com" as username and "demo0123456789" as
                 password.
@@ -68,7 +67,7 @@ const Signin_1: React.FC = () => {
                 // size="small"
               />
               <Box sx={{ textAlign: "right" }}>
-                <Typography variant="body2" mb={1}>
+                <Typography variant="body2" sx={{ mb: 1 }}>
                   <Link href="#">Forgot password?</Link>
                 </Typography>
               </Box>
@@ -102,7 +101,7 @@ const Signin_1: React.FC = () => {
               </FormControl>
             </Box>
             <Button variant="contained">Sign in</Button>
-            <Typography variant="body2" mb={8} sx={{ textAlign: "center" }}>
+            <Typography variant="body2" sx={{ textAlign: "center", mt: 6 }}>
               Don't have an account? <Link href="#">Sign up</Link>
             </Typography>
           </Stack>
