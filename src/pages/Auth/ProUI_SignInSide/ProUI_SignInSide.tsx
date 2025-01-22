@@ -17,10 +17,16 @@ import InputAdornment from "@mui/material/InputAdornment";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
+import ProUI_ForgotPassword from "../../../components/ProUI_Elements/ProUI_ForgetPassword/ProUI_ForgetPassword";
 import { GoogleIcon, FacebookIcon } from '../../../components/ProUI_Elements/ProUI_CustomIcons/ProUI_CustomIcons';
 
 const ProUI_SignInSide: React.FC = () => {
   const [showPassword, setShowPassword] = React.useState(false);
+  // const [emailError, setEmailError] = React.useState(false);
+  // const [emailErrorMessage, setEmailErrorMessage] = React.useState('');
+  // const [passwordError, setPasswordError] = React.useState(false);
+  // const [passwordErrorMessage, setPasswordErrorMessage] = React.useState('');
+  const [openForgotPasswordDailog, setOpenForgotPasswordDailog] = React.useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -35,6 +41,27 @@ const ProUI_SignInSide: React.FC = () => {
   ) => {
     event.preventDefault();
   };
+
+
+  const handleClickOpenForgotPasswordDailog = () => {
+    setOpenForgotPasswordDailog(true);
+  };
+
+  const handleCloseForgotPasswordDailog = () => {
+    setOpenForgotPasswordDailog(false);
+  };
+
+  // const handleLoginSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  //   if (emailError || passwordError) {
+  //     event.preventDefault();
+  //     return;
+  //   }
+  //   const data = new FormData(event.currentTarget);
+  //   console.log({
+  //     email: data.get('email'),
+  //     password: data.get('password'),
+  //   });
+  // };
 
   return (
     <>
@@ -60,6 +87,7 @@ const ProUI_SignInSide: React.FC = () => {
               sx={{ mb: 3, "& .MuiTextField-root": { mb: 2, width: "100%" } }}
               noValidate
               autoComplete="off"
+              // onSubmit={handleLoginSubmit}
             >
               <TextField
                 // error
@@ -70,11 +98,12 @@ const ProUI_SignInSide: React.FC = () => {
                 // helperText="Incorrect entry."
                 // size="small"
               />
-              <Box sx={{ textAlign: "right" }}>
+              {/* <Box sx={{ textAlign: "right" }}>
                 <Typography variant="body2" sx={{ mb: 1 }}>
                   <Link href="#">Forgot your password?</Link>
                 </Typography>
-              </Box>
+              </Box> */}
+              <ProUI_ForgotPassword open={handleClickOpenForgotPasswordDailog} handleClose={handleCloseForgotPasswordDailog} />
               <FormControl sx={{ width: "100%" }} variant="outlined">
                 <InputLabel htmlFor="outlined-adornment-password">
                   Password
