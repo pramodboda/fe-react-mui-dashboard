@@ -72,7 +72,7 @@ const ProUI_SignInSide: React.FC = () => {
               />
               <Box sx={{ textAlign: "right" }}>
                 <Typography variant="body2" sx={{ mb: 1 }}>
-                  <Link href="#">Forgot password?</Link>
+                  <Link href="#">Forgot your password?</Link>
                 </Typography>
               </Box>
               <FormControl sx={{ width: "100%" }} variant="outlined">
@@ -105,28 +105,28 @@ const ProUI_SignInSide: React.FC = () => {
               </FormControl>
             </Box>
             <Button variant="contained" sx={{  mb: 3 }}>Sign in</Button>
-            <Typography variant="body2" sx={{ textAlign: "center", mb: 2}}>
+            <Typography variant="body2" sx={{ textAlign: "center"}}>
               Don't have an account? <Link href="#">Sign up</Link>
             </Typography>
-            <Divider>or</Divider>
+            <Divider sx={{  mt:2, mb: 2 }}>or</Divider>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-        <Button
-          fullWidth
-          variant="outlined"
-          onClick={() => alert('Sign in with Google')}
-          startIcon={<GoogleIcon />}
-        >
-          Sign in with Google
-        </Button>
-        <Button
-          fullWidth
-          variant="outlined"
-          onClick={() => alert('Sign in with Facebook')}
-          startIcon={<FacebookIcon />}
-        >
-          Sign in with Facebook
-        </Button>
-      </Box>
+              <Button
+                fullWidth
+                variant="outlined"
+                onClick={() => alert('Sign in with Google')}
+                startIcon={<GoogleIcon />}
+              >
+                Sign in with Google
+              </Button>
+              <Button
+                fullWidth
+                variant="outlined"
+                onClick={() => alert('Sign in with Facebook')}
+                startIcon={<FacebookIcon />}
+              >
+                Sign in with Facebook
+              </Button>
+            </Box>
           </Stack>
         </Box>
       </Stack>

@@ -64,6 +64,10 @@ body {
   .login-left{
     display: none;
   }
+
+}
+
+@media only screen and (max-height: 700px) {
   .login-right{
     width: 100%;
     padding: 5% 1rem !important;
