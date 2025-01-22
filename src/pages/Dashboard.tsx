@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
-import { useAuth } from "../context/AuthContext";
-// import { useSettingsDrawer } from "../context/SettingsDrawerContext"; // Import the custom hook
-
+import { useAuth } from "../context/AuthContext";// Import the custom hook
+import ProUI_SignInSide from "../pages/Auth/ProUI_SignInSide/ProUI_SignInSide";
 import { useSettingsDrawer } from "../context/SettingsDrawerContext"; // Import the custom hook
 import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -334,7 +333,7 @@ export default function Dashboard() {
           </Box>
         </Box>
       ) : (
-        <p>Please log in</p>
+        <ProUI_SignInSide/>
       )}
     </>
   );

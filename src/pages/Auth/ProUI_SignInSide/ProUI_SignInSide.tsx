@@ -15,7 +15,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
-const Signin_1: React.FC = () => {
+const ProUI_SignInSide: React.FC = () => {
   const [showPassword, setShowPassword] = React.useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -110,4 +110,4 @@ const Signin_1: React.FC = () => {
     </>
   );
 };
-export default Signin_1;
+export default ProUI_SignInSide;
