@@ -7,6 +7,8 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
 
+import Divider from "@mui/material/Divider";
+
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import OutlinedInput from "@mui/material/OutlinedInput";
@@ -14,6 +16,8 @@ import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+
+import { GoogleIcon, FacebookIcon } from '../../../components/ProUI_Elements/ProUI_CustomIcons/ProUI_CustomIcons';
 
 const ProUI_SignInSide: React.FC = () => {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -53,7 +57,7 @@ const ProUI_SignInSide: React.FC = () => {
 
             <Box
               component="form"
-              sx={{ mb: 6, "& .MuiTextField-root": { mb: 2, width: "100%" } }}
+              sx={{ mb: 3, "& .MuiTextField-root": { mb: 2, width: "100%" } }}
               noValidate
               autoComplete="off"
             >
@@ -100,10 +104,29 @@ const ProUI_SignInSide: React.FC = () => {
                 />
               </FormControl>
             </Box>
-            <Button variant="contained">Sign in</Button>
-            <Typography variant="body2" sx={{ textAlign: "center", mt: 6 }}>
+            <Button variant="contained" sx={{  mb: 3 }}>Sign in</Button>
+            <Typography variant="body2" sx={{ textAlign: "center", mb: 2}}>
               Don't have an account? <Link href="#">Sign up</Link>
             </Typography>
+            <Divider>or</Divider>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+        <Button
+          fullWidth
+          variant="outlined"
+          onClick={() => alert('Sign in with Google')}
+          startIcon={<GoogleIcon />}
+        >
+          Sign in with Google
+        </Button>
+        <Button
+          fullWidth
+          variant="outlined"
+          onClick={() => alert('Sign in with Facebook')}
+          startIcon={<FacebookIcon />}
+        >
+          Sign in with Facebook
+        </Button>
+      </Box>
           </Stack>
         </Box>
       </Stack>
