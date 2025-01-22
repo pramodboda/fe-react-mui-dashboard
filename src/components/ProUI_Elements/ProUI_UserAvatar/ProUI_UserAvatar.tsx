@@ -1,8 +1,10 @@
-import * as React from 'react';
+// import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Badge from '@mui/material/Badge';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
+
+import IconButton from '@mui/material/IconButton';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -27,37 +29,29 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
       opacity: 1,
     },
     '100%': {
-      transform: 'scale(2.4)',
+      transform: 'scale(3)',
       opacity: 0,
     },
   },
 }));
 
-const SmallAvatar = styled(Avatar)(({ theme }) => ({
-  width: 22,
-  height: 22,
-  border: `2px solid ${theme.palette.background.paper}`,
-}));
+
 
 export default function BadgeAvatars() {
   return (
     <Stack direction="row" spacing={2}>
+         <IconButton aria-label="UserControls" color="inherit">
+
+         
       <StyledBadge
         overlap="circular"
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
         variant="dot"
       >
-        <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+        <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" sx={{ width: 30, height: 30 }} />
       </StyledBadge>
-      <Badge
-        overlap="circular"
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-        badgeContent={
-          <SmallAvatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-        }
-      >
-        <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
-      </Badge>
+      </IconButton>
+      
     </Stack>
   );
 }
