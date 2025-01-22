@@ -1,9 +1,14 @@
 import React from "react";
 import { useSettingsDrawer } from "../../../context/SettingsDrawerContext"; // Import the custom hook
 
+import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
+import Typography from "@mui/material/Typography";
+
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
 
 import SetThemeColor from "../../../features/settings/themeColor/SetThemeColor";
 
@@ -33,10 +38,26 @@ const SettingsDrawer: React.FC = () => {
       }}
     >
       <Box
-        sx={{ width: 250, padding: "1rem 0" }}
+        sx={{ width: 250, padding: "1rem 1rem" }}
         role="presentation"
         // onClick={handleToggleSettingsDrawer}
       >
+        <Stack
+          direction="row"
+          sx={{ alignItems: "center" }}
+          // onClick={handleToggleSettingsDrawer}
+        >
+          <Typography variant="h6" color="inherit" sx={{ flexGrow: 1 }}>
+            Settings
+          </Typography>
+          <IconButton>
+            <CloseIcon
+              aria-label="settings"
+              color="inherit"
+              onClick={handleToggleSettingsDrawer}
+            />
+          </IconButton>
+        </Stack>
         <SetThemeColor />
         <Divider />
       </Box>

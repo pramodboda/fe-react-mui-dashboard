@@ -166,7 +166,13 @@ const ProUI_SignInSide: React.FC = () => {
             <Typography variant="body2" sx={{ textAlign: "center" }}>
               Don't have an account? <Link href="#">Sign up</Link>
             </Typography>
-            <Divider sx={{ mt: 2, mb: 2 }}>or</Divider>
+            <Divider sx={{ mt: 2, mb: 2 }}>
+              <Typography variant="body2" sx={{ mt: -0.6 }}>
+                {" "}
+                or
+              </Typography>
+              {/* <Chip label="or" size="small" /> */}
+            </Divider>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
               <Button
                 fullWidth
