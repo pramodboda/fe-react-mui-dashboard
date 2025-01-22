@@ -31,6 +31,7 @@ import SettingsTwoToneIcon from '@mui/icons-material/SettingsTwoTone';
 import SettingsDrawer from "../components/ProUI_Elements/SettingsDrawer/SettingsDrawer";
 import Footer_1 from "../components/ProUI_Elements/footer1/Footer_1";
 import ProUI_Typography from "../components/ProUI_Elements/Typography/ProUI_Typography";
+import ProUI_UserAvatar from "../components/ProUI_Elements/ProUI_UserAvatar/ProUI_UserAvatar";
 // import SetThemeColor from "../features/settings/themeColor/SetThemeColor";
 const drawerWidth = 240;
 
@@ -165,6 +166,7 @@ export default function Dashboard() {
                 <IconButton aria-label="settings" color="inherit" onClick={handleToggleSettingsDrawer}>
                 <SettingsTwoToneIcon/>
                 </IconButton >
+                <ProUI_UserAvatar/>
                 <Button color="inherit" onClick={logout}>
                   Logout
                 </Button>
