@@ -73,6 +73,7 @@ interface AppBarProps extends MuiAppBarProps {
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
 })<AppBarProps>(({ theme }) => ({
+  
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(["width", "margin"], {
     easing: theme.transitions.easing.sharp,
@@ -144,11 +145,11 @@ export default function Dashboard() {
               position="fixed"
               open={open}
               sx={{
-                // backgroundClip: "border-box",
-                // backdrop-filter:"blur(6px)",
-                backdropFilter: "saturate(200%) blur(30px)",
-                backgroundColor: "#f9f9f9", // Fixed AppBar color (does not change with primaryColor)
-
+               
+                backdropFilter: "blur(8px)", // Apply blur effect
+                backgroundColor: "rgba(255, 255, 255, 0.4)", // White with opacity for frosted look
+                boxShadow:
+                  "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px", // Custom shadow
                 color: blueGrey[400],
               }}
             >
@@ -179,8 +180,26 @@ export default function Dashboard() {
                   aria-label="settings"
                   color="inherit"
                   onClick={handleToggleSettingsDrawer}
+                  sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    animation: 'spin 8s linear infinite',
+                  }}
                 >
                   <SettingsTwoToneIcon />
+                  <style>
+        {`
+          @keyframes spin {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+        `}
+      </style>
                 </IconButton>
                 <ProUI_UserAvatar />
                 <Button color="inherit" onClick={logout}>
