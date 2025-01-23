@@ -50,11 +50,11 @@ const SettingsDrawer: React.FC = () => {
           <Typography variant="h6" color="inherit" sx={{ flexGrow: 1 }}>
             Settings
           </Typography>
-          <IconButton>
-            <CloseIcon
-              aria-label="settings"
+          <IconButton aria-label="settings"
               color="inherit"
-              onClick={handleToggleSettingsDrawer}
+              onClick={handleToggleSettingsDrawer}>
+            <CloseIcon
+              
             />
           </IconButton>
         </Stack>
