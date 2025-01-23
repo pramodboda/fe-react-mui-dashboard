@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 
+import ProUI_BrowserFullscreenIcon from "../ProUI_BrowserFullscreenIcon/ProUI_BrowserFullscreenIcon";
 import SetThemeColor from "../../../features/settings/themeColor/SetThemeColor";
 
 const SettingsDrawer: React.FC = () => {
@@ -50,12 +51,13 @@ const SettingsDrawer: React.FC = () => {
           <Typography variant="h6" color="inherit" sx={{ flexGrow: 1 }}>
             Settings
           </Typography>
-          <IconButton aria-label="settings"
-              color="inherit"
-              onClick={handleToggleSettingsDrawer}>
-            <CloseIcon
-              
-            />
+          <ProUI_BrowserFullscreenIcon />
+          <IconButton
+            aria-label="settings"
+            color="inherit"
+            onClick={handleToggleSettingsDrawer}
+          >
+            <CloseIcon />
           </IconButton>
         </Stack>
         <SetThemeColor />

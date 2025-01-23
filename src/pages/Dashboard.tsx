@@ -34,6 +34,7 @@ import ProUI_UserAvatar from "../components/ProUI_Elements/ProUI_UserAvatar/ProU
 // import SetThemeColor from "../features/settings/themeColor/SetThemeColor";
 
 import { blueGrey } from "@mui/material/colors";
+
 const drawerWidth = 240;
 
 const openedMixin = (theme: Theme): CSSObject => ({
@@ -73,7 +74,6 @@ interface AppBarProps extends MuiAppBarProps {
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "open",
 })<AppBarProps>(({ theme }) => ({
-  
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(["width", "margin"], {
     easing: theme.transitions.easing.sharp,
@@ -145,11 +145,10 @@ export default function Dashboard() {
               position="fixed"
               open={open}
               sx={{
-               
                 backdropFilter: "blur(8px)", // Apply blur effect
                 backgroundColor: "rgba(255, 255, 255, 0.4)", // White with opacity for frosted look
                 // boxShadow:"none",
-                boxShadow:"rgba(50, 50, 93, 0.25) 0px 20px 20px -20px",
+                boxShadow: "rgba(50, 50, 93, 0.25) 0px 20px 20px -20px",
                 // boxShadow:"rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px", // Custom shadow
                 color: blueGrey[400],
               }}
@@ -182,15 +181,15 @@ export default function Dashboard() {
                   color="inherit"
                   onClick={handleToggleSettingsDrawer}
                   sx={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    animation: 'spin 8s linear infinite',
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    animation: "spin 8s linear infinite",
                   }}
                 >
                   <SettingsTwoToneIcon />
                   <style>
-        {`
+                    {`
           @keyframes spin {
             0% {
               transform: rotate(0deg);
@@ -200,7 +199,7 @@ export default function Dashboard() {
             }
           }
         `}
-      </style>
+                  </style>
                 </IconButton>
                 <ProUI_UserAvatar />
                 <Button color="inherit" onClick={logout}>
@@ -334,6 +333,7 @@ export default function Dashboard() {
 
               {/* <ProUI_Typography /> */}
               <Button variant="contained">Create New</Button>
+
               <Typography variant="body2" sx={{ marginBottom: 2 }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
