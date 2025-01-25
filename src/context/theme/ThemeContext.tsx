@@ -3,7 +3,7 @@ import {
   ThemeProvider as MuiThemeProvider,
   createTheme,
 } from "@mui/material/styles";
-import { purple } from "@mui/material/colors";
+import { deepPurple } from "@mui/material/colors";
 
 import { blueGrey } from "@mui/material/colors";
 
@@ -19,7 +19,7 @@ const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [primaryColor, setPrimaryColor] = useState<string>(purple[500]);
+  const [primaryColor, setPrimaryColor] = useState<string>(deepPurple[500]);
 
   // Global overrides
   const theme = createTheme({
