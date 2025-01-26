@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import { useThemeContext } from "../../../hooks/useThemeContext"; // Adjust the import path as needed
 
 const SetThemeFont = () => {
-  const { setPrimaryFont } = useThemeContext(); // Access setPrimaryFont from theme context
+  const { primaryFont,setPrimaryFont } = useThemeContext(); // Access setPrimaryFont from theme context
 
   // State to track which button is active (null means no button is active)
   const [activeIndex, setActiveIndex] = useState<number | null>(2);
@@ -79,7 +79,8 @@ const SetThemeFont = () => {
               height: 66,
               fontFamily: fontOption.font,
               color: "#999999",
-              backgroundColor: activeIndex === index ? "#cccccc" : "white", // Change button color if active
+              // backgroundColor: activeIndex === index ? "#cccccc" : "white", // Change button color if active
+              backgroundColor: primaryFont === fontOption.font ? "#cccccc" : "white", // Set active button based on context value
               boxShadow: "none",
               // "&:hover": {
               //   backgroundColor: activeIndex === index ? "#cccccc" : "#f0f0f0",
