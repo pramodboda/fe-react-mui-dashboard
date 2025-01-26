@@ -3,20 +3,11 @@ import { useState } from "react";
 
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import SvgIcon from "@mui/material/SvgIcon";
 import Typography from "@mui/material/Typography";
 import { useThemeContext } from "../../../hooks/useThemeContext"; // Adjust the import path as needed
-import {
-  indigo,
-  blue,
-  deepPurple,
-  amber,
-  green,
-  red,
-} from "@mui/material/colors";
 
 const SetThemeFont = () => {
-  const { setPrimaryColor } = useThemeContext(); // Access setColor from theme context
+  const { setPrimaryFont } = useThemeContext(); // Access setColor from theme context
 
   // State to track which button is active (null means no button is active)
   const [activeIndex, setActiveIndex] = useState<number | null>(2);
@@ -44,11 +35,12 @@ const SetThemeFont = () => {
   ];
 
   // Function to handle button click and toggle active state
-  const handleColorChange = (index: number, newColor: string) => {
-    // Toggle the active state
-    setActiveIndex(activeIndex === index ? -1 : index); // Toggle active state, -1 means no active button
-    setPrimaryColor(newColor); // Update the color in the theme context
-  };
+
+  const handleFontChange = (index: number, newFont: string) => {
+     // Toggle the active state
+     setActiveIndex(activeIndex === index ? -1 : index); // Toggle active state, -1 means no active button
+     setPrimaryFont(newFont); // Update the color in the theme context
+  }
 
   return (
     <>
@@ -84,9 +76,9 @@ const SetThemeFont = () => {
               //   backgroundColor: activeIndex === index ? "#cccccc" : "#f0f0f0",
               // },
             }}
-            onClick={() => handleColorChange(index, fontOption.name)} // Activate or deactivate button on click
+            onClick={() => handleFontChange(index, fontOption.font)} // Activate or deactivate button on click
           >
-            <Typography>{fontOption.name}</Typography>
+            {fontOption.name}
           </Button>
         ))}
       </Box>
