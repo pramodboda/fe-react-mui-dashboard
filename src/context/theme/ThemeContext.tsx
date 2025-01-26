@@ -10,6 +10,7 @@ import { blueGrey } from "@mui/material/colors";
 // Define the shape of the context's data
 interface ThemeContextProps {
   setPrimaryColor: (color: string) => void;
+  setPrimaryFont: (font: string) => void;
 }
 
 // Create the context with default values
@@ -21,13 +22,17 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
 }) => {
   const [primaryColor, setPrimaryColor] = useState<string>(deepPurple[500]);
 
+  const [primaryFont, setPrimaryFont] = useState<string>(
+    "Plus Jakarta Sans, Roboto, Helvetica, Arial, sans-serif"
+  );
+
   // Global overrides
   const theme = createTheme({
     typography: {
       htmlFontSize: 18,
       fontSize: 14,
 
-      fontFamily: "Plus Jakarta Sans, Roboto, Helvetica, Arial, sans-serif",
+      fontFamily: primaryFont,
       // h1: {
       //   fontSize: "3.75rem", // 60px
       //   fontWeight: 700, // Bold, adjust as needed
@@ -130,7 +135,7 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
   });
 
   return (
-    <ThemeContext.Provider value={{ setPrimaryColor }}>
+    <ThemeContext.Provider value={{ setPrimaryColor, setPrimaryFont }}>
       <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
     </ThemeContext.Provider>
   );

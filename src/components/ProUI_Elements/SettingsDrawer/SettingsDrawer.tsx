@@ -12,6 +12,7 @@ import CloseIcon from "@mui/icons-material/Close";
 
 import ProUI_BrowserFullscreenIcon from "../ProUI_BrowserFullscreenIcon/ProUI_BrowserFullscreenIcon";
 import SetThemeColor from "../../../features/settings/themeColor/SetThemeColor";
+import SetThemeFont from "../../../features/settings/themeFont/SetThemeFont";
 
 const SettingsDrawer: React.FC = () => {
   const { isSettingsDrawerOpen, handleToggleSettingsDrawer } =
@@ -60,6 +61,7 @@ const SettingsDrawer: React.FC = () => {
             <CloseIcon />
           </IconButton>
         </Stack>
+        <SetThemeFont />
         <SetThemeColor />
         <Divider />
       </Box>
