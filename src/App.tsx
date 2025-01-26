@@ -12,17 +12,14 @@ import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
-    <>
      <MuiThemeProvider>
       <SettingsDrawerProvider>
         <AuthProvider>
-         
             <Dashboard />
             {/* <Signin_1 /> */}
         </AuthProvider>
       </SettingsDrawerProvider>
-      </MuiThemeProvider>
-    </>
+      </MuiThemeProvider>  
   );
 }
 

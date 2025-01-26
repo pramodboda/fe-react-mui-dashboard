@@ -9,6 +9,8 @@ import { blueGrey } from "@mui/material/colors";
 
 // Define the shape of the context's data
 interface ThemeContextProps {
+  primaryColor: string,
+  primaryFont : string,
   setPrimaryColor: (color: string) => void;
   setPrimaryFont: (font: string) => void;
 }
@@ -135,7 +137,7 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
   });
 
   return (
-    <ThemeContext.Provider value={{ setPrimaryColor, setPrimaryFont }}>
+    <ThemeContext.Provider value={{ primaryColor, setPrimaryColor, primaryFont, setPrimaryFont }}>
       <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
     </ThemeContext.Provider>
   );
