@@ -76,7 +76,6 @@ const SetThemeColor = () => {
         }}
       >
         {/* Render multiple buttons with state management */}
-        {/* {[0, 1, 2, 3, 4, 5].map((index) => ( */}
         {colorOptions.map((colorOption, index) => (
           <Button
             key={index}
@@ -84,11 +83,6 @@ const SetThemeColor = () => {
             sx={{
               width: 66,
               height: 66,
-              // backgroundColor: colorOptions.find(
-              //   (option) => option.color === primaryColor
-              // )
-              //   ? colorOption.lightColor
-              //   : "white",
               backgroundColor:
                 activeIndex === index ? colorOption.lightColor : "white", // Check if this is the active button
               boxShadow: "none",
