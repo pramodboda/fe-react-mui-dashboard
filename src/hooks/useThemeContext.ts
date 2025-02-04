@@ -8,8 +8,12 @@ import { useContext } from "react";
 import { ThemeContext } from "../context/theme/ThemeContext"; // Adjust the import path as needed
 
 // Define the return type of the hook
+// Define the shape of the context's data
 interface ThemeContextProps {
-  setPrimaryColor: (primaryColor: string) => void; // Function to update the primary color
+  primaryColor: string,
+  primaryFont : string,
+  setPrimaryColor: (color: string) => void;// Function to update the primary color
+  setPrimaryFont: (font: string) => void;// Function to update the primary font
 }
 
 // The custom hook to use the theme context

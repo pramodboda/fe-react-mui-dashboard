@@ -20,7 +20,7 @@ import {
 import IconSidebarDuotone from "../../../assets/icons/IconSidebarDuotone";
 
 const SetThemeColor = () => {
-  const { setPrimaryColor } = useThemeContext(); // Access setColor from theme context
+  const { setPrimaryColor } = useThemeContext(); // Access setPrimaryColor from theme context
 
   // State to track which button is active (null means no button is active)
   const [activeIndex, setActiveIndex] = useState<number | null>(2);
