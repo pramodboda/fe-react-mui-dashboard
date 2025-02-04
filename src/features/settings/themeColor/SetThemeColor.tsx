@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import styled from "styled-components";
 
 import Box from "@mui/material/Box";
@@ -20,12 +20,19 @@ import {
 import IconSidebarDuotone from "../../../assets/icons/IconSidebarDuotone";
 
 const SetThemeColor = () => {
-  const { setPrimaryColor } = useThemeContext(); // Access setPrimaryColor from theme context
+  const { primaryColor, setPrimaryColor } = useThemeContext(); // Access setPrimaryColor from theme context
 
   // State to track which button is active (null means no button is active)
   const [activeIndex, setActiveIndex] = useState<number | null>(2);
 
-  const colorOptions = [
+  type ColorInfo = {
+    id: number;
+    name: string;
+    color: string;
+    lightColor: string;
+  };
+
+  const colorOptions: ColorInfo[] = [
     { id: 0, name: "Indigo", color: indigo[500], lightColor: indigo[50] },
     { id: 1, name: "Blue", color: blue[500], lightColor: blue[50] },
     {
@@ -40,10 +47,17 @@ const SetThemeColor = () => {
     { id: 5, name: "Red", color: red[500], lightColor: red[50] },
   ];
 
+  // Set activeIndex based on primaryColor when component mounts
+  useEffect(() => {
+    const activeIndex = colorOptions.findIndex(
+      (option) => option.color === primaryColor
+    );
+    setActiveIndex(activeIndex !== -1 ? activeIndex : null); // If no match, set to null
+  }, [primaryColor]); // Runs whenever primaryColor changes
+
   // Function to handle button click and toggle active state
   const handleColorChange = (index: number, newColor: string) => {
-    // Toggle the active state
-    setActiveIndex(activeIndex === index ? -1 : index); // Toggle active state, -1 means no active button
+    setActiveIndex(index); // Set active button index
     setPrimaryColor(newColor); // Update the color in the theme context
   };
 
@@ -70,13 +84,13 @@ const SetThemeColor = () => {
             sx={{
               width: 66,
               height: 66,
-
+              // backgroundColor: colorOptions.find(
+              //   (option) => option.color === primaryColor
+              // )
+              //   ? colorOption.lightColor
+              //   : "white",
               backgroundColor:
-                activeIndex === index ? colorOption.lightColor : "white", // Change button color if active
-
-              // backgroundColor:
-              //   activeIndex === index ? colorOption.lightColor : "white", // Change button color if active
-
+                activeIndex === index ? colorOption.lightColor : "white", // Check if this is the active button
               boxShadow: "none",
               // "&:hover": {
               //   backgroundColor: activeIndex === index ? "#cccccc" : "#f0f0f0",
