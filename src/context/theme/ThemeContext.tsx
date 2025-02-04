@@ -64,7 +64,7 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
       body2: {
         fontSize: "0.875rem", // 14px
         fontWeight: 400,
-        color: blueGrey[400],
+        color: blueGrey[500],
       },
       // caption: {
       //   fontSize: "0.75rem", // 12px
