@@ -25,7 +25,7 @@ const ProUI_SignInSide: React.FC = () => {
           sx={{
             justifyContent: "center",
             width: { xs: "100%", sm: "100%", md: "55%" },
-            padding: { xs: "1rem", sm: "12rem", md: "8rem" },
+            padding: { xs: "1rem", sm: "12rem", md: "8rem", lg: "10rem" },
             // gap: { xs: 6, sm: 12 },
           }}
         >
