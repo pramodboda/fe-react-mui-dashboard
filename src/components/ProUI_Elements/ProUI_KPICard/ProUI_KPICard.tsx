@@ -45,7 +45,7 @@ function AreaGradient({ color, id }: { color: string; id: string }) {
   );
 }
 
-export default function StatCard({
+export default function ProUI_KPICard({
   title,
   value,
   interval,

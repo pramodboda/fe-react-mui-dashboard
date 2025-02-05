@@ -34,6 +34,7 @@ import ProUI_UserAvatar from "../components/ProUI_Elements/ProUI_UserAvatar/ProU
 // import SetThemeColor from "../features/settings/themeColor/SetThemeColor";
 
 import { blueGrey } from "@mui/material/colors";
+import Dashboard_Home1 from "../features/dashboard/Dashboard_Home1";
 
 const drawerWidth = 240;
 
@@ -334,6 +335,7 @@ export default function Dashboard() {
               {/* <ProUI_Typography /> */}
               <Button variant="contained">Create New</Button>
 
+              <Dashboard_Home1 />
               <Typography variant="body2" sx={{ marginBottom: 2 }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
