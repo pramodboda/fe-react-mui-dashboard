@@ -174,6 +174,7 @@ export default function Dashboard() {
                   noWrap
                   component="div"
                   sx={{ flexGrow: 1 }}
+                  className="text-pop-up-top"
                 >
                   Codevik
                 </Typography>
