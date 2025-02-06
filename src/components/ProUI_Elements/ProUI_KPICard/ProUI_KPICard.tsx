@@ -11,6 +11,10 @@ import Typography from "@mui/material/Typography";
 import { SparkLineChart } from "@mui/x-charts/SparkLineChart";
 import { areaElementClasses } from "@mui/x-charts/LineChart";
 
+
+import AnimatedNumber from '../AnimatedNumber/AnimatedNumber';
+
+
 export type StatCardProps = {
   title: string;
   value: string;
@@ -20,6 +24,8 @@ export type StatCardProps = {
 };
 
 function getDaysInMonth(month: number, year: number) {
+  
+
   const date = new Date(year, month, 0);
   const monthName = date.toLocaleDateString("en-US", {
     month: "short",
@@ -52,6 +58,9 @@ export default function ProUI_KPICard({
   trend,
   data,
 }: StatCardProps) {
+
+  const [number, setNumber] = useState<number>(0);
+
   const theme = useTheme();
   const daysInWeek = getDaysInMonth(4, 2024);
 
@@ -97,6 +106,7 @@ export default function ProUI_KPICard({
             >
               <Typography variant="h4" component="p">
                 {value}
+                <AnimatedNumber targetNumber={value} />
               </Typography>
               <Chip size="small" color={color} label={trendValues[trend]} />
             </Stack>
