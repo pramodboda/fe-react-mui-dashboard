@@ -5,6 +5,7 @@ import ProUI_SignInSide from "../pages/Auth/ProUI_SignInSide/ProUI_SignInSide";
 import { useSettingsDrawer } from "../context/SettingsDrawerContext"; // Import the custom hook
 import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
 import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
 import MuiDrawer from "@mui/material/Drawer";
 
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
@@ -35,6 +36,8 @@ import ProUI_UserAvatar from "../components/ProUI_Elements/ProUI_UserAvatar/ProU
 
 import { blueGrey } from "@mui/material/colors";
 import Dashboard_Home1 from "../features/dashboard/Dashboard_Home1";
+
+import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 
 const drawerWidth = 240;
 
@@ -332,9 +335,22 @@ export default function Dashboard() {
           <Box>
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
               <DrawerHeader />
-
               {/* <ProUI_Typography /> */}
-              <Button variant="contained">Create New</Button>
+              <Stack direction="row" alignItems="center" sx={{ gap: 2 }}>
+                <Button variant="contained">Get in Touch</Button>
+                <Typography
+                  sx={{ color: "#43a047", fontSize: ".9rem", fontWeight: 500 }}
+                >
+                  <Stack direction="row" alignItems="center" sx={{ gap: 1 }}>
+                    <FiberManualRecordIcon
+                      sx={{
+                        fontSize: ".8rem",
+                      }}
+                    />
+                    <span>Open to New Opportunities</span>
+                  </Stack>
+                </Typography>
+              </Stack>
 
               <Dashboard_Home1 />
               <Typography variant="body2" sx={{ marginBottom: 2 }}>
