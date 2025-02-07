@@ -116,8 +116,8 @@ export default function ProUI_KPICard({
                   duration={0.075}
                   increment={3}
                   // symbol={}
+                  numUnit={numUnit}
                 />
-                {numUnit && numUnit}
               </Typography>
               <Chip size="small" color={color} label={trendValues[trend]} />
             </Stack>

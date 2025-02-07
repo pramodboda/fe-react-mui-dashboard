@@ -9,6 +9,7 @@ interface NumberSwitcherProps {
   targetNumber: number;
   increment?: number; // Increment step (optional, default: 1)
   duration?: number; // Duration in seconds (optional, default: 0.5)
+  numUnit?: string;
 }
 
 const ProUI_NumberSwitcher: React.FC<NumberSwitcherProps> = ({
@@ -17,44 +18,10 @@ const ProUI_NumberSwitcher: React.FC<NumberSwitcherProps> = ({
   targetNumber,
   increment = 1,
   duration = 0.5,
+  numUnit = "k",
 }) => {
-  // const [currentNumber, setCurrentNumber] = useState(0);
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCurrentNumber((prev) =>
-  //       prev < targetNumber ? prev + increment : targetNumber
-  //     );
-  //   }, duration * 1000);
-
-  //   return () => clearInterval(interval);
-  // }, [targetNumber, duration]);
-
-  // return (
-  //   <Box
-  //     sx={{
-  //       position: "relative",
-  //       overflow: "overflow-hidden",
-  //       height: 10,
-  //       display: "inline-flex",
-  //     }}
-  //   >
-  //     <AnimatePresence mode="popLayout">
-  //       <motion.span
-  //         key={currentNumber}
-  //         initial={{ opacity: 0, y: 20 }}
-  //         animate={{ opacity: 1, y: 0 }}
-  //         exit={{ opacity: 0, y: -20 }}
-  //         transition={{ duration }}
-  //         className="absolute"
-  //       >
-  //         {currentNumber}
-  //       </motion.span>
-  //     </AnimatePresence>
-  //   </Box>
-  // );
-
   const [currentValue, setCurrentValue] = useState(0);
+  const [showNumUnit, setShowNumUnit] = useState(false);
   const targetValue = Number(targetNumber);
 
   useEffect(() => {
@@ -62,6 +29,7 @@ const ProUI_NumberSwitcher: React.FC<NumberSwitcherProps> = ({
       setCurrentValue((prev) => {
         if (prev >= targetValue) {
           clearInterval(interval);
+          setShowNumUnit(true);
           return targetValue;
         }
 
@@ -104,6 +72,17 @@ const ProUI_NumberSwitcher: React.FC<NumberSwitcherProps> = ({
           </AnimatePresence>
         </span>
       ))}
+
+      {showNumUnit && (
+        <motion.span
+          initial={{ opacity: 0, x: 10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.3 }}
+          className="ml-1"
+        >
+          {numUnit}
+        </motion.span>
+      )}
     </Box>
   );
 };
