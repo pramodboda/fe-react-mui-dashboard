@@ -11,8 +11,8 @@ import Typography from "@mui/material/Typography";
 import { SparkLineChart } from "@mui/x-charts/SparkLineChart";
 import { areaElementClasses } from "@mui/x-charts/LineChart";
 
+import ProUI_NumberSwitcher from "../ProUI_NumberSwitcher/ProUI_NumberSwitcher";
 
-import AnimatedNumber from '../AnimatedNumber/AnimatedNumber';
 
 
 export type StatCardProps = {
@@ -59,7 +59,15 @@ export default function ProUI_KPICard({
   data,
 }: StatCardProps) {
 
-  const [number, setNumber] = useState<number>(0);
+  
+  const [number, setNumber] = useState(1000);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setNumber(prev => prev + Math.floor(Math.random() * 100));
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
 
   const theme = useTheme();
   const daysInWeek = getDaysInMonth(4, 2024);
@@ -106,8 +114,9 @@ export default function ProUI_KPICard({
             >
               <Typography variant="h4" component="p">
                 {value}
-                <AnimatedNumber targetNumber={value} />
+                
               </Typography>
+              <h1>Price: $ <ProUI_NumberSwitcher value={number} /></h1>
               <Chip size="small" color={color} label={trendValues[trend]} />
             </Stack>
             <Typography variant="caption" sx={{ color: "text.secondary" }}>
