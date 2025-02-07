@@ -14,13 +14,12 @@ import StatCard, {
   StatCardProps,
 } from "../../components/ProUI_Elements/ProUI_KPICard/ProUI_KPICard";
 
-
-
-
 const data: StatCardProps[] = [
   {
     title: "Users",
-    value: "14k",
+    value: 14,
+    sign: "",
+    numUnit: "k",
     interval: "Last 30 days",
     trend: "up",
     data: [
@@ -30,7 +29,9 @@ const data: StatCardProps[] = [
   },
   {
     title: "Conversions",
-    value: "325",
+    value: 325,
+    sign: "",
+    numUnit: "",
     interval: "Last 30 days",
     trend: "down",
     data: [
@@ -41,7 +42,9 @@ const data: StatCardProps[] = [
   },
   {
     title: "Event count",
-    value: "200k",
+    value: 200,
+    sign: "",
+    numUnit: "k",
     interval: "Last 30 days",
     trend: "neutral",
     data: [

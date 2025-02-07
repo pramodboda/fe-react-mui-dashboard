@@ -1,6 +1,6 @@
 // Key Metrics Summary: Showcases  cards with KPIs like Statics, Total users, revenue, Orders Active sessions and etc.
 
-import * as React from "react";
+// import React, { useState, useEffect } from "react";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
@@ -13,19 +13,17 @@ import { areaElementClasses } from "@mui/x-charts/LineChart";
 
 import ProUI_NumberSwitcher from "../ProUI_NumberSwitcher/ProUI_NumberSwitcher";
 
-
-
 export type StatCardProps = {
   title: string;
-  value: string;
+  value: number;
+  sign: string;
+  numUnit: string;
   interval: string;
   trend: "up" | "down" | "neutral";
   data: number[];
 };
 
 function getDaysInMonth(month: number, year: number) {
-  
-
   const date = new Date(year, month, 0);
   const monthName = date.toLocaleDateString("en-US", {
     month: "short",
@@ -54,21 +52,12 @@ function AreaGradient({ color, id }: { color: string; id: string }) {
 export default function ProUI_KPICard({
   title,
   value,
+  sign,
+  numUnit,
   interval,
   trend,
   data,
 }: StatCardProps) {
-
-  
-  const [number, setNumber] = useState(1000);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setNumber(prev => prev + Math.floor(Math.random() * 100));
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
-
   const theme = useTheme();
   const daysInWeek = getDaysInMonth(4, 2024);
 
@@ -112,11 +101,24 @@ export default function ProUI_KPICard({
               direction="row"
               sx={{ justifyContent: "space-between", alignItems: "center" }}
             >
-              <Typography variant="h4" component="p">
+              {/* <Typography variant="h4" component="p">
                 {value}
-                
+              </Typography> */}
+              <Typography
+                variant="h4"
+                component="p"
+                sx={{ fontWeight: "bold" }}
+              >
+                {sign && sign}
+                <ProUI_NumberSwitcher
+                  targetNumber={value}
+                  // duration={0.11}
+                  duration={0.075}
+                  increment={3}
+                  // symbol={}
+                />
+                {numUnit && numUnit}
               </Typography>
-              <h1>Price: $ <ProUI_NumberSwitcher value={number} /></h1>
               <Chip size="small" color={color} label={trendValues[trend]} />
             </Stack>
             <Typography variant="caption" sx={{ color: "text.secondary" }}>
