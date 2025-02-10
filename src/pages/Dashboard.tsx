@@ -177,7 +177,6 @@ export default function Dashboard() {
                   noWrap
                   component="div"
                   sx={{ flexGrow: 1 }}
-                  className="text-pop-up-top"
                 >
                   Codevik
                 </Typography>
@@ -335,6 +334,7 @@ export default function Dashboard() {
           <Box>
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
               <DrawerHeader />
+
               {/* <ProUI_Typography /> */}
               <Stack direction="row" alignItems="center" sx={{ gap: 2 }}>
                 <Button variant="contained">Get in Touch</Button>
@@ -349,6 +349,26 @@ export default function Dashboard() {
                     />
                     <span>Open to New Opportunities</span>
                   </Stack>
+                </Typography>
+              </Stack>
+              <Stack
+                sx={{
+                  justifyContent: "center",
+                  width: "200px",
+                  height: "200px",
+                  backgroundColor: "#eeeeee",
+                }}
+              >
+                <Typography
+                  className="text-pop-up-top"
+                  variant="h2"
+                  sx={{
+                    textAlign: "center",
+                    color: "#f9f9f9",
+                    fontWeight: 700,
+                  }}
+                >
+                  P
                 </Typography>
               </Stack>
 

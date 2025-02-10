@@ -47,7 +47,7 @@ const AutoLoadToastDrawer = () => {
   }
 
   function SettingsToast({ closeToast }: ToastContentProps) {
-    return <div>Click on the gear icon and explore the settings! </div>;
+    return <div>Click on the gear icon to explore the settings! </div>;
   }
 };
 
