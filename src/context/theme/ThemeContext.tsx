@@ -1,4 +1,4 @@
-import React, { createContext, useState, ReactNode } from "react";
+import React, { createContext, useState, ReactNode, useMemo } from "react";
 import {
   ThemeProvider as MuiThemeProvider,
   createTheme,
@@ -24,12 +24,16 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
 }) => {
   const [primaryColor, setPrimaryColor] = useState<string>(deepPurple[500]);
 
-  const [primaryFont, setPrimaryFont] = useState<string>(
-    "Plus Jakarta Sans, Roboto, Helvetica, Arial, sans-serif"
-  );
+  // const [primaryFont, setPrimaryFont] = useState<string>(
+  //   "Plus Jakarta Sans, Roboto, Helvetica, Arial, sans-serif"
+  // );
+
+  const DEFAULT_FONT_STACK = "Plus Jakarta Sans, Roboto, Helvetica, Arial, sans-serif";
+const [primaryFont, setPrimaryFont] = useState<string>(DEFAULT_FONT_STACK);
 
   // Global overrides
-  const theme = createTheme({
+
+  const theme = useMemo(() => createTheme({
     typography: {
       htmlFontSize: 18,
       fontSize: 14,
@@ -134,7 +138,7 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
         },
       },
     },
-  });
+  }), [primaryColor, primaryFont]);
 
   return (
     <ThemeContext.Provider value={{ primaryColor, setPrimaryColor, primaryFont, setPrimaryFont }}>
