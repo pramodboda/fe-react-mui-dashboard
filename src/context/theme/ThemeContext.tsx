@@ -1,11 +1,9 @@
-import React, { createContext, useState, ReactNode, useMemo } from "react";
+import React, { createContext, useState, ReactNode, useMemo, useCallback } from "react";
 import {
   ThemeProvider as MuiThemeProvider,
   createTheme,
 } from "@mui/material/styles";
-import { deepPurple } from "@mui/material/colors";
-
-import { blueGrey } from "@mui/material/colors";
+import { deepPurple, blueGrey } from "@mui/material/colors";
 
 // Define the shape of the context's data
 interface ThemeContextProps {
@@ -23,16 +21,17 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [primaryColor, setPrimaryColor] = useState<string>(deepPurple[500]);
+const [primaryFont, setPrimaryFont] = useState<string>("Plus Jakarta Sans, Roboto, Helvetica, Arial, sans-serif");
 
-  // const [primaryFont, setPrimaryFont] = useState<string>(
-  //   "Plus Jakarta Sans, Roboto, Helvetica, Arial, sans-serif"
-  // );
+const handleSetPrimaryColor = useCallback((color: string) => {
+  setPrimaryColor(color);
+}, []);
 
-  const DEFAULT_FONT_STACK = "Plus Jakarta Sans, Roboto, Helvetica, Arial, sans-serif";
-const [primaryFont, setPrimaryFont] = useState<string>(DEFAULT_FONT_STACK);
+const handleSetPrimaryFont = useCallback((font: string) => {
+  setPrimaryFont(font);
+}, []);
 
   // Global overrides
-
   const theme = useMemo(() => createTheme({
     typography: {
       htmlFontSize: 18,
@@ -141,7 +140,7 @@ const [primaryFont, setPrimaryFont] = useState<string>(DEFAULT_FONT_STACK);
   }), [primaryColor, primaryFont]);
 
   return (
-    <ThemeContext.Provider value={{ primaryColor, setPrimaryColor, primaryFont, setPrimaryFont }}>
+    <ThemeContext.Provider value={{ primaryColor, setPrimaryColor: handleSetPrimaryColor, primaryFont, setPrimaryFont: handleSetPrimaryFont }}>
       <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
     </ThemeContext.Provider>
   );
