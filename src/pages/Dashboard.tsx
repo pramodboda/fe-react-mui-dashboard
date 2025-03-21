@@ -8,8 +8,6 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import MuiDrawer from "@mui/material/Drawer";
 
-
-
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
@@ -36,7 +34,7 @@ import Footer_1 from "../components/ProUI_Elements/footer1/Footer_1";
 import ProUI_UserAvatar from "../components/ProUI_Elements/ProUI_UserAvatar/ProUI_UserAvatar";
 // import SetThemeColor from "../features/settings/themeColor/SetThemeColor";
 
-import { blueGrey } from "@mui/material/colors";
+import { blueGrey, grey } from "@mui/material/colors";
 import Dashboard_Home1 from "../features/dashboard/Dashboard_Home1";
 
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
@@ -334,7 +332,7 @@ export default function Dashboard() {
           </Drawer>
 
           <Box>
-            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+            <Box component="main" sx={{ flexGrow: 1, p: 3, background: grey[200] }}>
               <DrawerHeader />
 
               {/* <ProUI_Typography /> */}

@@ -1,9 +1,16 @@
 import * as React from "react";
+import {Stack, Box, Button} from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { columns, rows } from "../../../../internals/gridData";
 
 export default function CustomizedDataGrid() {
   return (
+    <>
+        <Stack>
+      <Box>
+<Button varient="contained">Export (.xls)</Button>
+      </Box>
+    </Stack>
     <DataGrid
       checkboxSelection
       rows={rows}
@@ -44,5 +51,7 @@ export default function CustomizedDataGrid() {
         },
       }}
     />
+    </>
+
   );
 }

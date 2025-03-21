@@ -107,7 +107,8 @@ export default function MainGrid() {
                     Check out 3D Web projects
                   </Typography>
                 </Stack>
-              </Link></Grid>
+              </Link>
+        </Grid>
         <Grid size={{ xs: 12, md: 6 }}>
           <SessionsChart />
         </Grid>
@@ -116,7 +117,7 @@ export default function MainGrid() {
         </Grid>
       </Grid>
       <Typography component="h2" variant="h6" sx={{ mb: 2 }}>
-        Details
+        A powerful data grid
       </Typography>
       <Grid container spacing={2} columns={12}>
         <Grid size={{ xs: 12, lg: 9 }}>
