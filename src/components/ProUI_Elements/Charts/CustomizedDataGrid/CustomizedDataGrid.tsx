@@ -5,15 +5,17 @@ import { columns, rows } from "../../../../internals/gridData";
 
 
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import ProUI_SearchInputField from "../../ProUI_SearchInputField/ProUI_SearchInputField";
 
 
 export default function CustomizedDataGrid() {
   return (
     <>
-        <Stack>
-      <Box>
+        <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{padding: "0.5rem 1rem", backgroundColor: "#f9f9f9"}}>
+ 
+        <ProUI_SearchInputField/>
 <Button variant="contained" size="small" startIcon={<FileDownloadIcon/>}>Export (.xls)</Button>
-      </Box>
+
     </Stack>
     <DataGrid
       checkboxSelection
