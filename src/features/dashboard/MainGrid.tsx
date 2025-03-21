@@ -1,8 +1,11 @@
 // Key Metrics Summary: Showcases  cards with KPIs like Statics, Total users, revenue, Orders Active sessions and etc.
-import * as React from "react";
+// import * as React from "react";
 import Grid from "@mui/material/Grid2";
+import {Button, Link} from "@mui/material";
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import ProUI_SearchInputField from "../../components/ProUI_Elements/ProUI_SearchInputField/ProUI_SearchInputField";
 
-import { Card, CardActionArea, Link } from "@mui/material";
+
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
@@ -121,6 +124,12 @@ export default function MainGrid() {
       </Typography>
       <Grid container spacing={2} columns={12}>
         <Grid size={{ xs: 12, lg: 9 }}>
+        <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{padding: "0.5rem 1rem", backgroundColor: "#f9f9f9"}}>
+ 
+ <ProUI_SearchInputField/>
+<Button variant="contained" size="small" startIcon={<FileDownloadIcon/>}>Export (.xls)</Button>
+
+</Stack>
           <CustomizedDataGrid />
         </Grid>
         <Grid size={{ xs: 12, lg: 3 }}>
