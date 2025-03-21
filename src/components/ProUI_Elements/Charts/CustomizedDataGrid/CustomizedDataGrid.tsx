@@ -1,14 +1,18 @@
-import * as React from "react";
+// import * as React from "react";
 import {Stack, Box, Button} from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { columns, rows } from "../../../../internals/gridData";
+
+
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
+
 
 export default function CustomizedDataGrid() {
   return (
     <>
         <Stack>
       <Box>
-<Button varient="contained">Export (.xls)</Button>
+<Button variant="contained" size="small" startIcon={<FileDownloadIcon/>}>Export (.xls)</Button>
       </Box>
     </Stack>
     <DataGrid
