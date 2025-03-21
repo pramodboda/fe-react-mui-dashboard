@@ -16,15 +16,15 @@ const AutoLoadToastDrawer = () => {
   useEffect(() => {
     toast.success(Welcome, {
       position: "top-center",
-      delay: 1000,
-      autoClose: 8000,
+      delay: 10000,
+      autoClose: 6000,
       transition: slide,
       theme: "colored",
     });
     toast(SettingsToast, {
       position: "top-right",
-      delay: 2000,
-      autoClose: 7000,
+      delay: 20000,
+      autoClose: 6000,
       transition: slide,
       className: "Settings__toast",
     });
