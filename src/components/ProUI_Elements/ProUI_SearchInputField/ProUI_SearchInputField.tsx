@@ -3,14 +3,16 @@ import { styled, alpha } from '@mui/material/styles';
 
 import InputBase from '@mui/material/InputBase';
 
+import {grey} from "@mui/material/colors";
+
 import SearchIcon from '@mui/icons-material/Search';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    backgroundColor: grey[200],
     '&:hover': {
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
+      backgroundColor: grey[300],
     },
     marginRight: theme.spacing(2),
     marginLeft: 0,
