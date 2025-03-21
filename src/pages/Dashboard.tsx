@@ -8,6 +8,8 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import MuiDrawer from "@mui/material/Drawer";
 
+import { Card, CardActionArea, Link } from "@mui/material";
+
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
@@ -351,26 +353,37 @@ export default function Dashboard() {
                   </Stack>
                 </Typography>
               </Stack>
-              <Stack
-                sx={{
-                  justifyContent: "center",
-                  width: "200px",
-                  height: "200px",
-                  backgroundColor: "#eeeeee",
-                }}
+              <Link
+                href="https://pramodboda.github.io/3d-apple-watch-ultra-orange-v2/"
+                traget="_blank"
+                sx={{ textDecoration: "none" }}
               >
-                <Typography
-                  className="text-pop-up-top"
-                  variant="h2"
+                <Stack
                   sx={{
+                    justifyContent: "center",
+                    alignItems: "center",
                     textAlign: "center",
-                    color: "#f9f9f9",
-                    fontWeight: 700,
+                    width: "200px",
+                    height: "200px",
+                    backgroundColor: "#eeeeee",
                   }}
                 >
-                  P
-                </Typography>
-              </Stack>
+                  <Typography
+                    className="text-pop-up-top"
+                    variant="h2"
+                    sx={{
+                      textAlign: "center",
+                      color: "#f9f9f9",
+                      fontWeight: 700,
+                    }}
+                  >
+                    P
+                  </Typography>
+                  <Typography variant="body2">
+                    Check out 3D Web projects
+                  </Typography>
+                </Stack>
+              </Link>
 
               <Dashboard_Home1 />
               <Typography variant="body2" sx={{ marginBottom: 2 }}>
