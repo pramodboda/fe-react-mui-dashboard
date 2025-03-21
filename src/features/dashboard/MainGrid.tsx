@@ -1,6 +1,8 @@
 // Key Metrics Summary: Showcases  cards with KPIs like Statics, Total users, revenue, Orders Active sessions and etc.
 import * as React from "react";
 import Grid from "@mui/material/Grid2";
+
+import { Card, CardActionArea, Link } from "@mui/material";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
@@ -70,9 +72,42 @@ export default function MainGrid() {
         {data.map((card, index) => (
           <Grid key={index} size={{ xs: 12, sm: 6, lg: 3 }}>
             <StatCard {...card} />
+
           </Grid>
         ))}
-        <Grid size={{ xs: 12, sm: 6, lg: 3 }}>{/* <HighlightedCard /> */}</Grid>
+        {/* <Grid size={{ xs: 12, sm: 6, lg: 3 }}><HighlightedCard /></Grid> */}
+        <Grid size={{ xs: 12, sm: 6, lg: 3 }}>
+          <Link
+                href="https://pramodboda.github.io/3d-apple-watch-ultra-orange-v2/"
+                traget="_blank"
+                sx={{ textDecoration: "none" }}
+              >
+                <Stack
+                  sx={{
+                    justifyContent: "center",
+                    alignItems: "center",
+                    textAlign: "center",
+                    width: "100%",
+                    height: "200px",
+                    backgroundColor: "#eeeeee",
+                  }}
+                >
+                  <Typography
+                    className="text-pop-up-top"
+                    variant="h2"
+                    sx={{
+                      textAlign: "center",
+                      color: "#f9f9f9",
+                      fontWeight: 700,
+                    }}
+                  >
+                    P
+                  </Typography>
+                  <Typography variant="body2">
+                    Check out 3D Web projects
+                  </Typography>
+                </Stack>
+              </Link></Grid>
         <Grid size={{ xs: 12, md: 6 }}>
           <SessionsChart />
         </Grid>
