@@ -225,9 +225,60 @@ export default function DashboardLayout() {
             </DrawerHeader>
             <Divider />
             <List>
+            <ListItem disablePadding sx={{ display: "block" }}>
+                 
+                 <ListItemButton to="/"
+                   sx={[
+                     {
+                       minHeight: 48,
+                       px: 2.5,
+                     },
+                     open
+                       ? {
+                           justifyContent: "initial",
+                         }
+                       : {
+                           justifyContent: "center",
+                         },
+                   ]}
+                 >
+                   <ListItemIcon
+                     sx={[
+                       {
+                         minWidth: 0,
+                         justifyContent: "center",
+                       },
+                       open
+                         ? {
+                             mr: 3,
+                           }
+                         : {
+                             mr: "auto",
+                           },
+                     ]}
+                   >
+                    <InboxIcon /> 
+                   </ListItemIcon>
+                   <ListItemText
+                     primary="Dashboard"
+                     sx={[
+                       open
+                         ? {
+                             opacity: 1,
+                           }
+                         : {
+                             opacity: 0,
+                           },
+                     ]}
+                   />
+                 </ListItemButton>
+               </ListItem>
+            </List>
+            <List>
               {["Inbox", "Starred", "Send email", "Drafts"].map(
                 (text, index) => (
                   <ListItem key={text} disablePadding sx={{ display: "block" }}>
+                 
                     <ListItemButton
                       sx={[
                         {
