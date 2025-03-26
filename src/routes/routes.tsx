@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import DashboardLayout from '../layout/DashboardLayout';
-import Dashboard_Home1 from '../features/dashboard/Dashboard_Home1';
+import Dashboard_Home1 from '../pages/Dashboard_Home1';
 import SitemapPage from "../pages/SitemapPage";
 
 // Define your routes here

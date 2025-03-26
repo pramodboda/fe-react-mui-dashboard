@@ -1,4 +1,5 @@
 import React from "react";
+import {NavLink} from "react-router-dom";
 import { useCurrentYear } from "../../../hooks/useCurrentYear";
 
 import Stack from "@mui/material/Stack";
@@ -14,6 +15,8 @@ const Footer_1: React.FC = () => {
         <Typography variant="body2">
           {currentYear} © Developed by Pramod Boda Inc.
         </Typography>
+        <br/>
+        <NavLink to={sitemap}></NavLink>
       </Stack>
     </>
   );
