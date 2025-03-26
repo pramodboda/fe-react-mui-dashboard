@@ -16,7 +16,7 @@ const Footer_1: React.FC = () => {
           {currentYear} © Developed by Pramod Boda Inc.
         </Typography>
         <br/>
-        <NavLink to={sitemap}></NavLink>
+        <NavLink to="/sitemap">Sitemap</NavLink>
       </Stack>
     </>
   );
