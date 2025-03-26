@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Outlet } from "react-router";
 import { useAuth } from "../context/AuthContext"; // Import the custom hook
 import ProUI_SignInSide from "../pages/Auth/ProUI_SignInSide/ProUI_SignInSide";
 import { useSettingsDrawer } from "../context/SettingsDrawerContext"; // Import the custom hook
@@ -37,7 +37,7 @@ import ProUI_UserAvatar from "../components/ProUI_Elements/ProUI_UserAvatar/ProU
 import { blueGrey, grey } from "@mui/material/colors";
 import Dashboard_Home1 from "../features/dashboard/Dashboard_Home1";
 
-import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
+
 
 const drawerWidth = 240;
 
@@ -123,7 +123,7 @@ const Drawer = styled(MuiDrawer, {
   ],
 }));
 
-export default function Dashboard() {
+export default function DashboardLayout() {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
 
@@ -336,24 +336,10 @@ export default function Dashboard() {
               <DrawerHeader />
 
               {/* <ProUI_Typography /> */}
-              <Stack direction="row" alignItems="center" sx={{ gap: 2 }}>
-                <Button variant="contained">Get in Touch</Button>
-                <Typography
-                  sx={{ color: "#43a047", fontSize: ".9rem", fontWeight: 500 }}
-                >
-                  <Stack direction="row" alignItems="center" sx={{ gap: 1 }}>
-                    <FiberManualRecordIcon
-                      sx={{
-                        fontSize: ".8rem",
-                      }}
-                    />
-                    <span>Open to New Opportunities</span>
-                  </Stack>
-                </Typography>
-              </Stack>
+          
            
-
-              <Dashboard_Home1 />
+<Outlet/>
+              {/* <Dashboard_Home1 /> */}
               <Typography variant="body2" sx={{ marginBottom: 2 }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.

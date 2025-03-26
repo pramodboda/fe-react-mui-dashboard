@@ -2,8 +2,8 @@
 
 // import { ThemeProvider } from "@mui/material/styles";
 
-import {RouterProvider} from "react-router-dom";
-import routes from "./routes/routes";
+import {RouterProvider } from "react-router-dom";
+import router from "./routes/routes";
 
 import { AuthProvider } from "./context/AuthContext";
 import { ThemeProvider as MuiThemeProvider } from "./context/theme/ThemeContext";
@@ -11,7 +11,7 @@ import { SettingsDrawerProvider } from "./context/SettingsDrawerContext";
 // import theme from "./styles/theme";
 
 import "./App.css";
-import Dashboard from "./pages/Dashboard";
+import DashboardLayout from "./layout/DashboardLayout";
 // import Signin_1 from "./pages/Auth/Signin_1";
 
 function App() {
@@ -19,10 +19,10 @@ function App() {
      <MuiThemeProvider>
       <SettingsDrawerProvider>
         <AuthProvider>
-        <RouterProvider router={routes}>
-            <Dashboard />
+        <RouterProvider router={router}>
+            <DashboardLayout />
             {/* <Signin_1 /> */}
-            </RouterProvider>
+            </RouterProvider >
         </AuthProvider>
       </SettingsDrawerProvider>
       </MuiThemeProvider>  

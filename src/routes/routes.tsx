@@ -1,6 +1,19 @@
-import { createBrowserRouter } from "react-router-dom";
-import SitemapPage from "../pages/SitemapPage"
+import { createBrowserRouter } from 'react-router-dom';
 
-const routes:any = createBrowserRouter([{ path: "/sitemap", element: <SitemapPage /> }])
+import DashboardLayout from '../layout/DashboardLayout';
+import Dashboard_Home1 from '../features/dashboard/Dashboard_Home1';
+import SitemapPage from "../pages/SitemapPage";
 
-export default routes;
+// Define your routes here
+const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <DashboardLayout />, // This is like your "children"
+      children: [
+        { index: true, element: <Dashboard_Home1 /> },
+        { path: 'sitemap', element: <SitemapPage /> },
+      ],
+    },
+  ]);
+
+export default router;
