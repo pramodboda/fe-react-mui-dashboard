@@ -2,6 +2,8 @@
 
 // import { ThemeProvider } from "@mui/material/styles";
 
+import {RouterProvider} from "react-router-dom";
+import routes from "./routes/routes";
 
 import { AuthProvider } from "./context/AuthContext";
 import { ThemeProvider as MuiThemeProvider } from "./context/theme/ThemeContext";
@@ -17,8 +19,10 @@ function App() {
      <MuiThemeProvider>
       <SettingsDrawerProvider>
         <AuthProvider>
+        <RouterProvider router={routes}>
             <Dashboard />
             {/* <Signin_1 /> */}
+            </RouterProvider>
         </AuthProvider>
       </SettingsDrawerProvider>
       </MuiThemeProvider>  
