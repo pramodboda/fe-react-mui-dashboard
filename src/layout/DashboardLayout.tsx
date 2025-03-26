@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Outlet } from "react-router";
+import { Outlet, NavLink } from "react-router";
 import { useAuth } from "../context/AuthContext"; // Import the custom hook
 import ProUI_SignInSide from "../pages/Auth/ProUI_SignInSide/ProUI_SignInSide";
 import { useSettingsDrawer } from "../context/SettingsDrawerContext"; // Import the custom hook
@@ -225,9 +225,9 @@ export default function DashboardLayout() {
             </DrawerHeader>
             <Divider />
             <List>
-            <ListItem disablePadding sx={{ display: "block" }}>
+            <ListItem component={NavLink} to="/" disablePadding sx={{ display: "block" }}>
                  
-                 <ListItemButton to="/"
+                 <ListItemButton 
                    sx={[
                      {
                        minHeight: 48,
