@@ -19,7 +19,7 @@ return <Box>
     Sitemap
     </Typography>
     <Grid container spacing={2}>
-    {sitemap_data.map((i)=> { return <Grid size={{xs:12, md:3}}><Typography >{i.title}</Typography> {i.subpages.map((sp)=>{return <NavLink to=''>{sb}</NavLink>})}</Grid>})}
+    {sitemap_data.map((i)=> { return <Grid size={{xs:12, md:3}}><Typography >{i.title}</Typography> {i.subpages.map((sb)=>{return <NavLink to="/{sb}">{sb}</NavLink>})}</Grid>})}
     
     </Grid></Box>
 }
