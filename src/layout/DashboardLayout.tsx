@@ -205,18 +205,18 @@ export default function DashboardLayout() {
   const renderMenuItem = (item: MenuItem, depth = 0) => {
     const hasChildren = item.children && item.children.length > 0;
     const isExpanded = expandedItems[item.title];
-
+  
     return (
       <React.Fragment key={item.title}>
-        <ListItem component={NavLink} to={`${item.path}`} disablePadding sx={{ display: 'block' }}>
+        <ListItem disablePadding sx={{ display: 'block' }}>
           <Tooltip
             title={!open ? item.title : ''}
             placement="right"
             disableHoverListener={open}
           >
             <ListItemButton
-              component={!hasChildren ? NavLink : 'div'}
-              to={!hasChildren ? item.path : undefined}
+              component={!hasChildren && item.path ? NavLink : 'div'}
+              to={!hasChildren && item.path ? item.path : undefined}
               sx={{
                 minHeight: 48,
                 justifyContent: open ? 'initial' : 'center',
@@ -227,9 +227,12 @@ export default function DashboardLayout() {
                 },
                 '&.active': {
                   backgroundColor: theme.palette.action.selected,
+                  '& .MuiListItemIcon-root': {
+                    color: theme.palette.primary.main,
+                  },
                 },
               }}
-              onClick={() => hasChildren ? handleToggle(item.title) : null}
+              onClick={() => hasChildren ? handleToggle(item.title) : undefined}
             >
               {item.icon && (
                 <ListItemIcon
@@ -244,14 +247,19 @@ export default function DashboardLayout() {
               )}
               {open && (
                 <>
-                  <ListItemText primary={item.title} />
+                  <ListItemText 
+                    primary={item.title} 
+                    primaryTypographyProps={{
+                      fontWeight: 'medium'
+                    }}
+                  />
                   {hasChildren && (isExpanded ? <ExpandLess /> : <ExpandMore />)}
                 </>
               )}
             </ListItemButton>
           </Tooltip>
         </ListItem>
-
+  
         {hasChildren && open && (
           <Collapse in={isExpanded} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
