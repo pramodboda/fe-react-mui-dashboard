@@ -1,16 +1,27 @@
-
+import { ReactNode } from 'react';
 import Grid from "@mui/material/Grid2";
 import {Box, Typography} from "@mui/material";
 
 import { NavLink } from "react-router-dom";
 // import { title } from "framer-motion/client";
 
+// Define proper types for your menu items
+// type PageItem = {
+//   title: string;
+//   subpages: any;
+//   url: string;
+//   icon?: ReactNode;
+//   // level: number;
+//   path?: string;
+//   // children?: PageItem[];
+// };
+
 const sitemap_data = [{
     title: "Dashboard",
-    subpages: ["DashboardHome1"]
+    subpages: [{title:"Dashboard_Home1", url:"Dashboard_Home1"}]
     },{
 title: "Pages",
-subpages: ["Buttons"]
+subpages: [{title:"Buttons", url:"ButtonsPage"}]
 },{
     title: "Utils",
     subpages: ["Timelines"]
@@ -26,15 +37,9 @@ return <Box>
     
 
     {sitemap_data.map((item, index) => (
-    <Grid item key={index} xs={12} md={3}>  {/* Added 'item' prop and key */}
+    <Grid item key={index} xs={12} md={3} lg={3}>  {/* Added 'item' prop and key */}
     <Typography>{item.title}</Typography>
-    <ul>
-      {item.subpages.map((subpage, subIndex) => (
-        <li key={subIndex}>  {/* Added key for list items */}
-          <NavLink to={`/${subpage}`}>{subpage}</NavLink>  {/* Fixed template literal */}
-        </li>
-      ))}
-    </ul>
+   {/* {item.subpages.map((pg, pgIndex)=> <p key={pgIndex}>{pg}</p>)} */}
   </Grid>
 ))}
 
@@ -42,3 +47,5 @@ return <Box>
 }
 
 export default SitemapPage;
+
+{/* <NavLink to={`/${page.url}`}>{page.title}</NavLink> */}

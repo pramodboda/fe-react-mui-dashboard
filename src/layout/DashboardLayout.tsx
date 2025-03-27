@@ -1,31 +1,32 @@
-import React, { useState } from "react";
+
+import React, { ReactNode, useState } from "react";
+
 import { Outlet, NavLink } from "react-router";
+
 import { useAuth } from "../context/AuthContext"; // Import the custom hook
 import ProUI_SignInSide from "../pages/Auth/ProUI_SignInSide/ProUI_SignInSide";
 import { useSettingsDrawer } from "../context/SettingsDrawerContext"; // Import the custom hook
+
 import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import Stack from "@mui/material/Stack";
+
 import MuiDrawer from "@mui/material/Drawer";
+import {
+  Box, Toolbar, List, CssBaseline, Typography, Divider, Button, IconButton, ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Tooltip,
+  Collapse
+} from "@mui/material";
+
 
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import List from "@mui/material/List";
-import CssBaseline from "@mui/material/CssBaseline";
-import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
+
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
-import Button from "@mui/material/Button";
-
 import SettingsTwoToneIcon from "@mui/icons-material/SettingsTwoTone";
 import DashboardTwoToneIcon from '@mui/icons-material/DashboardTwoTone';
 // import BedtimeTwoToneIcon from '@mui/icons-material/BedtimeTwoTone';
@@ -41,7 +42,27 @@ import { blueGrey, grey } from "@mui/material/colors";
 // import Dashboard_Home1 from "../features/dashboard/Dashboard_Home1";
 
 
+import {
+  ChevronLeft,
+  ChevronRight,
+  ExpandMore,
+  ExpandLess,
+  Home,
+  Folder,
+  Description
+} from '@mui/icons-material';
 
+
+// Define proper types for your menu items
+type MenuItem = {
+  title: string;
+  icon?: ReactNode;
+  level: number;
+  path?: string;
+  children?: MenuItem[];
+};
+
+// Fixed Drawer width
 const drawerWidth = 240;
 
 const openedMixin = (theme: Theme): CSSObject => ({
@@ -129,6 +150,119 @@ const Drawer = styled(MuiDrawer, {
 export default function DashboardLayout() {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
+  const [expandedItems, setExpandedItems] = useState<Record<string, boolean>>({});
+
+  // Sample menu data structure
+  const menuData: MenuItem[] = [
+    {
+      title: 'Dashboard',
+      // icon: <Home />,
+      icon: <Home />,
+      level: 1,
+      path: '/dashboard'
+    },
+    {
+      title: 'Products',
+      icon: <Folder />,
+      level: 1,
+      children: [
+        {
+          title: 'Electronics',
+          level: 2,
+          children: [
+            { title: 'Smartphones', level: 3, path: '/products/electronics/smartphones' },
+            { title: 'Laptops', level: 3, path: '/products/electronics/laptops' }
+          ]
+        },
+        {
+          title: 'Clothing',
+          level: 2,
+          children: [
+            { title: 'Men', level: 3, path: '/products/clothing/men' },
+            { title: 'Women', level: 3, path: '/products/clothing/women' }
+          ]
+        }
+      ]
+    },
+    {
+      title: 'Documents',
+      icon: <Description />,
+      level: 1,
+      children: [
+        { title: 'Templates', level: 2, path: '/documents/templates' },
+        { title: 'Reports', level: 2, path: '/documents/reports' }
+      ]
+    }
+  ];
+
+  const handleToggle = (title: string) => {
+    setExpandedItems(prev => ({
+      ...prev,
+      [title]: !prev[title]
+    }));
+  };
+
+  const renderMenuItem = (item: MenuItem, depth = 0) => {
+    const hasChildren = item.children && item.children.length > 0;
+    const isExpanded = expandedItems[item.title];
+
+    return (
+      <React.Fragment key={item.title}>
+        <ListItem disablePadding sx={{ display: 'block' }}>
+          <Tooltip
+            title={!open ? item.title : ''}
+            placement="right"
+            disableHoverListener={open}
+          >
+            <ListItemButton
+              component={!hasChildren ? NavLink : 'div'}
+              to={!hasChildren ? item.path : undefined}
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? 'initial' : 'center',
+                px: 2.5,
+                pl: open ? theme.spacing(depth * 2 + 2) : theme.spacing(2),
+                '&:hover': {
+                  backgroundColor: theme.palette.action.hover,
+                },
+                '&.active': {
+                  backgroundColor: theme.palette.action.selected,
+                },
+              }}
+              onClick={() => hasChildren ? handleToggle(item.title) : null}
+            >
+              {item.icon && (
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 3 : 'auto',
+                    justifyContent: 'center',
+                  }}
+                >
+                  {item.icon}
+                </ListItemIcon>
+              )}
+              {open && (
+                <>
+                  <ListItemText primary={item.title} />
+                  {hasChildren && (isExpanded ? <ExpandLess /> : <ExpandMore />)}
+                </>
+              )}
+            </ListItemButton>
+          </Tooltip>
+        </ListItem>
+
+        {hasChildren && open && (
+          <Collapse in={isExpanded} timeout="auto" unmountOnExit>
+            <List component="div" disablePadding>
+              {item.children.map(child => renderMenuItem(child, depth + 1))}
+            </List>
+          </Collapse>
+        )}
+      </React.Fragment>
+    );
+  };
+
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -213,7 +347,7 @@ export default function DashboardLayout() {
                   Logout
                 </Button>
                 {/* <Button variant="outlined" color="inherit"><DarkModeTwoToneIcon/></Button> */}
-                <IconButton color="inherit"><DarkModeTwoToneIcon/></IconButton>
+                <IconButton color="inherit"><DarkModeTwoToneIcon /></IconButton>
               </Toolbar>
             </AppBar>
           </Box>
@@ -229,63 +363,67 @@ export default function DashboardLayout() {
               </IconButton>
             </DrawerHeader>
             <Divider />
+
             <List>
-            <ListItem component={NavLink} to="/" disablePadding sx={{ display: "block" }}>
-                 
-                 <ListItemButton 
-                  
-                   sx={[
-                     {
-                       minHeight: 48,
-                       px: 2.5,
-                     },
-                     open
-                       ? {
-                           justifyContent: "initial",
-                         }
-                       : {
-                           justifyContent: "center",
-                         },
-                   ]}
-                 >
-                   <ListItemIcon
-                    
-                     sx={[
-                       {
-                         minWidth: 0,
-                         justifyContent: "center",
-                       },
-                       open
-                         ? {
-                             mr: 3,
-                           }
-                         : {
-                             mr: "auto",
-                           },
-                     ]}
-                   >
-                    <DashboardTwoToneIcon /> 
-                   </ListItemIcon>
-                   <ListItemText
-                     primary="Dashboard"
-                     sx={[
-                       open
-                         ? {
-                             opacity: 1,
-                           }
-                         : {
-                             opacity: 0,
-                           },
-                     ]}
-                   />
-                 </ListItemButton>
-               </ListItem>
+              {menuData.map(item => renderMenuItem(item))}
+            </List>
+            <List>
+              <ListItem component={NavLink} to="/" disablePadding sx={{ display: "block" }}>
+
+                <ListItemButton
+
+                  sx={[
+                    {
+                      minHeight: 48,
+                      px: 2.5,
+                    },
+                    open
+                      ? {
+                        justifyContent: "initial",
+                      }
+                      : {
+                        justifyContent: "center",
+                      },
+                  ]}
+                >
+                  <ListItemIcon
+
+                    sx={[
+                      {
+                        minWidth: 0,
+                        justifyContent: "center",
+                      },
+                      open
+                        ? {
+                          mr: 3,
+                        }
+                        : {
+                          mr: "auto",
+                        },
+                    ]}
+                  >
+                    <DashboardTwoToneIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Dashboard"
+                    sx={[
+                      open
+                        ? {
+                          opacity: 1,
+                        }
+                        : {
+                          opacity: 0,
+                        },
+                    ]}
+                  />
+                </ListItemButton>
+              </ListItem>
             </List>
             <List>
               {["Inbox", "Starred", "Send email", "Drafts"].map(
                 (text, index) => (
                   <ListItem key={text} disablePadding sx={{ display: "block" }}>
-                 
+
                     <ListItemButton
                       sx={[
                         {
@@ -294,11 +432,11 @@ export default function DashboardLayout() {
                         },
                         open
                           ? {
-                              justifyContent: "initial",
-                            }
+                            justifyContent: "initial",
+                          }
                           : {
-                              justifyContent: "center",
-                            },
+                            justifyContent: "center",
+                          },
                       ]}
                     >
                       <ListItemIcon
@@ -309,11 +447,11 @@ export default function DashboardLayout() {
                           },
                           open
                             ? {
-                                mr: 3,
-                              }
+                              mr: 3,
+                            }
                             : {
-                                mr: "auto",
-                              },
+                              mr: "auto",
+                            },
                         ]}
                       >
                         {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
@@ -323,11 +461,11 @@ export default function DashboardLayout() {
                         sx={[
                           open
                             ? {
-                                opacity: 1,
-                              }
+                              opacity: 1,
+                            }
                             : {
-                                opacity: 0,
-                              },
+                              opacity: 0,
+                            },
                         ]}
                       />
                     </ListItemButton>
@@ -347,11 +485,11 @@ export default function DashboardLayout() {
                       },
                       open
                         ? {
-                            justifyContent: "initial",
-                          }
+                          justifyContent: "initial",
+                        }
                         : {
-                            justifyContent: "center",
-                          },
+                          justifyContent: "center",
+                        },
                     ]}
                   >
                     <ListItemIcon
@@ -362,11 +500,11 @@ export default function DashboardLayout() {
                         },
                         open
                           ? {
-                              mr: 3,
-                            }
+                            mr: 3,
+                          }
                           : {
-                              mr: "auto",
-                            },
+                            mr: "auto",
+                          },
                       ]}
                     >
                       {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
@@ -376,11 +514,11 @@ export default function DashboardLayout() {
                       sx={[
                         open
                           ? {
-                              opacity: 1,
-                            }
+                            opacity: 1,
+                          }
                           : {
-                              opacity: 0,
-                            },
+                            opacity: 0,
+                          },
                       ]}
                     />
                   </ListItemButton>
@@ -394,9 +532,9 @@ export default function DashboardLayout() {
               <DrawerHeader />
 
               {/* <ProUI_Typography /> */}
-          
-           
-<Outlet/>
+
+
+              <Outlet />
               {/* <Dashboard_Home1 /> */}
               <Typography variant="body2" sx={{ marginBottom: 2 }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

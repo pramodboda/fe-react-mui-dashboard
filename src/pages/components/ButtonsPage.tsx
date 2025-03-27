@@ -1,5 +1,5 @@
 import Button from "@mui/material/Button";
-import ProUI_BrowserFullscreen from "../components/ProUI_Elements/ProUI_BrowserFullscreen/ProUI_BrowserFullscreen";
+import ProUI_BrowserFullscreen from "../../components/ProUI_Elements/ProUI_BrowserFullscreen/ProUI_BrowserFullscreen";
 
 const ButtonsPage: React.FC = () => {
   return (
