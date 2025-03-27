@@ -167,6 +167,15 @@ export default function DashboardLayout() {
       level: 1,
       children: [
         {
+          title: 'Buttons',
+          level: 2,
+          path: '/ButtonsPage'
+          // children: [
+          //   { title: 'Smartphones', level: 3, path: '/products/electronics/smartphones' },
+          //   { title: 'Laptops', level: 3, path: '/products/electronics/laptops' }
+          // ]
+        },
+        {
           title: 'Electronics',
           level: 2,
           children: [
