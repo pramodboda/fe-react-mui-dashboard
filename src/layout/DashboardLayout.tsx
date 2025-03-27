@@ -27,6 +27,8 @@ import MailIcon from "@mui/icons-material/Mail";
 import Button from "@mui/material/Button";
 
 import SettingsTwoToneIcon from "@mui/icons-material/SettingsTwoTone";
+import DashboardTwoToneIcon from '@mui/icons-material/DashboardTwoTone';
+import BedtimeTwoToneIcon from '@mui/icons-material/BedtimeTwoTone';
 
 import SettingsDrawer from "../components/ProUI_Elements/SettingsDrawer/SettingsDrawer";
 import Footer_1 from "../components/ProUI_Elements/footer1/Footer_1";
@@ -209,6 +211,7 @@ export default function DashboardLayout() {
                 <Button color="inherit" onClick={logout}>
                   Logout
                 </Button>
+                <IconButton><BedtimeTwoToneIcon/></IconButton>
               </Toolbar>
             </AppBar>
           </Box>
@@ -257,7 +260,7 @@ export default function DashboardLayout() {
                            },
                      ]}
                    >
-                    <InboxIcon /> 
+                    <DashboardTwoToneIcon /> 
                    </ListItemIcon>
                    <ListItemText
                      primary="Dashboard"
