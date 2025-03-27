@@ -1,14 +1,10 @@
 // Key Metrics Summary: Showcases  cards with KPIs like Statics, Total users, revenue, Orders Active sessions and etc.
 // import * as React from "react";
 import Grid from "@mui/material/Grid2";
-import {Button, Link} from "@mui/material";
+import {Button, Link, Box, Stack, Typography} from "@mui/material";
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import ProUI_SearchInputField from "../../components/ProUI_Elements/ProUI_SearchInputField/ProUI_SearchInputField";
 
-
-import Box from "@mui/material/Box";
-import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
 // import Copyright from "../internals/components/Copyright";
 import ChartUserByCountry from "../../components/ProUI_Elements/Charts/ChartUserByCountry/ChartUserByCountry";
 import CustomizedDataGrid from "../../components/ProUI_Elements/Charts/CustomizedDataGrid/CustomizedDataGrid";
@@ -112,6 +108,13 @@ export default function MainGrid() {
                 </Stack>
               </Link>
         </Grid>
+        <Grid size={{ xs: 12, md: 12, lg:12 }}>
+          <Typography variant="h6">
+          This is a Multi-Level Navigation Drawer with MUI
+          </Typography>
+        
+        </Grid>
+        
         <Grid size={{ xs: 12, md: 6 }}>
           <SessionsChart />
         </Grid>

@@ -28,7 +28,8 @@ import Button from "@mui/material/Button";
 
 import SettingsTwoToneIcon from "@mui/icons-material/SettingsTwoTone";
 import DashboardTwoToneIcon from '@mui/icons-material/DashboardTwoTone';
-import BedtimeTwoToneIcon from '@mui/icons-material/BedtimeTwoTone';
+// import BedtimeTwoToneIcon from '@mui/icons-material/BedtimeTwoTone';
+import DarkModeTwoToneIcon from '@mui/icons-material/DarkModeTwoTone';
 
 import SettingsDrawer from "../components/ProUI_Elements/SettingsDrawer/SettingsDrawer";
 import Footer_1 from "../components/ProUI_Elements/footer1/Footer_1";
@@ -211,7 +212,8 @@ export default function DashboardLayout() {
                 <Button color="inherit" onClick={logout}>
                   Logout
                 </Button>
-                <IconButton><BedtimeTwoToneIcon/></IconButton>
+                {/* <Button variant="outlined" color="inherit"><DarkModeTwoToneIcon/></Button> */}
+                <IconButton color="inherit"><DarkModeTwoToneIcon/></IconButton>
               </Toolbar>
             </AppBar>
           </Box>
@@ -231,6 +233,7 @@ export default function DashboardLayout() {
             <ListItem component={NavLink} to="/" disablePadding sx={{ display: "block" }}>
                  
                  <ListItemButton 
+                  
                    sx={[
                      {
                        minHeight: 48,
@@ -246,6 +249,7 @@ export default function DashboardLayout() {
                    ]}
                  >
                    <ListItemIcon
+                    
                      sx={[
                        {
                          minWidth: 0,
