@@ -169,7 +169,7 @@ export default function DashboardLayout() {
         {
           title: 'Buttons',
           level: 2,
-          path: '/ButtonsPage'
+          path: '/components/buttons'
           // children: [
           //   { title: 'Smartphones', level: 3, path: '/products/electronics/smartphones' },
           //   { title: 'Laptops', level: 3, path: '/products/electronics/laptops' }
@@ -199,7 +199,15 @@ export default function DashboardLayout() {
       level: 1,
       children: [
         { title: 'Templates', level: 2, path: '/documents/templates' },
-        { title: 'Sitemap', level: 2, path: '/documents/reports' }
+        { title: 'Sitemap', level: 2, path: '/pages/sitemap' }
+      ]
+    },
+    {
+      title: 'Utils',
+      icon: <Description />,
+      level: 1,
+      children: [
+        { title: 'Timeline and Roadmaps', level: 2, path: '/utils/timelineandroadmaps' },
       ]
     }
   ];
