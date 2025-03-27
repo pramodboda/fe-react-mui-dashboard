@@ -157,12 +157,12 @@ export default function DashboardLayout() {
     {
       title: 'Dashboard',
       // icon: <Home />,
-      icon: <Home />,
+      icon: <DashboardTwoToneIcon />,
       level: 1,
-      path: '/dashboard'
+      path: '/'
     },
     {
-      title: 'Products',
+      title: 'Components',
       icon: <Folder />,
       level: 1,
       children: [
@@ -185,12 +185,12 @@ export default function DashboardLayout() {
       ]
     },
     {
-      title: 'Documents',
+      title: 'Pages',
       icon: <Description />,
       level: 1,
       children: [
         { title: 'Templates', level: 2, path: '/documents/templates' },
-        { title: 'Reports', level: 2, path: '/documents/reports' }
+        { title: 'Sitemap', level: 2, path: '/documents/reports' }
       ]
     }
   ];
@@ -208,7 +208,7 @@ export default function DashboardLayout() {
 
     return (
       <React.Fragment key={item.title}>
-        <ListItem disablePadding sx={{ display: 'block' }}>
+        <ListItem component={NavLink} to={`${item.path}`} disablePadding sx={{ display: 'block' }}>
           <Tooltip
             title={!open ? item.title : ''}
             placement="right"
@@ -367,7 +367,7 @@ export default function DashboardLayout() {
             <List>
               {menuData.map(item => renderMenuItem(item))}
             </List>
-            <List>
+            {/* <List>
               <ListItem component={NavLink} to="/" disablePadding sx={{ display: "block" }}>
 
                 <ListItemButton
@@ -418,7 +418,7 @@ export default function DashboardLayout() {
                   />
                 </ListItemButton>
               </ListItem>
-            </List>
+            </List> */}
             <List>
               {["Inbox", "Starred", "Send email", "Drafts"].map(
                 (text, index) => (
