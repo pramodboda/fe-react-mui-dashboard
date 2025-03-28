@@ -74,11 +74,13 @@ const ListsPage: React.FC = () => {
               </ListItem>
               <ListItem>
                 <Alert icon={<FaLayerGroup />} sx={{ width: '100%' }} severity="error">
-                  <AlertTitle>
-                    Group lunch celebration
-                  </AlertTitle>
-                  <Stack>
-                    <Box>Due in 2 Days</Box>
+
+                  <Stack direction="row" justifyContent="space-between">
+
+                    <Box>
+                      <AlertTitle>
+                      Group lunch celebration
+                    </AlertTitle>Due in 2 Days</Box>
                     <Box>-27%</Box>
                   </Stack>
 
