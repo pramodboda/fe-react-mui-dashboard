@@ -13,6 +13,8 @@ import Grid from "@mui/material/Grid2";
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 
+import { FaLayerGroup } from "react-icons/fa";
+
 import ProUI_Card from "../../components/ProUI_Elements/ProUI_Card/ProUI_Card";
 
 const ListsPage: React.FC = () => {
@@ -54,7 +56,7 @@ const ListsPage: React.FC = () => {
            <List>
               <ListItem>
 
-                <Alert sx={{ width: '100%' }} severity="warning">
+                <Alert icon={<FaLayerGroup/>} sx={{ width: '100%' }} severity="warning">
                   <AlertTitle>
                     Group lunch celebration
                   </AlertTitle>
