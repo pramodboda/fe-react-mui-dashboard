@@ -23,7 +23,10 @@ import { SiJavascript, SiTypescript, SiBootstrap, SiRedux, SiReactrouter, SiJest
 import ProUI_Card from '../../components/ProUI_Elements/ProUI_Card/ProUI_Card';
 import { Description } from "@mui/icons-material";
 
-const FE_React_Dev_Roadmap = [{ title: "HTML5", position: "right", icon:<FaHtml5/>, description:"(Semantic elements, Accessibility)" }, { title: "CSS3", position: "right", icon:<FaCss3 />, description:"(Flexbox, Grid, Animations, Preprocessors like SASS)" }, { title: "Boostrap", position: "right", icon: <SiBootstrap />,description:"()" }, { title: "JavaScript", position: "right", icon: <SiJavascript />,description:"(Closures, Hoisting, Promises, Async/Await)" }, { title: "ES6+", position: "right", icon: <BiSolidFileJs />,description:"(Semantic elements, Accessibility)"  }, { title: "TypeScript", position: "right", icon: <SiTypescript/>,description:"(Semantic elements, Accessibility)"  }, { title: "React", position: "right", icon: <FaReact/>,description:"(Semantic elements, Accessibility)"  }, { title: "State Management", position: "right", icon: <SiRedux />,description:"(Semantic elements, Accessibility)"  }, { title: "React Router", position: "right", icon: <SiReactrouter />,description:"(Semantic elements, Accessibility)"  }, { title: "Component Design Patterns", position: "right", icon: <GiGearStickPattern/>,description:"(Semantic elements, Accessibility)" },{ title: "Frontend Performance Optimization", position: "right", icon: <IoSpeedometerOutline />,description:"(Semantic elements, Accessibility)" }, { title: "Unit testing", position: "right", icon:<SiJest />,description:"(Semantic elements, Accessibility)" }]
+const FE_React_Dev_Roadmap = {
+    coreFrontendSkills:[{ title: "HTML5", position: "right", icon:<FaHtml5/>, description:"(Semantic elements, Accessibility)" }, { title: "CSS3", position: "right", icon:<FaCss3 />, description:"(Flexbox, Grid, Animations, Preprocessors like SASS)" }, { title: "Boostrap", position: "right", icon: <SiBootstrap />,description:"()" }, { title: "JavaScript(ES6+)", position: "right", icon: <SiJavascript />,description:"(Closures, Hoisting, Promises, Async/Await)" }, { title: "ES6+", position: "right", icon: <BiSolidFileJs />,description:"()"  }, { title: "TypeScript", position: "right", icon: <SiTypescript/>,description:"(Optional, but preferred)"  }, { title: "React", position: "right", icon: <FaReact/>,description:"(Hooks, Context API, Lifecycle Methods, State Management)"  }, { title: "State Management", position: "right", icon: <SiRedux />,description:"(Redux, Recoil, Zustand, or Context API)"  }, { title: "React Router", position: "right", icon: <SiReactrouter />,description:"(Dynamic Routing, Nested Routes)"  }, { title: "React/ Component Design Patterns", position: "right", icon: <GiGearStickPattern/>,description:"(HOC, Render Props, Compound Components)" },{ title: "Frontend Performance Optimization", position: "right", icon: <IoSpeedometerOutline />,description:"(Lazy Loading, Code Splitting, Memoization)" }, { title: "Unit testing", position: "right", icon:<SiJest />,description:"(Jest, React Testing Library, Cypress)" }],
+
+}
 
 const Timelines: React.FC = () => {
     return <>
@@ -32,7 +35,7 @@ const Timelines: React.FC = () => {
             <Grid size={{ xs: 12, lg: 3 }}>
                 <ProUI_Card>
                     <Timeline position="alternate">
-                        {FE_React_Dev_Roadmap.map((skill, index) => {
+                        {FE_React_Dev_Roadmap.coreFrontendSkills.map((skill, index) => {
                             return <TimelineItem>
                                 <TimelineOppositeContent
                                     key={index}
@@ -54,7 +57,7 @@ const Timelines: React.FC = () => {
                                     <Typography variant="h6" component="span">
                                         {skill.title}
                                     </Typography>
-                                    <Typography>Because you need strength</Typography>
+                                    <Typography>{skill.description}</Typography>
                                 </TimelineContent>
                             </TimelineItem>
                         })}
