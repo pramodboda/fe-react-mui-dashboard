@@ -4,6 +4,7 @@ import DashboardLayout from '../layout/DashboardLayout';
 import Dashboard_Home1 from '../pages/Dashboard_Home1';
 import SitemapPage from "../pages/SitemapPage";
 import ButtonsPage from '../pages/components/ButtonsPage';
+import ListsPage from '../pages/components/ListsPage';
 import Timelines from '../pages/utils/Timelines';
 
 // Define your routes here
