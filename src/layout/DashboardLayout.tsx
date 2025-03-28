@@ -207,7 +207,7 @@ export default function DashboardLayout() {
       icon: <Description />,
       level: 1,
       children: [
-        { title: 'Timeline and Roadmaps', level: 2, path: '/utils/timelineandroadmaps' },
+        { title: 'Timelines', level: 2, path: '/utils/timelines' },
       ]
     }
   ];
@@ -238,7 +238,7 @@ export default function DashboardLayout() {
                 minHeight: 48,
                 justifyContent: open ? 'initial' : 'center',
                 px: 2.5,
-                pl: open ? theme.spacing(depth * 2 + 2) : theme.spacing(2),
+                // pl: open ? theme.spacing(depth * 2 + 2) : theme.spacing(2),
                 '&:hover': {
                   backgroundColor: theme.palette.action.hover,
                 },

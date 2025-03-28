@@ -13,20 +13,26 @@ import HotelIcon from '@mui/icons-material/Hotel';
 import RepeatIcon from '@mui/icons-material/Repeat';
 import Typography from '@mui/material/Typography';
 
+
+
+// import { FaHtml5 } from "react-icons/fa";
+import { FaHtml5, FaCss3, FaReact } from 'react-icons/fa';
+import { FaBuildingColumns } from "react-icons/fa6";
+import { SiJavascript, SiTypescript, SiBootstrap } from 'react-icons/si';
+
+
 import ProUI_Card from '../../components/ProUI_Elements/ProUI_Card/ProUI_Card';
 
-const FE_React_Dev_Roadmap = [{ skill_title: "HTML5", position: "right" }, { skill_title: "CSS3", position: "right" }, { skill_title: "Boostrap", position: "right"}, { skill_title: "JavaScript", position: "right" }, { skill_title: "ES6+", position: "right" }, { skill_title: "TypeScript", position: "right" }, { skill_title: "React", position: "right" }]
+const FE_React_Dev_Roadmap = [{ title: "HTML5", position: "right", icon:<FaHtml5/> }, { title: "CSS3", position: "right", icon:<FaCss3 />}, { title: "Boostrap", position: "right", icon: <SiBootstrap />}, { title: "JavaScript", position: "right", icon: <SiJavascript />}, { title: "ES6+", position: "right", }, { title: "TypeScript", position: "right", icon: <SiTypescript/> }, { title: "React", position: "right", icon: <FaReact/> }, { title: "State Management", position: "right", icon: <FaBuildingColumns/> }, { title: "React Router", position: "right" }, { title: "Component Design Patterns", position: "right"},{ title: "Frontend Performance Optimization", position: "right"}, { title: "Unit testing", position: "right"}]
 
-const TimelinesAndRoadmaps: React.FC = () => {
+const Timelines: React.FC = () => {
     return <>
 
         <Grid container>
             <Grid size={{ xs: 12, lg: 3 }}>
-
                 <ProUI_Card>
-
                     <Timeline position="alternate">
-                        {FE_React_Dev_Roadmap.map((item, index) => {
+                        {FE_React_Dev_Roadmap.map((skill, index) => {
                             return <TimelineItem>
                                 <TimelineOppositeContent
                                     key={index}
@@ -39,14 +45,14 @@ const TimelinesAndRoadmaps: React.FC = () => {
                                 </TimelineOppositeContent>
                                 <TimelineSeparator>
                                     <TimelineConnector />
-                                    <TimelineDot>
-                                        <FastfoodIcon />
+                                    <TimelineDot color="primary">
+                                    {skill.icon}
                                     </TimelineDot>
                                     <TimelineConnector />
                                 </TimelineSeparator>
                                 <TimelineContent sx={{ py: '12px', px: 2 }}>
                                     <Typography variant="h6" component="span">
-                                        {item.skill_title}
+                                        {skill.title}
                                     </Typography>
                                     <Typography>Because you need strength</Typography>
                                 </TimelineContent>
@@ -141,4 +147,4 @@ const TimelinesAndRoadmaps: React.FC = () => {
     </>
 }
 
-export default TimelinesAndRoadmaps;
+export default Timelines;
