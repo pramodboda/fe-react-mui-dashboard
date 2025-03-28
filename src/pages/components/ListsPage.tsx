@@ -1,4 +1,4 @@
-import Button from "@mui/material/Button";
+import {Button, Stack} from "@mui/material";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
@@ -50,31 +50,43 @@ const ListsPage: React.FC = () => {
       </Grid>
       <Grid size={{xs: 12, lg:3}}>
       <ProUI_Card>
-    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+    <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
+    <Stack sx={{ width: '100%' }} spacing={2}>
+    <ListItem>
+
+<Alert severity="warning">
+  <AlertTitle>
+  Group lunch celebration
+  </AlertTitle>
+  Due in 2 Days
+</Alert>
+</ListItem>
       <ListItem>
-      <Alert severity="warning">
-        <AlertTitle>
-        Group lunch celebration
-        </AlertTitle>
-        Due in 2 Days
-      </Alert>
-      </ListItem>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar>
-            <WorkIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Work" secondary="Jan 7, 2014" />
-      </ListItem>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar>
-            <BeachAccessIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Vacation" secondary="July 20, 2014" />
-      </ListItem>
+<Alert severity="success">
+  <AlertTitle>
+  Group lunch celebration
+  </AlertTitle>
+  Due in 2 Days
+</Alert>
+</ListItem>
+<ListItem>
+<Alert severity="error">
+  <AlertTitle>
+  Group lunch celebration
+  </AlertTitle>
+  Due in 2 Days
+</Alert>
+</ListItem>
+<ListItem>
+<Alert severity="success" color="primary">
+  <AlertTitle>
+  Group lunch celebration
+  </AlertTitle>
+  Due in 2 Days
+</Alert>
+</ListItem>
+      </Stack>
+  
     </List>
     </ProUI_Card>
       </Grid>
