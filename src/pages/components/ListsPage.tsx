@@ -1,4 +1,4 @@
-import { Box, Stack, Button  } from "@mui/material";
+import { Box, Stack, Button } from "@mui/material";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
@@ -52,11 +52,11 @@ const ListsPage: React.FC = () => {
       </Grid>
       <Grid size={{ xs: 12, lg: 3 }}>
         <ProUI_Card title="Notification" action="true">
-           <Box>
-           <List>
+          <Box>
+            <List>
               <ListItem>
 
-                <Alert icon={<FaLayerGroup/>} sx={{ width: '100%' }} severity="warning">
+                <Alert icon={<FaLayerGroup />} sx={{ width: '100%' }} severity="warning">
                   <AlertTitle>
                     Group lunch celebration
                   </AlertTitle>
@@ -64,7 +64,7 @@ const ListsPage: React.FC = () => {
                 </Alert>
               </ListItem>
               <ListItem>
-                <Alert icon={<FaLayerGroup/>} sx={{ width: '100%' }} severity="success">
+                <Alert icon={<FaLayerGroup />} sx={{ width: '100%' }} severity="success">
                   <AlertTitle>
                     Group lunch celebration
                   </AlertTitle>
@@ -72,28 +72,28 @@ const ListsPage: React.FC = () => {
                 </Alert>
               </ListItem>
               <ListItem>
-                <Alert icon={<FaLayerGroup/>} sx={{ width: '100%' }} severity="error">
+                <Alert icon={<FaLayerGroup />} sx={{ width: '100%' }} severity="error">
                   <AlertTitle>
                     Group lunch celebration
                   </AlertTitle>
                   <Stack>
-<Box>Due in 2 Days</Box>
-<Box>-27%</Box>
+                    <Box>Due in 2 Days</Box>
+                    <Box>-27%</Box>
                   </Stack>
-                  
+
                 </Alert>
               </ListItem>
               <ListItem>
-                <Alert icon={<FaLayerGroup/>} sx={{ width: '100%' }} severity="success" color="primary">
+                <Alert icon={<FaLayerGroup />} sx={{ width: '100%' }} severity="success" color="primary">
                   <AlertTitle>
                     Group lunch celebration
                   </AlertTitle>
                   Due in 2 Days
                 </Alert>
               </ListItem>
-          </List>
-           </Box>
-    
+            </List>
+          </Box>
+
         </ProUI_Card>
       </Grid>
 
