@@ -7,10 +7,6 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-import FastfoodIcon from '@mui/icons-material/Fastfood';
-import LaptopMacIcon from '@mui/icons-material/LaptopMac';
-import HotelIcon from '@mui/icons-material/Hotel';
-import RepeatIcon from '@mui/icons-material/Repeat';
 import Typography from '@mui/material/Typography';
 
 
@@ -18,12 +14,15 @@ import Typography from '@mui/material/Typography';
 // import { FaHtml5 } from "react-icons/fa";
 import { FaHtml5, FaCss3, FaReact } from 'react-icons/fa';
 // import { FaBuildingColumns } from "react-icons/fa6";
-import { SiJavascript, SiTypescript, SiBootstrap, SiRedux, SiReactrouter  } from 'react-icons/si';
+import { IoSpeedometerOutline } from "react-icons/io5";
+import { GiGearStickPattern } from "react-icons/gi";
+import { BiSolidFileJs } from "react-icons/bi";
+import { SiJavascript, SiTypescript, SiBootstrap, SiRedux, SiReactrouter, SiJest   } from 'react-icons/si';
 
 
 import ProUI_Card from '../../components/ProUI_Elements/ProUI_Card/ProUI_Card';
 
-const FE_React_Dev_Roadmap = [{ title: "HTML5", position: "right", icon:<FaHtml5/> }, { title: "CSS3", position: "right", icon:<FaCss3 />}, { title: "Boostrap", position: "right", icon: <SiBootstrap />}, { title: "JavaScript", position: "right", icon: <SiJavascript />}, { title: "ES6+", position: "right", }, { title: "TypeScript", position: "right", icon: <SiTypescript/> }, { title: "React", position: "right", icon: <FaReact/> }, { title: "State Management", position: "right", icon: <SiRedux /> }, { title: "React Router", position: "right", icon: <SiReactrouter /> }, { title: "Component Design Patterns", position: "right"},{ title: "Frontend Performance Optimization", position: "right"}, { title: "Unit testing", position: "right"}]
+const FE_React_Dev_Roadmap = [{ title: "HTML5", position: "right", icon:<FaHtml5/> }, { title: "CSS3", position: "right", icon:<FaCss3 />}, { title: "Boostrap", position: "right", icon: <SiBootstrap />}, { title: "JavaScript", position: "right", icon: <SiJavascript />}, { title: "ES6+", position: "right", icon: <BiSolidFileJs /> }, { title: "TypeScript", position: "right", icon: <SiTypescript/> }, { title: "React", position: "right", icon: <FaReact/> }, { title: "State Management", position: "right", icon: <SiRedux /> }, { title: "React Router", position: "right", icon: <SiReactrouter /> }, { title: "Component Design Patterns", position: "right", icon: <GiGearStickPattern/>},{ title: "Frontend Performance Optimization", position: "right", icon: <IoSpeedometerOutline />}, { title: "Unit testing", position: "right", icon:<SiJest />}]
 
 const Timelines: React.FC = () => {
     return <>
