@@ -34,8 +34,8 @@ const FE_React_Dev_Roadmap = {
 const Timelines: React.FC = () => {
     return <>
 
-        <Grid container>
-            <Grid size={{ xs: 12, lg: 3 }}>
+        <Grid container spacing={2}>
+            <Grid size={{ xs: 12, lg: 4 }}>
                 <ProUI_Card>
                     <Timeline position="alternate">
                         {FE_React_Dev_Roadmap.coreFrontendSkills.map((skill, index) => {
@@ -70,7 +70,7 @@ const Timelines: React.FC = () => {
                 </ProUI_Card>
             </Grid>
 
-            <Grid size={{ xs: 12, lg: 3 }}>
+            <Grid size={{ xs: 12, lg: 4 }}>
                 <ProUI_Card>
                     <Timeline position="alternate">
                         {FE_React_Dev_Roadmap.buildAndDeploymentTools.map((skill, index) => {
