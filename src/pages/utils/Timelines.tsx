@@ -38,7 +38,7 @@ const Timelines: React.FC = () => {
             <Grid size={{ xs: 12, lg: 4 }}>
             Core Frontend Skills:
                 <ProUI_Card>
-                    <Timeline position="alternate">
+                    <Timeline position="alternate" sx={{fontSize:"0.2rem"}}>
                         {FE_React_Dev_Roadmap.coreFrontendSkills.map((skill, index) => {
                             return <TimelineItem>
                                 <TimelineOppositeContent
@@ -47,6 +47,7 @@ const Timelines: React.FC = () => {
                                     align="right"
                                     variant="body2"
                                     color="text.secondary"
+                                    fontSize="0.5rem"
                                 >
                                     9:30 am
                                 </TimelineOppositeContent>
@@ -58,10 +59,10 @@ const Timelines: React.FC = () => {
                                     <TimelineConnector />
                                 </TimelineSeparator>
                                 <TimelineContent sx={{ py: '12px', px: 2 }}>
-                                    <Typography variant="h6" component="span">
+                                    <Typography variant="body1" component="span">
                                         {skill.title}
                                     </Typography>
-                                    <Typography>{skill.description}</Typography>
+                                    <Typography variant="body2">{skill.description}</Typography>
                                 </TimelineContent>
                             </TimelineItem>
                         })}
