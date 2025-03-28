@@ -9,8 +9,9 @@ interface CustomCardProps {
   }
 
 
-const ProUI_Card:React.FC<CustomCardProps> = ({children}) => {
+const ProUI_Card:React.FC<CustomCardProps> = ({title, children}) => {
     return (<Box sx={{backgroundColor: "#f9f9f9"}}>
+        {title&&title}
 {children}
     </Box>)
 }

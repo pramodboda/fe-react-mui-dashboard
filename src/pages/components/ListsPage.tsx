@@ -1,4 +1,4 @@
-import {Button, Stack} from "@mui/material";
+import { Box, Stack, Button  } from "@mui/material";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
@@ -18,77 +18,77 @@ import ProUI_Card from "../../components/ProUI_Elements/ProUI_Card/ProUI_Card";
 const ListsPage: React.FC = () => {
   return (
     <Grid container spacing={2}>
-      <Grid size={{xs: 12, lg:3}}>
-      <ProUI_Card>
-    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar>
-            <ImageIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Photos" secondary="Jan 9, 2014" />
-      </ListItem>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar>
-            <WorkIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Work" secondary="Jan 7, 2014" />
-      </ListItem>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar>
-            <BeachAccessIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Vacation" secondary="July 20, 2014" />
-      </ListItem>
-    </List>
-    </ProUI_Card>
+      <Grid size={{ xs: 12, lg: 3 }}>
+        <ProUI_Card>
+          <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar>
+                  <ImageIcon />
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText primary="Photos" secondary="Jan 9, 2014" />
+            </ListItem>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar>
+                  <WorkIcon />
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText primary="Work" secondary="Jan 7, 2014" />
+            </ListItem>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar>
+                  <BeachAccessIcon />
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText primary="Vacation" secondary="July 20, 2014" />
+            </ListItem>
+          </List>
+        </ProUI_Card>
       </Grid>
-      <Grid size={{xs: 12, lg:3}}>
-      <ProUI_Card>
-    <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-    <Stack sx={{ width: '100%' }} spacing={2}>
-    <ListItem>
+      <Grid size={{ xs: 12, lg: 3 }}>
+        <ProUI_Card>
+           <Box>
+           <List>
+              <ListItem>
 
-<Alert severity="warning">
-  <AlertTitle>
-  Group lunch celebration
-  </AlertTitle>
-  Due in 2 Days
-</Alert>
-</ListItem>
-      <ListItem>
-<Alert severity="success">
-  <AlertTitle>
-  Group lunch celebration
-  </AlertTitle>
-  Due in 2 Days
-</Alert>
-</ListItem>
-<ListItem>
-<Alert severity="error">
-  <AlertTitle>
-  Group lunch celebration
-  </AlertTitle>
-  Due in 2 Days
-</Alert>
-</ListItem>
-<ListItem>
-<Alert severity="success" color="primary">
-  <AlertTitle>
-  Group lunch celebration
-  </AlertTitle>
-  Due in 2 Days
-</Alert>
-</ListItem>
-      </Stack>
-  
-    </List>
-    </ProUI_Card>
+                <Alert sx={{ width: '100%' }} severity="warning">
+                  <AlertTitle>
+                    Group lunch celebration
+                  </AlertTitle>
+                  Due in 2 Days
+                </Alert>
+              </ListItem>
+              <ListItem>
+                <Alert sx={{ width: '100%' }} severity="success">
+                  <AlertTitle>
+                    Group lunch celebration
+                  </AlertTitle>
+                  Due in 2 Days
+                </Alert>
+              </ListItem>
+              <ListItem>
+                <Alert sx={{ width: '100%' }} severity="error">
+                  <AlertTitle>
+                    Group lunch celebration
+                  </AlertTitle>
+                  Due in 2 Days
+                </Alert>
+              </ListItem>
+              <ListItem>
+                <Alert sx={{ width: '100%' }} severity="success" color="primary">
+                  <AlertTitle>
+                    Group lunch celebration
+                  </AlertTitle>
+                  Due in 2 Days
+                </Alert>
+              </ListItem>
+          </List>
+           </Box>
+    
+        </ProUI_Card>
       </Grid>
 
     </Grid>
