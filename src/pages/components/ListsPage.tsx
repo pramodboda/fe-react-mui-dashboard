@@ -76,7 +76,11 @@ const ListsPage: React.FC = () => {
                   <AlertTitle>
                     Group lunch celebration
                   </AlertTitle>
-                  Due in 2 Days
+                  <Stack>
+<Box>Due in 2 Days</Box>
+<Box>-27%</Box>
+                  </Stack>
+                  
                 </Alert>
               </ListItem>
               <ListItem>
