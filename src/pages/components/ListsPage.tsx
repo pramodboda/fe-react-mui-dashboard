@@ -8,7 +8,7 @@ import ImageIcon from '@mui/icons-material/Image';
 import WorkIcon from '@mui/icons-material/Work';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 
-import ProUI_Card from "../../components/ProUI_Elements/ProUI_Card";
+import ProUI_Card from "../../components/ProUI_Elements/ProUI_Card/ProUI_Card";
 
 const ListsPage: React.FC = () => {
   return (
