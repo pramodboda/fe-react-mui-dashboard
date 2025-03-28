@@ -49,7 +49,7 @@ const ListsPage: React.FC = () => {
         </ProUI_Card>
       </Grid>
       <Grid size={{ xs: 12, lg: 3 }}>
-        <ProUI_Card>
+        <ProUI_Card title="Notification" action="true">
            <Box>
            <List>
               <ListItem>

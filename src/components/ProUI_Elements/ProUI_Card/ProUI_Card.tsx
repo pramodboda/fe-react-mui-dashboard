@@ -1,4 +1,4 @@
-import {Box} from "@mui/material";
+import {Box, Button, IconButton} from "@mui/material";
 
 interface CustomCardProps {
     title?: string;
@@ -9,9 +9,10 @@ interface CustomCardProps {
   }
 
 
-const ProUI_Card:React.FC<CustomCardProps> = ({title, children}) => {
+const ProUI_Card:React.FC<CustomCardProps> = ({title, actions, children}) => {
     return (<Box sx={{backgroundColor: "#f9f9f9"}}>
         {title&&title}
+        {actions&&<IconButton>A</IconButton>}
 {children}
     </Box>)
 }
