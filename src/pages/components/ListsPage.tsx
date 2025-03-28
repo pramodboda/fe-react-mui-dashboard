@@ -1,4 +1,6 @@
-import { Box, Stack, Button, Link } from "@mui/material";
+import { Card, Box, Stack, Button, Link, Typography } from "@mui/material";
+import { motion } from "framer-motion";
+
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
@@ -16,6 +18,47 @@ import AlertTitle from "@mui/material/AlertTitle";
 import { FaLayerGroup } from "react-icons/fa6";
 
 import ProUI_Card from "../../components/ProUI_Elements/ProUI_Card/ProUI_Card";
+
+const severityColors = {
+  success: "#00B86B",
+  error: "#FF4D4F",
+  warning: "#FFAA00",
+  info: " #0080ff",
+  primary: "#735DF5",
+};
+const tasks = [
+  {
+    title: "Group lunch celebration",
+    due: "Due in 2 Days",
+    change: "+28%",
+    severity: "warning",
+  },
+  {
+    title: "Navigation optimization",
+    due: "Due in 2 Days",
+    change: "+50%",
+    severity: "success",
+  },
+  {
+    title: "Rebrand strategy planning",
+    due: "Due in 5 Days",
+    change: "-27%",
+    severity: "error",
+  },
+  {
+    title: "Product goals strategy",
+    due: "Due in 7 Days",
+    change: "+8%",
+    severity: "info",
+  },
+  {
+    title: "Product goals strategy",
+    due: "Due in 7 Days",
+    change: "+8%",
+    severity: "",
+    color: "primary",
+  },
+];
 
 const ListsPage: React.FC = () => {
   return (
@@ -57,70 +100,108 @@ const ListsPage: React.FC = () => {
       </Grid>
       <Grid size={{ xs: 12, lg: 4 }}>
         <ProUI_Card title="Notification" actions="true">
-          <Box sx={{ width: "100%" }}>
-            <List sx={{ width: "100%" }}>
-              <ListItem>
-                <Alert
-                  icon={<FaLayerGroup />}
-                  sx={{ width: "100%" }}
-                  severity="warning"
+          <Stack spacing={2}>
+            {tasks.map((task, index) => (
+              <Alert
+                key={index}
+                severity={task.severity}
+                color={task.color}
+                icon={<FaLayerGroup />}
+                sx={{
+                  padding: "0.5rem 1.5rem",
+                  borderRadius: 2,
+                  // backgroundColor: "rgba(255, 255, 255, 0.9)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  "& .MuiAlert-message": { flexGrow: 1 },
+                }}
+              >
+                <Stack
+                  sx={{
+                    width: "100%",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                  direction="row"
                 >
-                  <AlertTitle>Group lunch celebration</AlertTitle>
-                  Due in 2 Days
-                </Alert>
-              </ListItem>
-              <ListItem>
-                <Alert
-                  icon={<FaLayerGroup />}
-                  sx={{ width: "100%" }}
-                  severity="success"
-                >
-                  <AlertTitle>Group lunch celebration</AlertTitle>
-                  Due in 2 Days
-                </Alert>
-              </ListItem>
-              <ListItem sx={{ width: "100%", justifyContent: "space-between" }}>
-                <Alert
-                  icon={<FaLayerGroup />}
-                  sx={{ width: "100%", border: "1px solid red", margin: 0 }}
-                  severity="error"
-                >
-                  <Stack
-                    direction="row"
-                    justifyContent="space-between"
-                    sx={{
-                      width: "100%",
-                      border: "1px solid red",
-                    }}
-                  >
-                    <Box
-                      component="div"
-                      sx={{
-                        width: "100%",
-                        border: "1px solid red",
-                      }}
+                  <Box>
+                    <Typography variant="body1" fontWeight={600}>
+                      {task.title}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      fontWeight={600}
+                      sx={{ color: "#999" }}
                     >
-                      <AlertTitle>Group lunch celebration</AlertTitle>
-                      Due in 2 Days
-                    </Box>
-                    <Box component="div">-27%</Box>
-                  </Stack>
-                </Alert>
-              </ListItem>
-              <ListItem>
-                <Alert
-                  icon={<FaLayerGroup />}
-                  sx={{ width: "100%" }}
-                  severity="success"
-                  color="primary"
-                >
-                  <AlertTitle>Group lunch celebration</AlertTitle>
-                  Due in 2 Days
-                </Alert>
-              </ListItem>
-            </List>
-          </Box>
+                      {task.due}
+                    </Typography>
+                  </Box>
+                  <Box>
+                    <Typography
+                      fontWeight={600}
+                      sx={{ color: severityColors[task.severity] }}
+                    >
+                      {task.change}
+                    </Typography>
+                  </Box>
+                </Stack>
+              </Alert>
+            ))}
+          </Stack>
         </ProUI_Card>
+
+        {/* 
+        <Stack spacing={2}>
+          {tasks.map((task, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+            >
+              <Card
+                sx={{
+                  backgroundColor: "primary",
+                  borderRadius: 2,
+                  p: 2,
+                  boxShadow: "0 2px 6px rgba(0,0,0,0.05)",
+                  transition: "all 0.3s ease-in-out",
+                  "&:hover": {
+                    transform: "translateY(-4px)",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                    opacity: 0.9,
+                  },
+                }}
+              >
+                <Stack
+                  direction="row"
+                  justifyContent="space-between"
+                  alignItems="center"
+                >
+                  <Box>
+                    <Stack
+                      direction="row"
+                      justifyContent="space-between"
+                      alignItems="center"
+                    >
+                      <Box sx={{ pr: 1.5 }}>{task.icon}</Box>
+                      <Box>
+                        <Typography fontWeight={600}>{task.title}</Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {task.due}
+                        </Typography>
+                      </Box>
+                    </Stack>
+                  </Box>
+                  <Typography fontWeight={600} color={task.changeColor}>
+                    {task.change}
+                  </Typography>
+                </Stack>
+              </Card>
+            </motion.div>
+          ))}
+        </Stack> */}
       </Grid>
     </Grid>
   );
