@@ -18,8 +18,8 @@ import ProUI_Card from "../../components/ProUI_Elements/ProUI_Card/ProUI_Card";
 const ListsPage: React.FC = () => {
   return (
     <Grid container spacing={2}>
-      <Grid></Grid>
-    <ProUI_Card>
+      <Grid size={{xs: 12, lg:3}}>
+      <ProUI_Card>
     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
       <ListItem>
         <ListItemAvatar>
@@ -47,8 +47,39 @@ const ListsPage: React.FC = () => {
       </ListItem>
     </List>
     </ProUI_Card>
+      </Grid>
+      <Grid size={{xs: 12, lg:3}}>
+      <ProUI_Card>
+    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+      <ListItem>
+      <Alert severity="warning">
+        <AlertTitle>
+        Group lunch celebration
+        </AlertTitle>
+        Due in 2 Days
+      </Alert>
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar>
+            <WorkIcon />
+          </Avatar>
+        </ListItemAvatar>
+        <ListItemText primary="Work" secondary="Jan 7, 2014" />
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar>
+            <BeachAccessIcon />
+          </Avatar>
+        </ListItemAvatar>
+        <ListItemText primary="Vacation" secondary="July 20, 2014" />
+      </ListItem>
+    </List>
+    </ProUI_Card>
+      </Grid>
 
-    <Grid/>
+    </Grid>
   );
 };
 
