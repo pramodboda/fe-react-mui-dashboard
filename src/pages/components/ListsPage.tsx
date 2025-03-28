@@ -8,6 +8,7 @@ import ImageIcon from '@mui/icons-material/Image';
 import WorkIcon from '@mui/icons-material/Work';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 
+import Grid from "@mui/material/Grid2";
 
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
@@ -16,7 +17,8 @@ import ProUI_Card from "../../components/ProUI_Elements/ProUI_Card/ProUI_Card";
 
 const ListsPage: React.FC = () => {
   return (
-    <>
+    <Grid container spacing={2}>
+      <Grid></Grid>
     <ProUI_Card>
     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
       <ListItem>
@@ -46,7 +48,7 @@ const ListsPage: React.FC = () => {
     </List>
     </ProUI_Card>
 
-    </>
+    <Grid/>
   );
 };
 
