@@ -176,6 +176,11 @@ export default function DashboardLayout() {
           // ]
         },
         {
+          title: 'Lists',
+          level: 2,
+          path: '/components/lists'
+        },
+        {
           title: 'Electronics',
           level: 2,
           children: [
