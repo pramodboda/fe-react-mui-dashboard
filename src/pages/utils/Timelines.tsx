@@ -36,6 +36,7 @@ const Timelines: React.FC = () => {
 
         <Grid container spacing={2}>
             <Grid size={{ xs: 12, lg: 4 }}>
+            Core Frontend Skills:
                 <ProUI_Card>
                     <Timeline position="alternate">
                         {FE_React_Dev_Roadmap.coreFrontendSkills.map((skill, index) => {
@@ -69,8 +70,9 @@ const Timelines: React.FC = () => {
                     </Timeline>
                 </ProUI_Card>
             </Grid>
-
+           
             <Grid size={{ xs: 12, lg: 4 }}>
+            Build & Deployment Tools:
                 <ProUI_Card>
                     <Timeline position="alternate">
                         {FE_React_Dev_Roadmap.buildAndDeploymentTools.map((skill, index) => {
@@ -104,6 +106,8 @@ const Timelines: React.FC = () => {
                     </Timeline>
                 </ProUI_Card>
             </Grid>
+            <Grid size={{ xs: 12, lg: 4 }}>Backend & API Skills (Basic Knowledge for Frontend):</Grid>
+            <Grid size={{ xs: 12, lg: 4 }}>Other Important and Must Skills:</Grid>
         </Grid>
 
 
