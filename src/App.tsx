@@ -1,14 +1,13 @@
 // import { useState } from "react";
 
-// import { ThemeProvider } from "@mui/material/styles";
-
-import {RouterProvider } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import router from "./routes/routes";
 
 import { AuthProvider } from "./context/AuthContext";
+import { CssBaseline, GlobalStyles } from "@mui/material";
+
 import { ThemeProvider as MuiThemeProvider } from "./context/theme/ThemeContext";
 import { SettingsDrawerProvider } from "./context/SettingsDrawerContext";
-// import theme from "./styles/theme";
 
 import "./App.css";
 import DashboardLayout from "./layout/DashboardLayout";
@@ -16,16 +15,17 @@ import DashboardLayout from "./layout/DashboardLayout";
 
 function App() {
   return (
-     <MuiThemeProvider>
+    <MuiThemeProvider>
+      <CssBaseline />
       <SettingsDrawerProvider>
         <AuthProvider>
-        <RouterProvider router={router}>
+          <RouterProvider router={router}>
             <DashboardLayout />
             {/* <Signin_1 /> */}
-            </RouterProvider >
+          </RouterProvider>
         </AuthProvider>
       </SettingsDrawerProvider>
-      </MuiThemeProvider>  
+    </MuiThemeProvider>
   );
 }
 

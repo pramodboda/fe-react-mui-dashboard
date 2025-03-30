@@ -5,6 +5,7 @@ import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   typography: {
+    fontSize: 12, // This sets the base font size (12px)
     fontFamily: "Plus Jakarta Sans, Roboto, Helvetica, Arial, sans-serif",
     h1: {
       fontSize: "3.75rem", // 60px
@@ -31,11 +32,12 @@ const theme = createTheme({
       fontWeight: 600,
     },
     body1: {
-      fontSize: "1rem", // 16px
+      // fontSize: "1rem", // 16px
+      fontSize: "0.875rem", // 14px
       fontWeight: 400, // Normal weight
     },
     body2: {
-      fontSize: "0.875rem", // 14px
+      fontSize: "0.8rem", // 14px
       fontWeight: 400,
     },
     caption: {
