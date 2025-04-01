@@ -403,7 +403,9 @@ const Timelines: React.FC = () => {
             <RenderTimeline skillData={FE_React_Dev_Roadmap.interviewRounds} />
           </ProUI_Card>
         </Grid>
-        <Grid size={{ xs: 12, lg: 3 }}></Grid>
+        <Grid size={{ xs: 12, lg: 3 }}>
+          Formate a number as currency string
+        </Grid>
       </Grid>
     </>
   );

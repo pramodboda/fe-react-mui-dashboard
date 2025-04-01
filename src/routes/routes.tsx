@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import DashboardLayout from '../layout/DashboardLayout';
 import Dashboard_Home1 from '../pages/Dashboard_Home1';
 import SitemapPage from "../pages/SitemapPage";
+import NumbersPage from "../pages/NumbersPage";
 import ButtonsPage from '../pages/components/ButtonsPage';
 import ListsPage from '../pages/components/ListsPage';
 import Timelines from '../pages/utils/Timelines';
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
         { path: '/components/buttons', element: <ButtonsPage /> },
         { path: '/components/lists', element: <ListsPage /> },
         { path: '/pages/sitemap', element: <SitemapPage /> },
+        { path: '/pages/numbers', element: <NumbersPage /> },
         { path: '/utils/timelines', element: <Timelines /> },
       ],
     },

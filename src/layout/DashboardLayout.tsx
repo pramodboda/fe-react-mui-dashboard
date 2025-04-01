@@ -204,7 +204,8 @@ export default function DashboardLayout() {
       level: 1,
       children: [
         { title: 'Templates', level: 2, path: '/documents/templates' },
-        { title: 'Sitemap', level: 2, path: '/pages/sitemap' }
+        { title: 'Sitemap', level: 2, path: '/pages/sitemap' },
+        { title: 'Numbers', level: 2, path: '/pages/numbers' }
       ]
     },
     {
