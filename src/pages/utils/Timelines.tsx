@@ -299,15 +299,6 @@ const RenderTimeline = ({ skillData }) => {
       {skillData.map((skill, index) => {
         return (
           <TimelineItem>
-            {/* <TimelineOppositeContent
-                      key={index}
-                      sx={{ m: "auto 0" }}
-                      align="right"
-                      variant="body2"
-                      color="text.secondary"
-                    >
-                      9:30 am
-                    </TimelineOppositeContent> */}
             <TimelineSeparator>
               <TimelineConnector />
               <TimelineDot color="primary">{skill.icon}</TimelineDot>
@@ -404,7 +395,10 @@ const Timelines: React.FC = () => {
           </ProUI_Card>
         </Grid>
         <Grid size={{ xs: 12, lg: 3 }}>
-          Formate a number as currency string
+          Best Books:
+          <Box className="bookshelf">
+            <Box className="book"></Box>
+          </Box>
         </Grid>
       </Grid>
     </>
