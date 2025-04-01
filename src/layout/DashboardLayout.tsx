@@ -360,7 +360,7 @@ export default function DashboardLayout() {
                   component="div"
                   sx={{ flexGrow: 1 }}
                 >
-                  Codevik
+                  CodeVik
                 </Typography>
                 <IconButton
                   aria-label="settings"
