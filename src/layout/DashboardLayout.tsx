@@ -1,4 +1,3 @@
-
 import React, { ReactNode, useState } from "react";
 
 import { Outlet, NavLink } from "react-router";
@@ -11,14 +10,21 @@ import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
 
 import MuiDrawer from "@mui/material/Drawer";
 import {
-  Box, Toolbar, List, CssBaseline, Typography, Divider, Button, IconButton, ListItem,
+  Box,
+  Toolbar,
+  List,
+  CssBaseline,
+  Typography,
+  Divider,
+  Button,
+  IconButton,
+  ListItem,
   ListItemButton,
   ListItemIcon,
   ListItemText,
   Tooltip,
-  Collapse
+  Collapse,
 } from "@mui/material";
-
 
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 
@@ -28,9 +34,9 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import SettingsTwoToneIcon from "@mui/icons-material/SettingsTwoTone";
-import DashboardTwoToneIcon from '@mui/icons-material/DashboardTwoTone';
+import DashboardTwoToneIcon from "@mui/icons-material/DashboardTwoTone";
 // import BedtimeTwoToneIcon from '@mui/icons-material/BedtimeTwoTone';
-import DarkModeTwoToneIcon from '@mui/icons-material/DarkModeTwoTone';
+import DarkModeTwoToneIcon from "@mui/icons-material/DarkModeTwoTone";
 
 import SettingsDrawer from "../components/ProUI_Elements/SettingsDrawer/SettingsDrawer";
 import Footer_1 from "../components/ProUI_Elements/footer1/Footer_1";
@@ -41,7 +47,6 @@ import ProUI_UserAvatar from "../components/ProUI_Elements/ProUI_UserAvatar/ProU
 import { blueGrey, grey } from "@mui/material/colors";
 // import Dashboard_Home1 from "../features/dashboard/Dashboard_Home1";
 
-
 import {
   ChevronLeft,
   ChevronRight,
@@ -49,9 +54,8 @@ import {
   ExpandLess,
   Home,
   Folder,
-  Description
-} from '@mui/icons-material';
-
+  Description,
+} from "@mui/icons-material";
 
 // Define proper types for your menu items
 type MenuItem = {
@@ -150,119 +154,129 @@ const Drawer = styled(MuiDrawer, {
 export default function DashboardLayout() {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
-  const [expandedItems, setExpandedItems] = useState<Record<string, boolean>>({});
+  const [expandedItems, setExpandedItems] = useState<Record<string, boolean>>(
+    {}
+  );
 
   // Sample menu data structure
   const menuData: MenuItem[] = [
     {
-      title: 'Dashboard',
+      title: "Dashboard",
       // icon: <Home />,
       icon: <DashboardTwoToneIcon />,
       level: 1,
-      path: '/'
+      path: "/",
     },
     {
-      title: 'Components',
+      title: "Components",
       icon: <Folder />,
       level: 1,
       children: [
         {
-          title: 'Buttons',
+          title: "Buttons",
           level: 2,
-          path: '/components/buttons'
+          path: "/components/buttons",
           // children: [
           //   { title: 'Smartphones', level: 3, path: '/products/electronics/smartphones' },
           //   { title: 'Laptops', level: 3, path: '/products/electronics/laptops' }
           // ]
         },
         {
-          title: 'Lists',
+          title: "Lists",
           level: 2,
-          path: '/components/lists'
+          path: "/components/lists",
         },
         {
-          title: 'Electronics',
+          title: "Electronics",
           level: 2,
           children: [
-            { title: 'Smartphones', level: 3, path: '/products/electronics/smartphones' },
-            { title: 'Laptops', level: 3, path: '/products/electronics/laptops' }
-          ]
+            {
+              title: "Smartphones",
+              level: 3,
+              path: "/products/electronics/smartphones",
+            },
+            {
+              title: "Laptops",
+              level: 3,
+              path: "/products/electronics/laptops",
+            },
+          ],
         },
         {
-          title: 'Clothing',
+          title: "Clothing",
           level: 2,
           children: [
-            { title: 'Men', level: 3, path: '/products/clothing/men' },
-            { title: 'Women', level: 3, path: '/products/clothing/women' }
-          ]
-        }
-      ]
+            { title: "Men", level: 3, path: "/products/clothing/men" },
+            { title: "Women", level: 3, path: "/products/clothing/women" },
+          ],
+        },
+      ],
     },
     {
-      title: 'Pages',
+      title: "Pages",
       icon: <Description />,
       level: 1,
       children: [
-        { title: 'Templates', level: 2, path: '/documents/templates' },
-        { title: 'Sitemap', level: 2, path: '/pages/sitemap' },
-        { title: 'Numbers', level: 2, path: '/pages/numbers' }
-      ]
+        { title: "Templates", level: 2, path: "/documents/templates" },
+        { title: "Sitemap", level: 2, path: "/pages/sitemap" },
+        { title: "Numbers", level: 2, path: "/pages/numbers" },
+      ],
     },
     {
-      title: 'Utils',
+      title: "Utils",
       icon: <Description />,
       level: 1,
-      children: [
-        { title: 'Timelines', level: 2, path: '/utils/timelines' },
-      ]
-    }
+      children: [{ title: "Timelines", level: 2, path: "/utils/timelines" }],
+    },
   ];
 
   const handleToggle = (title: string) => {
-    setExpandedItems(prev => ({
+    setExpandedItems((prev) => ({
       ...prev,
-      [title]: !prev[title]
+      [title]: !prev[title],
     }));
   };
 
   const renderMenuItem = (item: MenuItem, depth = 0) => {
     const hasChildren = item.children && item.children.length > 0;
     const isExpanded = expandedItems[item.title];
-  
+
     return (
       <React.Fragment key={item.title}>
-        <ListItem disablePadding sx={{ display: 'block' }}>
+        <ListItem disablePadding sx={{ display: "block" }}>
           <Tooltip
-            title={!open ? item.title : ''}
+            title={!open ? item.title : ""}
             placement="right"
             disableHoverListener={open}
           >
             <ListItemButton
-              component={!hasChildren && item.path ? NavLink : 'div'}
+              component={!hasChildren && item.path ? NavLink : "div"}
               to={!hasChildren && item.path ? item.path : undefined}
               sx={{
                 minHeight: 48,
-                justifyContent: open ? 'initial' : 'center',
+                justifyContent: open ? "initial" : "center",
                 px: 2.5,
                 // pl: open ? theme.spacing(depth * 2 + 2) : theme.spacing(2),
-                '&:hover': {
+                "&:hover": {
                   backgroundColor: theme.palette.action.hover,
                 },
-                '&.active': {
+                "&.active": {
                   backgroundColor: theme.palette.action.selected,
-                  '& .MuiListItemIcon-root': {
+                  "& .MuiListItemIcon-root": {
                     color: theme.palette.primary.main,
                   },
                 },
               }}
-              onClick={() => hasChildren ? handleToggle(item.title) : undefined}
+              onClick={() =>
+                hasChildren ? handleToggle(item.title) : undefined
+              }
             >
               {item.icon && (
                 <ListItemIcon
                   sx={{
                     minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
+                    mr: open ? 3 : "auto",
+                    justifyContent: "center",
                   }}
                 >
                   {item.icon}
@@ -270,30 +284,30 @@ export default function DashboardLayout() {
               )}
               {open && (
                 <>
-                  <ListItemText 
-                    primary={item.title} 
+                  <ListItemText
+                    primary={item.title}
                     primaryTypographyProps={{
-                      fontWeight: 'medium'
+                      fontWeight: "medium",
                     }}
                   />
-                  {hasChildren && (isExpanded ? <ExpandLess /> : <ExpandMore />)}
+                  {hasChildren &&
+                    (isExpanded ? <ExpandLess /> : <ExpandMore />)}
                 </>
               )}
             </ListItemButton>
           </Tooltip>
         </ListItem>
-  
+
         {hasChildren && open && (
           <Collapse in={isExpanded} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              {item.children.map(child => renderMenuItem(child, depth + 1))}
+              {item.children.map((child) => renderMenuItem(child, depth + 1))}
             </List>
           </Collapse>
         )}
       </React.Fragment>
     );
   };
-
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -378,7 +392,17 @@ export default function DashboardLayout() {
                   Logout
                 </Button>
                 {/* <Button variant="outlined" color="inherit"><DarkModeTwoToneIcon/></Button> */}
-                <IconButton color="inherit"><DarkModeTwoToneIcon /></IconButton>
+                <IconButton color="inherit">
+                  <DarkModeTwoToneIcon />
+                </IconButton>
+                {/* Dark/ Light Mode button - Start */}
+                {/* https://uiverse.io/ */}
+                <div className="toggle">
+                  <input type="checkbox" />
+                  <span className="button"></span>
+                  <span className="label">☼</span>
+                </div>
+                {/* Dark/ Light Mode button - Start */}
               </Toolbar>
             </AppBar>
           </Box>
@@ -395,9 +419,7 @@ export default function DashboardLayout() {
             </DrawerHeader>
             <Divider />
 
-            <List>
-              {menuData.map(item => renderMenuItem(item))}
-            </List>
+            <List>{menuData.map((item) => renderMenuItem(item))}</List>
             {/* <List>
               <ListItem component={NavLink} to="/" disablePadding sx={{ display: "block" }}>
 
@@ -454,7 +476,6 @@ export default function DashboardLayout() {
               {["Inbox", "Starred", "Send email", "Drafts"].map(
                 (text, index) => (
                   <ListItem key={text} disablePadding sx={{ display: "block" }}>
-
                     <ListItemButton
                       sx={[
                         {
@@ -463,11 +484,11 @@ export default function DashboardLayout() {
                         },
                         open
                           ? {
-                            justifyContent: "initial",
-                          }
+                              justifyContent: "initial",
+                            }
                           : {
-                            justifyContent: "center",
-                          },
+                              justifyContent: "center",
+                            },
                       ]}
                     >
                       <ListItemIcon
@@ -478,11 +499,11 @@ export default function DashboardLayout() {
                           },
                           open
                             ? {
-                              mr: 3,
-                            }
+                                mr: 3,
+                              }
                             : {
-                              mr: "auto",
-                            },
+                                mr: "auto",
+                              },
                         ]}
                       >
                         {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
@@ -492,11 +513,11 @@ export default function DashboardLayout() {
                         sx={[
                           open
                             ? {
-                              opacity: 1,
-                            }
+                                opacity: 1,
+                              }
                             : {
-                              opacity: 0,
-                            },
+                                opacity: 0,
+                              },
                         ]}
                       />
                     </ListItemButton>
@@ -516,11 +537,11 @@ export default function DashboardLayout() {
                       },
                       open
                         ? {
-                          justifyContent: "initial",
-                        }
+                            justifyContent: "initial",
+                          }
                         : {
-                          justifyContent: "center",
-                        },
+                            justifyContent: "center",
+                          },
                     ]}
                   >
                     <ListItemIcon
@@ -531,11 +552,11 @@ export default function DashboardLayout() {
                         },
                         open
                           ? {
-                            mr: 3,
-                          }
+                              mr: 3,
+                            }
                           : {
-                            mr: "auto",
-                          },
+                              mr: "auto",
+                            },
                       ]}
                     >
                       {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
@@ -545,11 +566,11 @@ export default function DashboardLayout() {
                       sx={[
                         open
                           ? {
-                            opacity: 1,
-                          }
+                              opacity: 1,
+                            }
                           : {
-                            opacity: 0,
-                          },
+                              opacity: 0,
+                            },
                       ]}
                     />
                   </ListItemButton>
@@ -559,11 +580,13 @@ export default function DashboardLayout() {
           </Drawer>
 
           <Box>
-            <Box component="main" sx={{ flexGrow: 1, p: 3, background: grey[200] }}>
+            <Box
+              component="main"
+              sx={{ flexGrow: 1, p: 3, background: grey[200] }}
+            >
               <DrawerHeader />
 
               {/* <ProUI_Typography /> */}
-
 
               <Outlet />
               <Typography variant="body2" sx={{ marginBottom: 2 }}>
