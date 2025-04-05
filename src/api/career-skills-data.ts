@@ -1,14 +1,16 @@
 const career_skills_data = [
 
     {
-        title: "HTML and CSS: Design and Build Websites by Jon Duckett",
+        title: "HTML and CSS: Design and Build Websites",
+        author:"Jon Duckett",
         best_for: "Beginners to Intermediate",
         highlights: "Visually rich, full-color pages. Clear explanations of HTML and CSS concepts. Hands-on examples with clean design principles.",
         projects: "Basic site layouts, forms, image galleries."
     },
 
     {
-        title: "Learning Web Design by Jennifer Niederst Robbins (5th Edition)",
+        title: "Learning Web Design (5th Edition)",
+        author:"Jennifer Niederst Robbins",
         best_for: "Complete beginners",
         covers: "HTML, CSS, responsive design, and even a bit of JavaScript.",
         highlights: "Step-by-step exercises. Hands-on examples with quizzes.",
@@ -16,7 +18,8 @@ const career_skills_data = [
     },
 
     {
-        title: "HTML5 and CSS3 All-in-One For Dummies by Andy Harris",
+        title: "HTML5 and CSS3 All-in-One For Dummies",
+        author:"Andy Harris",
         best_for: "Learners who want a solid foundation + extra skills",
         covers: "HTML5, CSS3, JavaScript basics, web programming.",
         highlights: "Practical examples throughout. Multi-part format—each part focuses on a specific area.",
@@ -24,7 +27,8 @@ const career_skills_data = [
     },
 
     {
-        title: "Web Design with HTML, CSS, JavaScript and jQuery Set by Jon Duckett",
+        title: "Web Design with HTML, CSS, JavaScript and jQuery Set",
+        author:"Jon Duckett",
         best_for: "People who want to go beyond HTML",
         covers: "Two books—one on HTML/CSS and one on JavaScript/jQuery.",
         highlights: "Beautiful layout and step-by-step tutorials.",
@@ -32,7 +36,8 @@ const career_skills_data = [
     },
 
     {
-        title: "HTML5: The Missing Manual by Matthew MacDonald",
+        title: "HTML5: The Missing Manual",
+        author:"Matthew MacDonald",
         best_for: "Intermediate users or those transitioning to HTML5",
         highlights: "Practical examples. Detailed explanation of new HTML5 tags and APIs.",
         projects: "Audio/video integration, forms, canvas elements."
