@@ -27,9 +27,13 @@ import {
 } from "react-icons/si";
 
 import ProUI_Card from "../../components/ProUI_Elements/ProUI_Card/ProUI_Card";
+<<<<<<< HEAD
 // import { Description } from "@mui/icons-material";
 import career_skills_data from "../../api/careerSkillsData";
 import ProUI_Bookshelf from "../../components/ProUI_Elements/ProUI_BestBooks/ProUI_Bookshelf";
+=======
+import { Description } from "@mui/icons-material";
+>>>>>>> 07109d42395b61ebbe4857ec911587ef0b3d6a56
 
 const FE_React_Dev_Roadmap = {
   coreFrontendSkills: [
@@ -398,7 +402,13 @@ const Timelines: React.FC = () => {
         </Grid>
         <Grid size={{ xs: 12, lg: 3 }}>
           Best Books:
+<<<<<<< HEAD
           <ProUI_Bookshelf career_skills_data={career_skills_data} />
+=======
+          <Box className="bookshelf">
+            <Box className="book"></Box>
+          </Box>
+>>>>>>> 07109d42395b61ebbe4857ec911587ef0b3d6a56
         </Grid>
       </Grid>
     </>

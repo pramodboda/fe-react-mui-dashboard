@@ -1,0 +1,66 @@
+/* Wooden Bookshelf Box */
+.bookshelf {
+    /* width: 400px; */
+    width: 100%;
+    /* height: 200px; */
+    /* background: linear-gradient(90deg, #8b5a2b, #a0522d, #8b4513); */
+    /* background-color: linear-gradient(90deg, #8b5a2b, #a0522d, #8b4513); */
+    background-image: url("https://www.toptal.com/designers/subtlepatterns/uploads/purty_wood.png");
+  
+    background-size: 400px;
+    background-origin: border-box;
+    background-position: 0;
+  
+    border-radius: 4px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 4px 6px rgba(0, 0, 0, 0.3);
+    /* border: 6px solid #5d3a1a; */
+    border: 6px solid #d7a865;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Bookshelf Wood Texture */
+  .bookshelf::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.1) 0px,
+      rgba(255, 255, 255, 0.05) 10px,
+      rgba(0, 0, 0, 0.1) 20px
+    );
+    opacity: 0.3;
+    z-index: 1;
+  }
+  
+  /* Books inside the shelf */
+  .book {
+    width: 40px;
+    height: 150px;
+    background: linear-gradient(180deg, #d2691e, #8b4513);
+    border-radius: 3px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    margin: 10px;
+    position: relative;
+    z-index: 2;
+  }
+  /* realistic wooden bookshelf box - End */
+  
+  /* Optional: Add labels to books */
+  .book::after {
+    content: "BOOK";
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+  }
