@@ -15,9 +15,10 @@ const career_skills_data = {
         },
 
         {
-          title: "Learning Web Design (5th Edition)",
+          title: "Learning Web Design ()",
+          edition: "5th Edition",
           book_cover:
-            "https://learning.oreilly.com/library/cover/9781118206911/250w/",
+            "https://learning.oreilly.com/library/cover/9781491960196/250w/",
           author: "Jennifer Niederst Robbins",
           best_for: "Complete beginners",
           covers: "HTML, CSS, responsive design, and even a bit of JavaScript.",
@@ -27,8 +28,9 @@ const career_skills_data = {
 
         {
           title: "HTML5 and CSS3 All-in-One For Dummies",
+          edition: "3nd Edition",
           book_cover:
-            "https://learning.oreilly.com/library/cover/9781118206911/250w/",
+            "https://learning.oreilly.com/library/cover/9781118421390/250w/",
           author: "Andy Harris",
           best_for: "Learners who want a solid foundation + extra skills",
           covers: "HTML5, CSS3, JavaScript basics, web programming.",
@@ -38,20 +40,23 @@ const career_skills_data = {
         },
 
         {
-          title: "Web Design with HTML, CSS, JavaScript and jQuery Set",
+          title: "A Smarter Way to Learn HTML & CSS ",
           book_cover:
-            "https://learning.oreilly.com/library/cover/9781118206911/250w/",
-          author: "Jon Duckett",
-          best_for: "People who want to go beyond HTML",
-          covers: "Two books—one on HTML/CSS and one on JavaScript/jQuery.",
-          highlights: "Beautiful layout and step-by-step tutorials.",
+            "https://m.media-amazon.com/images/I/41I10D4giVL._SY445_SX342_.jpg",
+          author: "Mark Myers",
+          best_for: 'Uses a "learn by doing" approach.',
+          covers:
+            "Free online interactive exercises. Focuses on retention through repetition.",
+          highlights:
+            "✔ 100+ coding exercises ✔ Immediate feedback ✔ Project-based learning",
           projects: "Interactive websites, responsive layouts.",
         },
 
         {
           title: "HTML5: The Missing Manual",
+          edition: "2nd Edition",
           book_cover:
-            "https://learning.oreilly.com/library/cover/9781118206911/250w/",
+            "https://learning.oreilly.com/library/cover/9781449373412/250w/",
           author: "Matthew MacDonald",
           best_for: "Intermediate users or those transitioning to HTML5",
           highlights:
@@ -64,10 +69,20 @@ const career_skills_data = {
       topic: "JavaScript",
       books: [
         {
-          title: "HTML and CSS: Design and Build Websites",
+          title: "The Modern JavaScript Tutorial by ",
           book_cover:
-            "https://learning.oreilly.com/library/cover/9781118206911/250w/",
-          author: "Jon Duckett",
+            "https://m.media-amazon.com/images/I/415rkoR4-BL._SY425_.jpg",
+          author: "Ilya Kantor",
+          best_for: "Beginners to Intermediate",
+          highlights:
+            "Visually rich, full-color pages. Clear explanations of HTML and CSS concepts. Hands-on examples with clean design principles.",
+          projects: "Basic site layouts, forms, image galleries.",
+        },
+        {
+          title: "JavaScript Everywhere",
+          book_cover:
+            "https://learning.oreilly.com/library/cover/9781492046974/250w/",
+          author: "Adam D. Scott",
           best_for: "Beginners to Intermediate",
           highlights:
             "Visually rich, full-color pages. Clear explanations of HTML and CSS concepts. Hands-on examples with clean design principles.",
@@ -75,10 +90,11 @@ const career_skills_data = {
         },
 
         {
-          title: "Learning Web Design (5th Edition)",
+          title: "JavaScript Cookbook",
+          edition: "3rd Edition",
           book_cover:
-            "https://learning.oreilly.com/library/cover/9781118206911/250w/",
-          author: "Jennifer Niederst Robbins",
+            "https://learning.oreilly.com/library/cover/9781492055747/250w/",
+          author: "Adam D. Scott, Matthew MacDonald, Shelley Powers",
           best_for: "Complete beginners",
           covers: "HTML, CSS, responsive design, and even a bit of JavaScript.",
           highlights: "Step-by-step exercises. Hands-on examples with quizzes.",
@@ -86,10 +102,10 @@ const career_skills_data = {
         },
 
         {
-          title: "HTML5 and CSS3 All-in-One For Dummies",
+          title: "Clean Code in JavaScript",
           book_cover:
-            "https://learning.oreilly.com/library/cover/9781118206911/250w/",
-          author: "Andy Harris",
+            "https://learning.oreilly.com/library/cover/9781789957648/250w/",
+          author: "James Padolsey",
           best_for: "Learners who want a solid foundation + extra skills",
           covers: "HTML5, CSS3, JavaScript basics, web programming.",
           highlights:

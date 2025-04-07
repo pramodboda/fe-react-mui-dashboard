@@ -1,10 +1,7 @@
 import { Box } from "@mui/material";
 import "./ProUI_Bookshelf";
 // Import Swiper React components
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import { Swiper as SwiperType } from "swiper/types";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
 // Import Swiper styles
 import "../../../styles/swiper/swiper.scss";
