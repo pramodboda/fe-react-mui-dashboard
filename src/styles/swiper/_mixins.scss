@@ -1,0 +1,12 @@
+@use "variables" as *;
+
+@mixin swiper-navigation {
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: $swiper-navigation-color;
+
+    &::after {
+      font-size: 1.5rem;
+    }
+  }
+}

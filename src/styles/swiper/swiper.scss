@@ -1,0 +1,7 @@
+// Forward all partials
+@forward "variables";
+@forward "mixins";
+@forward "swiper-core";
+
+// Import Swiper CSS (node_modules)
+@use "swiper/swiper-bundle.css";
