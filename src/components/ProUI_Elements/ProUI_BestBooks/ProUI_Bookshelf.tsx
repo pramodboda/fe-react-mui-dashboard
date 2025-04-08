@@ -34,7 +34,10 @@ const ProUI_Bookshelf: React.FC<CareerSkillsProps> = ({
 }) => {
   console.log("Rendering bookshelfs:", career_skills_data.best_books.length);
   return (
-    <Box className="bookshelf" sx={{ padding: "0.5rem" }}>
+    <Box
+      className="bookshelf"
+      sx={{ padding: "0.5rem", width: "100%", border: "1px solid red" }}
+    >
       {career_skills_data.best_books.map((category, idx) => (
         <div key={idx}>
           <h3>{category.topic}:</h3>

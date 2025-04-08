@@ -400,8 +400,12 @@ const Timelines: React.FC = () => {
           </ProUI_Card>
         </Grid>
         <Grid size={{ xs: 12, lg: 3 }}>
-          Best Books:
-          <ProUI_Bookshelf career_skills_data={career_skills_data} />
+          <Box
+            sx={{ padding: "0.5rem", width: "100%", border: "1px solid red" }}
+          >
+            Best Books:
+            <ProUI_Bookshelf career_skills_data={career_skills_data} />
+          </Box>
           {/* <Box className="bookshelf">
             <Box className="book"></Box>
           </Box> */}

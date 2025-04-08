@@ -582,7 +582,7 @@ export default function DashboardLayout() {
           <Box>
             <Box
               component="main"
-              sx={{ flexGrow: 1, p: 3, background: grey[200] }}
+              sx={{ flexGrow: 1, p: 3, background: grey[200], width: "100%" }}
             >
               <DrawerHeader />
 
