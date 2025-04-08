@@ -1,11 +1,58 @@
+import { FaHtml5, FaCss3, FaReact } from "react-icons/fa";
+
 const career_skills_data = {
   fe_react_dev_roadmap: {
     prep: [
-      "DSA Interview Q&A",
-      "HTML and CSS Interview Q&A",
-      "JS Interview Q&A",
-      "JS Interview Q&A",
-      "React Interview Q&A",
+      {
+        title: "About Me",
+        position: "right",
+        icon: <FaHtml5 />,
+        // description: "(Semantic elements, Accessibility)",
+      },
+      {
+        title: "DSA Interview Q&A",
+        position: "right",
+        icon: <FaHtml5 />,
+        // description: "(Semantic elements, Accessibility)",
+      },
+      {
+        title: "HTML and CSS Interview Q&A",
+        position: "right",
+        icon: <FaHtml5 />,
+        // description: "(Semantic elements, Accessibility)",
+      },
+      {
+        title: "JS Interview Q&A",
+        position: "right",
+        icon: <FaHtml5 />,
+        // description: "(Semantic elements, Accessibility)",
+      },
+      {
+        title: "JS Practical problem solving Q&A",
+        position: "right",
+        icon: <FaHtml5 />,
+        // description: "(Semantic elements, Accessibility)",
+      },
+      {
+        title: "React Interview Q&A",
+        position: "right",
+        icon: <FaHtml5 />,
+        // description: "(Semantic elements, Accessibility)",
+      },
+
+      {
+        title: "React Practical problem solving Q&A",
+        position: "right",
+        icon: <FaHtml5 />,
+        // description: "(Semantic elements, Accessibility)",
+      },
+
+      {
+        title: "System Design Q&A",
+        position: "right",
+        icon: <FaHtml5 />,
+        // description: "(Semantic elements, Accessibility)",
+      },
     ],
   },
   best_books: [
