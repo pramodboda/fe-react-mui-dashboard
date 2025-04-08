@@ -1,4 +1,5 @@
 const career_skills_data = {
+  prep: [],
   best_books: [
     {
       topic: "HTML and CSS",
