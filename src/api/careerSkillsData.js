@@ -1,5 +1,13 @@
 const career_skills_data = {
-  prep: [],
+  fe_react_dev_roadmap: {
+    prep: [
+      "DSA Interview Q&A",
+      "HTML and CSS Interview Q&A",
+      "JS Interview Q&A",
+      "JS Interview Q&A",
+      "React Interview Q&A",
+    ],
+  },
   best_books: [
     {
       topic: "HTML and CSS",
