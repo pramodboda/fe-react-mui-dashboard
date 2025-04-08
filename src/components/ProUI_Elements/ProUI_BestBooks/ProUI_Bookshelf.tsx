@@ -9,7 +9,7 @@ import "../../../styles/custom-swiper.css";
 import "./ProUI_Bookshelf.css";
 
 // Define the type for the props
-export interface IBook {
+interface IBook {
   title: string;
   book_cover: string;
   author: string;
