@@ -55,7 +55,7 @@ const ProUI_Card: React.FC<CustomCardProps> = ({
         </Box>
       </Box>
 
-      <Box sx={{ padding: "25px", backgroundColor: "#f9f9f9" }}>{children}</Box>
+      <Box sx={{ padding: "15px", backgroundColor: "#f9f9f9" }}>{children}</Box>
     </Box>
   );
 };
