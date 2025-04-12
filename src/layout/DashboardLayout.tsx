@@ -48,11 +48,8 @@ import { blueGrey, grey } from "@mui/material/colors";
 // import Dashboard_Home1 from "../features/dashboard/Dashboard_Home1";
 
 import {
-  ChevronLeft,
-  ChevronRight,
   ExpandMore,
   ExpandLess,
-  Home,
   Folder,
   Description,
 } from "@mui/icons-material";
@@ -185,6 +182,11 @@ export default function DashboardLayout() {
           title: "Lists",
           level: 2,
           path: "/components/lists",
+        },
+        {
+          title: "Typography",
+          level: 2,
+          path: "/components/typography",
         },
         {
           title: "Electronics",
