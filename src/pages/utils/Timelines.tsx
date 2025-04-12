@@ -313,13 +313,15 @@ const RenderTimeline = ({ skillData }) => {
               <Typography variant="body1" component="span">
                 {skill.title}
               </Typography>
-              <Typography variant="body2">
-                {typeof skill.description === "function" ? (
-                  <Box sx={{ ml: 2.2 }}>{skill.description()}</Box>
-                ) : (
-                  skill.description
-                )}
-              </Typography>
+              {skill.description && (
+                <Typography variant="body2">
+                  {typeof skill.description === "function" ? (
+                    <Box sx={{ ml: 2.2 }}>{skill.description()}</Box>
+                  ) : (
+                    skill.description
+                  )}
+                </Typography>
+              )}
             </TimelineContent>
           </TimelineItem>
         );
@@ -395,6 +397,11 @@ const Timelines: React.FC = () => {
           </ProUI_Card>
         </Grid>
         <Grid size={{ xs: 12, lg: 3 }}>
+          <ProUI_Card title="Technical Interviews (India)" actions="true">
+            <RenderTimeline
+              skillData={career_skills_data.fe_react_dev_roadmap.prep}
+            />
+          </ProUI_Card>
           <ProUI_Card title="Technical Interviews (India)" actions="true">
             <RenderTimeline skillData={FE_React_Dev_Roadmap.interviewRounds} />
           </ProUI_Card>

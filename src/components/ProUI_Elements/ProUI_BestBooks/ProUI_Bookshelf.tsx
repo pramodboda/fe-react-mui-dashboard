@@ -9,7 +9,7 @@ import "../../../styles/custom-swiper.css";
 import "./ProUI_Bookshelf.css";
 
 // Define the type for the props
-export interface Book {
+interface IBook {
   title: string;
   book_cover: string;
   author: string;
@@ -19,22 +19,29 @@ export interface Book {
   covers?: string; // Optional property for some books
 }
 
-interface CareerSkillsProps {
+interface ICareerSkillsProps {
   career_skills_data: {
     best_books: {
       topic: string;
-      books: Book[];
+      books: IBook[];
     }[];
   };
 }
-// Component props type
 
-const ProUI_Bookshelf: React.FC<CareerSkillsProps> = ({
+const ProUI_Bookshelf: React.FC<ICareerSkillsProps> = ({
   career_skills_data,
 }) => {
   console.log("Rendering bookshelfs:", career_skills_data.best_books.length);
+
+  // Check if data exists before rendering
+  if (!career_skills_data?.best_books) {
+    return <div>Loading books...</div>;
+  }
   return (
-    <Box className="bookshelf" sx={{ padding: "0.5rem" }}>
+    <Box
+      className="bookshelf"
+      sx={{ padding: "0.5rem", width: "100%", border: "1px solid red" }}
+    >
       {career_skills_data.best_books.map((category, idx) => (
         <div key={idx}>
           <h3>{category.topic}:</h3>
