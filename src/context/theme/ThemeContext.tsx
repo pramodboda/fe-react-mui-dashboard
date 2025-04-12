@@ -45,56 +45,103 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
       createTheme({
         typography: {
           // htmlFontSize: 16,
-          fontSize: 14,
-
+          // fontSize: 14,
           fontFamily: primaryFont,
-          // h1: {
-          //   fontSize: "3.75rem", // 60px
-          //   fontWeight: 700, // Bold, adjust as needed
+          // // h1: {
+          // //   fontSize: "3.75rem", // 60px
+          // //   fontWeight: 700, // Bold, adjust as needed
+          // // },
+          // // h2: {
+          // //   fontSize: "3rem", // 48px
+          // //   fontWeight: 700,
+          // // },
+          // // h3: {
+          // //   fontSize: "2.5rem", // 40px
+          // //   fontWeight: 700,
+          // // },
+          // // h4: {
+          // //   fontSize: "2rem", // 32px
+          // //   fontWeight: 600,
+          // // },
+          // // h5: {
+          // //   fontSize: "1.75rem", // 28px
+          // //   fontWeight: 600,
+          // // },
+          // // h6: {
+          // //   // fontSize: "1.5rem", // 24px
+          // //   fontWeight: 600,
+          // // },
+          // body1: {
+          //   // fontSize: "1rem", // 16px
+          //   fontSize: "0.875rem", // 14px
+          //   fontWeight: 400, // Normal weight
           // },
-          // h2: {
-          //   fontSize: "3rem", // 48px
-          //   fontWeight: 700,
+          // body2: {
+          //   fontSize: "0.75rem", // 12px
+          //   fontWeight: 400,
+          //   color: blueGrey[500],
           // },
-          // h3: {
-          //   fontSize: "2.5rem", // 40px
-          //   fontWeight: 700,
+          // caption: {
+          //   fontSize: "0.75rem", // 12px
+          //   fontWeight: 400,
           // },
-          // h4: {
-          //   fontSize: "2rem", // 32px
+          // // overline: {
+          // //   fontSize: "0.75rem", // 12px
+          // //   fontWeight: 400,
+          // //   textTransform: "uppercase", // often used for labels
+          // // },
+          // button: {
+          //   fontSize: "0.875rem", // 14px
           //   fontWeight: 600,
+          //   textTransform: "none", // Optional: turn off uppercase text transform for buttons
           // },
-          // h5: {
-          //   fontSize: "1.75rem", // 28px
-          //   fontWeight: 600,
-          // },
-          // h6: {
-          //   // fontSize: "1.5rem", // 24px
-          //   fontWeight: 600,
-          // },
-          body1: {
-            // fontSize: "1rem", // 16px
+
+          h1: {
+            fontSize: "3rem", // 48px
+            fontWeight: 700,
+            lineHeight: 1.2,
+          },
+          h2: {
+            fontSize: "2.25rem", // 36px
+            fontWeight: 600,
+            lineHeight: 1.3,
+          },
+          h3: {
+            fontSize: "1.75rem", // 28px
+            fontWeight: 600,
+          },
+          h4: {
+            fontSize: "1.5rem", // 24px
+          },
+          h5: {
+            fontSize: "1.25rem", // 20px
+          },
+          h6: {
+            fontSize: "1rem", // 16px
+          },
+          subtitle1: {
             fontSize: "0.875rem", // 14px
-            fontWeight: 400, // Normal weight
+          },
+          subtitle2: {
+            fontSize: "0.75rem", // 12px
+          },
+          body1: {
+            fontSize: "1rem", // 16px
           },
           body2: {
-            fontSize: "0.75rem", // 12px
-            fontWeight: 400,
-            color: blueGrey[500],
+            fontSize: "0.875rem", // 14px
+          },
+          button: {
+            fontSize: "0.875rem", // 14px
+            fontWeight: 500,
+            textTransform: "none", // optional: if you don’t want uppercase
           },
           caption: {
             fontSize: "0.75rem", // 12px
-            fontWeight: 400,
           },
-          // overline: {
-          //   fontSize: "0.75rem", // 12px
-          //   fontWeight: 400,
-          //   textTransform: "uppercase", // often used for labels
-          // },
-          button: {
-            fontSize: "0.875rem", // 14px
-            fontWeight: 600,
-            textTransform: "none", // Optional: turn off uppercase text transform for buttons
+          overline: {
+            fontSize: "0.625rem", // 10px
+            textTransform: "uppercase",
           },
         },
         palette: {
