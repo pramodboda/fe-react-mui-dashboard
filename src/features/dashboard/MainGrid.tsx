@@ -80,7 +80,7 @@ export default function MainGrid() {
         ))}
         {/* <Grid size={{ xs: 12, sm: 6, lg: 3 }}><HighlightedCard /></Grid> */}
         <Grid size={{ xs: 12, sm: 6, lg: 3 }}>
-          <Link
+          {/* <Link
                 href="https://pramodboda.github.io/3d-apple-watch-ultra-orange-v2/"
                 traget="_blank"
                 sx={{ textDecoration: "none" }}
@@ -110,7 +110,41 @@ export default function MainGrid() {
                     Check out 3D Web projects
                   </Typography>
                 </Stack>
-              </Link>
+              </Link> */}
+
+<Link
+  href="https://pramodboda.github.io/3d-apple-watch-ultra-orange-v2/"
+  target="_blank"
+  rel="noopener noreferrer"
+  sx={{ textDecoration: "none" }}
+>
+  <Stack
+    sx={{
+      justifyContent: "center",
+      alignItems: "center",
+      textAlign: "center",
+      width: "100%",
+      height: "200px",
+      backgroundColor: "#eeeeee",
+    }}
+  >
+    <Typography
+      className="text-pop-up-top"
+      variant="h2"
+      sx={{
+        textAlign: "center",
+        color: "#f9f9f9",
+        fontWeight: 700,
+      }}
+    >
+      P
+    </Typography>
+    <Typography variant="body2">
+      Check out 3D Web projects
+    </Typography>
+  </Stack>
+</Link>
+
         </Grid>
         <Grid size={{ xs: 12, md: 12, lg:12 }}>
           <Typography variant="h6">
