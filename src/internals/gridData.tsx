@@ -2,6 +2,8 @@
 import Avatar from "@mui/material/Avatar";
 import Chip from "@mui/material/Chip";
 
+import { useTheme } from "@mui/material/styles";
+
 import type {
   GridRenderCellParams,
   GridRowsProp,
@@ -58,6 +60,32 @@ function renderSparklineCell(params: GridRenderCellParams<SparkLineData>) {
   const { value, colDef } = params;
 
   if (!value || value.length === 0) return null;
+
+  const theme = useTheme();
+
+  const trendColors = {
+    up:
+      theme.palette.mode === "light"
+        ? theme.palette.success.main
+        : theme.palette.success.dark,
+    down:
+      theme.palette.mode === "light"
+        ? theme.palette.error.main
+        : theme.palette.error.dark,
+    neutral:
+      theme.palette.mode === "light"
+        ? theme.palette.grey[400]
+        : theme.palette.grey[700],
+  };
+
+  const labelColors = {
+    up: "success" as const,
+    down: "error" as const,
+    neutral: "default" as const,
+  };
+
+  // const color = labelColors[trend];
+  const chartColor = "red";
 
   return (
     <div style={{ display: "flex", alignItems: "center", height: "100%" }}>
