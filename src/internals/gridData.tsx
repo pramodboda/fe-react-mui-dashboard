@@ -1,9 +1,6 @@
-import * as React from "react";
+
 import Avatar from "@mui/material/Avatar";
 import Chip from "@mui/material/Chip";
-// import { GridCellParams, GridRowsProp, GridColDef } from "@mui/x-data-grid";
-// import type { GridRenderCellParams, GridRows } from "@mui/x-data-grid";
-// import type { GridColDef } from "@mui/x-data-grid";
 
 import type {
   GridRenderCellParams,
@@ -71,7 +68,8 @@ function renderSparklineCell(params: GridRenderCellParams<SparkLineData>) {
         plotType="bar"
         showHighlight
         showTooltip
-        colors={["hsl(210, 98%, 42%)"]}
+        // colors={["hsl(210, 98%, 42%)"]}
+        color={chartColor}
         xAxis={{
           scaleType: "band",
           data: days,

@@ -127,7 +127,8 @@ export default function ProUI_KPICard({
           </Stack>
           <Box sx={{ width: "100%", height: 50 }}>
             <SparkLineChart
-              colors={[chartColor]}
+              // colors={[chartColor]}
+              color={chartColor}
               data={data}
               area
               showHighlight
