@@ -1,6 +1,6 @@
 // Key Metrics Summary: Showcases  cards with KPIs like Statics, Total users, revenue, Orders Active sessions and etc.
 // import * as React from "react";
-import Grid from "@mui/material/Grid2";
+import Grid from "@mui/material/Grid";
 import {Button, Link, Box, Stack, Typography} from "@mui/material";
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import ProUI_SearchInputField from "../../components/ProUI_Elements/ProUI_SearchInputField/ProUI_SearchInputField";
@@ -11,9 +11,13 @@ import CustomizedDataGrid from "../../components/ProUI_Elements/Charts/Customize
 // import HighlightedCard from "./HighlightedCard";
 import PageViewsBarChart from "../../components/ProUI_Elements/Charts/PageViewsBarChart/PageViewsBarChart";
 import SessionsChart from "../../components/ProUI_Elements/Charts/SessionsChart/SessionsChart";
-import StatCard, {
-  StatCardProps,
-} from "../../components/ProUI_Elements/ProUI_KPICard/ProUI_KPICard";
+// import StatCard, {
+//   StatCardProps,
+// } from "../../components/ProUI_Elements/ProUI_KPICard/ProUI_KPICard";
+
+import StatCard from "../../components/ProUI_Elements/ProUI_KPICard/ProUI_KPICard";
+import type { StatCardProps } from "../../components/ProUI_Elements/ProUI_KPICard/ProUI_KPICard";
+
 
 const data: StatCardProps[] = [
   {

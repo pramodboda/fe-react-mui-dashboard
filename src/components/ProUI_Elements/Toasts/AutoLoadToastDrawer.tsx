@@ -1,12 +1,7 @@
 import React, { useEffect } from "react";
-import {
-  ToastContainer,
-  toast,
-  cssTransition,
-  ToastContentProps,
-} from "react-toastify";
-import Alert from "@mui/material/Alert";
-import { px } from "framer-motion";
+import { ToastContainer, toast, cssTransition } from "react-toastify";
+import type { ToastContentProps } from "react-toastify"; // ✅ Type-only import
+
 const AutoLoadToastDrawer = () => {
   const slide = cssTransition({
     enter: "slide-in-blurred-top",
@@ -14,30 +9,25 @@ const AutoLoadToastDrawer = () => {
   });
 
   useEffect(() => {
-    toast.success(Welcome, {
+    toast.success(<Welcome />, {
       position: "top-center",
       delay: 10000,
       autoClose: 6000,
       transition: slide,
       theme: "colored",
     });
-    toast(SettingsToast, {
+
+    toast(<SettingsToast />, {
       position: "top-right",
       delay: 20000,
       autoClose: 6000,
       transition: slide,
       className: "Settings__toast",
     });
-    // toast("Wow so easy !", {
-    //   position: "top-center",
-    //   delay: 3000,
-    //   autoClose: 6000,
-    //   transition: slide,
-    // });
   }, []);
 
   return (
-    <div className="">
+    <div>
       <ToastContainer newestOnTop />
     </div>
   );
@@ -47,7 +37,7 @@ const AutoLoadToastDrawer = () => {
   }
 
   function SettingsToast({ closeToast }: ToastContentProps) {
-    return <div>Click on the gear icon to explore the settings! </div>;
+    return <div>Click on the gear icon to explore the settings!</div>;
   }
 };
 

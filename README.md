@@ -1,24 +1,73 @@
-# Front-end: React MUI Dashboard
+# React + TypeScript + Vite
 
-This beautiful React Dashboard Demo Template is a modern, responsive, and highly customizable admin panel, designed to simplify the development of your next web application. Built with React + MUI, it offers a sleek and beautiful user interface, perfect for managing and visualizing data in an engaging way.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Technologies:
-- ReactJS
-- MUI
+Currently, two official plugins are available:
 
-## Key Features:
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- Responsive Layout: Fully responsive design that works seamlessly on desktops, tablets, and mobile devices.
-- Data Visualization: Includes pre-built components for charts and graphs, making it easy to display data in a visually appealing way.
-- Modular Components: A collection of reusable, customizable components for cards, tables, forms, and notifications.
-- Modern UI Design: Clean, minimalistic, and user-friendly interface for an optimized user experience.
-- Theming Support: Built-in support for light and dark themes, with the ability to easily switch between them.
-- Easy Setup: Simple to integrate into your existing project with detailed documentation and installation guides.
-- Pre-built Pages: Includes demo pages like Dashboard, Analytics, User Profile, Settings, and more to kickstart your development process.
-- Performance Optimized: Designed to deliver smooth and fast performance even with large datasets.
+## React Compiler
 
-Whether you’re building a data-driven web application or an internal business tool, this React dashboard template provides all the necessary components to create a professional and dynamic user interface.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-Start building your next project today with this powerful and flexible dashboard template!
+## Expanding the ESLint configuration
 
-https://minimals.cc/dashboard
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
+
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
+
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```

@@ -1,14 +1,76 @@
+// import React, { ReactNode, useState } from "react";
+
+// import { Outlet, NavLink } from "react-router";
+
+// import { useAuth } from "../context/AuthContext"; // Import the custom hook
+// import ProUI_SignInSide from "../pages/Auth/ProUI_SignInSide/ProUI_SignInSide";
+// import { useSettingsDrawer } from "../context/SettingsDrawerContext"; // Import the custom hook
+
+// import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
+
+// import MuiDrawer from "@mui/material/Drawer";
+// import {
+//   Box,
+//   Toolbar,
+//   List,
+//   CssBaseline,
+//   Typography,
+//   Divider,
+//   Button,
+//   IconButton,
+//   ListItem,
+//   ListItemButton,
+//   ListItemIcon,
+//   ListItemText,
+//   Tooltip,
+//   Collapse,
+// } from "@mui/material";
+
+// // import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
+
+// import MuiAppBar from "@mui/material/AppBar";
+// import type { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
+
+
+// import MenuIcon from "@mui/icons-material/Menu";
+// import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+// import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+// import InboxIcon from "@mui/icons-material/MoveToInbox";
+// import MailIcon from "@mui/icons-material/Mail";
+// import SettingsTwoToneIcon from "@mui/icons-material/SettingsTwoTone";
+// import DashboardTwoToneIcon from "@mui/icons-material/DashboardTwoTone";
+// // import BedtimeTwoToneIcon from '@mui/icons-material/BedtimeTwoTone';
+// import DarkModeTwoToneIcon from "@mui/icons-material/DarkModeTwoTone";
+
+// import SettingsDrawer from "../components/ProUI_Elements/SettingsDrawer/SettingsDrawer";
+// import Footer_1 from "../components/ProUI_Elements/footer1/Footer_1";
+// // import ProUI_Typography from "../components/ProUI_Elements/Typography/ProUI_Typography";
+// import ProUI_UserAvatar from "../components/ProUI_Elements/ProUI_UserAvatar/ProUI_UserAvatar";
+// // import SetThemeColor from "../features/settings/themeColor/SetThemeColor";
+
+// import { blueGrey, grey } from "@mui/material/colors";
+// // import Dashboard_Home1 from "../features/dashboard/Dashboard_Home1";
+
+// import {
+//   ExpandMore,
+//   ExpandLess,
+//   Folder,
+//   Description,
+// } from "@mui/icons-material";
+
 import React, { ReactNode, useState } from "react";
 
 import { Outlet, NavLink } from "react-router";
 
-import { useAuth } from "../context/AuthContext"; // Import the custom hook
+import { useAuth } from "../context/AuthContext";
 import ProUI_SignInSide from "../pages/Auth/ProUI_SignInSide/ProUI_SignInSide";
-import { useSettingsDrawer } from "../context/SettingsDrawerContext"; // Import the custom hook
+import { useSettingsDrawer } from "../context/SettingsDrawerContext";
 
-import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
+import { styled, useTheme } from "@mui/material/styles";
+import type { Theme, CSSObject } from "@mui/material/styles";
 
 import MuiDrawer from "@mui/material/Drawer";
+
 import {
   Box,
   Toolbar,
@@ -26,7 +88,8 @@ import {
   Collapse,
 } from "@mui/material";
 
-import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
+import MuiAppBar from "@mui/material/AppBar";
+import type { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
@@ -35,17 +98,13 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
 import SettingsTwoToneIcon from "@mui/icons-material/SettingsTwoTone";
 import DashboardTwoToneIcon from "@mui/icons-material/DashboardTwoTone";
-// import BedtimeTwoToneIcon from '@mui/icons-material/BedtimeTwoTone';
 import DarkModeTwoToneIcon from "@mui/icons-material/DarkModeTwoTone";
 
 import SettingsDrawer from "../components/ProUI_Elements/SettingsDrawer/SettingsDrawer";
 import Footer_1 from "../components/ProUI_Elements/footer1/Footer_1";
-// import ProUI_Typography from "../components/ProUI_Elements/Typography/ProUI_Typography";
 import ProUI_UserAvatar from "../components/ProUI_Elements/ProUI_UserAvatar/ProUI_UserAvatar";
-// import SetThemeColor from "../features/settings/themeColor/SetThemeColor";
 
 import { blueGrey, grey } from "@mui/material/colors";
-// import Dashboard_Home1 from "../features/dashboard/Dashboard_Home1";
 
 import {
   ExpandMore,
@@ -53,6 +112,7 @@ import {
   Folder,
   Description,
 } from "@mui/icons-material";
+
 
 // Define proper types for your menu items
 type MenuItem = {

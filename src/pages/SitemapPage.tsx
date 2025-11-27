@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import Grid from "@mui/material/Grid2";
+import Grid from "@mui/material/Grid";
 import {Box, Typography} from "@mui/material";
 
 import { NavLink } from "react-router-dom";

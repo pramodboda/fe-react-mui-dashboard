@@ -1,7 +1,16 @@
 import * as React from "react";
 import Avatar from "@mui/material/Avatar";
 import Chip from "@mui/material/Chip";
-import { GridCellParams, GridRowsProp, GridColDef } from "@mui/x-data-grid";
+// import { GridCellParams, GridRowsProp, GridColDef } from "@mui/x-data-grid";
+// import type { GridRenderCellParams, GridRows } from "@mui/x-data-grid";
+// import type { GridColDef } from "@mui/x-data-grid";
+
+import type {
+  GridRenderCellParams,
+  GridRowsProp,
+  GridColDef,
+} from "@mui/x-data-grid";
+
 import { SparkLineChart } from "@mui/x-charts/SparkLineChart";
 
 type SparkLineData = number[];
@@ -21,19 +30,43 @@ function getDaysInMonth(month: number, year: number) {
   return days;
 }
 
-function renderSparklineCell(params: GridCellParams<SparkLineData, any>) {
-  const data = getDaysInMonth(4, 2024);
+// function renderSparklineCell(params: GridCellParams<SparkLineData, any>) {
+//   const data = getDaysInMonth(4, 2024);
+//   const { value, colDef } = params;
+
+//   if (!value || value.length === 0) {
+//     return null;
+//   }
+
+//   return (
+//     <div style={{ display: "flex", alignItems: "center", height: "100%" }}>
+//       <SparkLineChart
+//         data={value}
+//         width={colDef.computedWidth || 100}
+//         height={32}
+//         plotType="bar"
+//         showHighlight
+//         showTooltip
+//         colors={["hsl(210, 98%, 42%)"]}
+//         xAxis={{
+//           scaleType: "band",
+//           data,
+//         }}
+//       />
+//     </div>
+//   );
+// }
+function renderSparklineCell(params: GridRenderCellParams<SparkLineData>) {
+  const days = getDaysInMonth(4, 2024);
   const { value, colDef } = params;
 
-  if (!value || value.length === 0) {
-    return null;
-  }
+  if (!value || value.length === 0) return null;
 
   return (
     <div style={{ display: "flex", alignItems: "center", height: "100%" }}>
       <SparkLineChart
         data={value}
-        width={colDef.computedWidth || 100}
+        width={colDef.computedWidth ?? 100}
         height={32}
         plotType="bar"
         showHighlight
@@ -41,42 +74,127 @@ function renderSparklineCell(params: GridCellParams<SparkLineData, any>) {
         colors={["hsl(210, 98%, 42%)"]}
         xAxis={{
           scaleType: "band",
-          data,
+          data: days,
         }}
       />
     </div>
   );
 }
 
-function renderStatus(status: "Online" | "Offline") {
-  const colors: { [index: string]: "success" | "default" } = {
-    Online: "success",
-    Offline: "default",
-  };
 
-  return <Chip label={status} color={colors[status]} size="small" />;
+
+// function renderStatus(status: "Online" | "Offline") {
+//   const colors: { [index: string]: "success" | "default" } = {
+//     Online: "success",
+//     Offline: "default",
+//   };
+
+//   return <Chip label={status} color={colors[status]} size="small" />;
+// }
+function renderStatus(status: "Online" | "Offline") {
+  return (
+    <Chip
+      label={status}
+      color={status === "Online" ? "success" : "default"}
+      size="small"
+    />
+  );
 }
 
+
+
+// export function renderAvatar(
+//   params: GridCellParams<{ name: string; color: string }, any, any>
+// ) {
+//   if (params.value == null) {
+//     return "";
+//   }
+
+//   return (
+//     <Avatar
+//       sx={{
+//         backgroundColor: params.value.color,
+//         width: "24px",
+//         height: "24px",
+//         fontSize: "0.85rem",
+//       }}
+//     >
+//       {params.value.name.toUpperCase().substring(0, 1)}
+//     </Avatar>
+//   );
+// }
+
+
 export function renderAvatar(
-  params: GridCellParams<{ name: string; color: string }, any, any>
+  params: GridRenderCellParams<{ name: string; color: string }>
 ) {
-  if (params.value == null) {
-    return "";
-  }
+  if (!params.value) return null;
 
   return (
     <Avatar
       sx={{
         backgroundColor: params.value.color,
-        width: "24px",
-        height: "24px",
+        width: 24,
+        height: 24,
         fontSize: "0.85rem",
       }}
     >
-      {params.value.name.toUpperCase().substring(0, 1)}
+      {params.value.name.charAt(0).toUpperCase()}
     </Avatar>
   );
 }
+
+
+
+// export const columns: GridColDef[] = [
+//   { field: "pageTitle", headerName: "Page Title", flex: 1.5, minWidth: 200 },
+//   {
+//     field: "status",
+//     headerName: "Status",
+//     flex: 0.5,
+//     minWidth: 80,
+//     renderCell: (params: GridRenderCellParams) => renderStatus(params.value as any),
+//   },
+//   {
+//     field: "users",
+//     headerName: "Users",
+//     headerAlign: "right",
+//     align: "right",
+//     flex: 1,
+//     minWidth: 80,
+//   },
+//   {
+//     field: "eventCount",
+//     headerName: "Event Count",
+//     headerAlign: "right",
+//     align: "right",
+//     flex: 1,
+//     minWidth: 100,
+//   },
+//   {
+//     field: "viewsPerUser",
+//     headerName: "Views per User",
+//     headerAlign: "right",
+//     align: "right",
+//     flex: 1,
+//     minWidth: 120,
+//   },
+//   {
+//     field: "averageTime",
+//     headerName: "Average Time",
+//     headerAlign: "right",
+//     align: "right",
+//     flex: 1,
+//     minWidth: 100,
+//   },
+//   {
+//     field: "conversions",
+//     headerName: "Daily Conversions",
+//     flex: 1,
+//     minWidth: 150,
+//     renderCell: renderSparklineCell,
+//   },
+// ];
 
 export const columns: GridColDef[] = [
   { field: "pageTitle", headerName: "Page Title", flex: 1.5, minWidth: 200 },
@@ -85,40 +203,13 @@ export const columns: GridColDef[] = [
     headerName: "Status",
     flex: 0.5,
     minWidth: 80,
-    renderCell: (params) => renderStatus(params.value as any),
+    renderCell: (params: GridRenderCellParams) =>
+      renderStatus(params.value as "Online" | "Offline"),
   },
-  {
-    field: "users",
-    headerName: "Users",
-    headerAlign: "right",
-    align: "right",
-    flex: 1,
-    minWidth: 80,
-  },
-  {
-    field: "eventCount",
-    headerName: "Event Count",
-    headerAlign: "right",
-    align: "right",
-    flex: 1,
-    minWidth: 100,
-  },
-  {
-    field: "viewsPerUser",
-    headerName: "Views per User",
-    headerAlign: "right",
-    align: "right",
-    flex: 1,
-    minWidth: 120,
-  },
-  {
-    field: "averageTime",
-    headerName: "Average Time",
-    headerAlign: "right",
-    align: "right",
-    flex: 1,
-    minWidth: 100,
-  },
+  { field: "users", headerAlign: "right", align: "right", flex: 1 },
+  { field: "eventCount", headerAlign: "right", align: "right", flex: 1 },
+  { field: "viewsPerUser", headerAlign: "right", align: "right", flex: 1 },
+  { field: "averageTime", headerAlign: "right", align: "right", flex: 1 },
   {
     field: "conversions",
     headerName: "Daily Conversions",
@@ -127,6 +218,7 @@ export const columns: GridColDef[] = [
     renderCell: renderSparklineCell,
   },
 ];
+
 
 export const rows: GridRowsProp = [
   {

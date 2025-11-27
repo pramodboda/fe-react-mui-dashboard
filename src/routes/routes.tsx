@@ -6,7 +6,7 @@ import SitemapPage from "../pages/SitemapPage";
 import NumbersPage from "../pages/NumbersPage";
 import ButtonsPage from "../pages/components/ButtonsPage";
 import ListsPage from "../pages/components/ListsPage";
-import Timelines from "../pages/utils/Timelines";
+// import Timelines from "../pages/utils/Timelines";
 import TypographyPage from "../pages/components/TypographyPage";
 
 // Define your routes here
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
 
       { path: "/pages/sitemap", element: <SitemapPage /> },
       { path: "/pages/numbers", element: <NumbersPage /> },
-      { path: "/utils/timelines", element: <Timelines /> },
+      // { path: "/utils/timelines", element: <Timelines /> },
     ],
   },
 ]);
