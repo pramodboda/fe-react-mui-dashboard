@@ -26,13 +26,13 @@ const AutoLoadToastDrawer = () => {
       theme: "colored",
     });
 
-    toast(SettingsToast, {
-      position: "top-right",
-      delay: 20000,
-      autoClose: 6000,
-      transition: slide,
-      className: "Settings__toast",
-    });
+    // toast(SettingsToast, {
+    //   position: "top-right",
+    //   delay: 20000,
+    //   autoClose: 6000,
+    //   transition: slide,
+    //   className: "Settings__toast",
+    // });
   }, []);
 
   return (
