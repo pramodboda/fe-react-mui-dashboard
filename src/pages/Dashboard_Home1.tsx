@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import {Stack, Button, Typography} from "@mui/material";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
-import AutoLoadToastDrawer from "../components/ProUI_Elements/Toasts/AutoLoadToastDrawer";
+// import AutoLoadToastDrawer from "../components/ProUI_Elements/Toasts/AutoLoadToastDrawer";
 import MainGrid from "../features/dashboard/MainGrid";
 
 const Dashboard_Home1: React.FC = () => {
@@ -24,7 +24,7 @@ const Dashboard_Home1: React.FC = () => {
                   </Stack>
                 </Typography>
               </Stack>
-      <AutoLoadToastDrawer />
+      {/* <AutoLoadToastDrawer /> */}
       <MainGrid />
       {/* Key Metrics Summary - End */}
     </>
