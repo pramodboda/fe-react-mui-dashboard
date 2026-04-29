@@ -41,6 +41,13 @@
   color: #888;
 } */
 
+
+
+body{
+  background: #ebe6f0;
+background: linear-gradient(45deg, rgba(235, 230, 240, 1) 0%, rgba(237, 222, 250, 1) 75%, rgba(230, 201, 255, 1) 100%);
+}
+
 .pramod-threeD-text {
   position: absolute;
   top: 40%; 

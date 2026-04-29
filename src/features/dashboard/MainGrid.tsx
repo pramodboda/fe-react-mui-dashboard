@@ -1,7 +1,13 @@
 // Key Metrics Summary: Showcases  cards with KPIs like Statics, Total users, revenue, Orders Active sessions and etc.
 // import * as React from "react";
-import Grid from "@mui/material/Grid";
-import { Button, Link, Box, Stack, Typography } from "@mui/material";
+import Grid from "@mui/material/GridGrid";
+import Button from "@mui/material/Button";
+import Link from "@mui/material/Link";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import Card from "@mui/material/Card";
+
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import ProUI_SearchInputField from "../../components/ProUI_Elements/ProUI_SearchInputField/ProUI_SearchInputField";
 
@@ -65,22 +71,22 @@ const data: StatCardProps[] = [
 export default function MainGrid() {
   return (
     <Box sx={{ width: "100%", maxWidth: { sm: "100%", md: "1700px" } }}>
-            <Stack direction="row" alignItems="center" justifyContent="end" sx={{ gap: 2 }}>
-            <Typography
-                  sx={{ color: "#43a047", fontSize: ".9rem", fontWeight: 500 }}
-                >
-                  <Stack direction="row" alignItems="center" sx={{ gap: 1 }}>
-                    <FiberManualRecordIcon
-                      sx={{
-                        fontSize: ".8rem",
-                      }}
-                    />
-                    <span>Open to New Opportunities</span>
-                  </Stack>
-                </Typography>
-                <Button variant="contained">Get in Touch</Button>
-              
-              </Stack>
+      <Stack direction="row" alignItems="center" justifyContent="end" sx={{ gap: 2 }}>
+        <Typography
+          sx={{ color: "#43a047", fontSize: ".9rem", fontWeight: 500 }}
+        >
+          <Stack direction="row" alignItems="center" sx={{ gap: 1 }}>
+            <FiberManualRecordIcon
+              sx={{
+                fontSize: ".8rem",
+              }}
+            />
+            <span>Open to New Opportunities</span>
+          </Stack>
+        </Typography>
+        <Button variant="contained">Get in Touch</Button>
+
+      </Stack>
       {/* cards */}
       <Typography component="h2" variant="h6" sx={{ mb: 2 }}>
         Overview
@@ -106,24 +112,27 @@ export default function MainGrid() {
             rel="noopener noreferrer"
             sx={{ textDecoration: "none" }}
           >
-            <Stack
-              sx={{
-                justifyContent: "center",
-                alignItems: "center",
-                textAlign: "center",
-                width: "100%",
-                height: "200px",
-                backgroundColor: "#ddd",
-                position: "relative"
-              }}
-            >
-              {/* Main Inspiration */}
-              {/* https://codepen.io/ryandsouza13/pen/yEBJQV */}
-              <span style={{ fontSize: "2em" }} className="pramod-threeD-text">Pramod</span>
-              <Typography variant="body2" sx={{ mt: 4 }}>
-                Check out 3D Web projects
-              </Typography>
-            </Stack>
+            <Card>
+              <Stack
+                sx={{
+                  justifyContent: "center",
+                  alignItems: "center",
+                  textAlign: "center",
+                  width: "100%",
+                  height: "200px",
+                  // backgroundColor: "#ddd",
+                  backgroundColor: "#BD9ED9",
+                  position: "relative"
+                }}
+              >
+                {/* Main Inspiration */}
+                {/* https://codepen.io/ryandsouza13/pen/yEBJQV */}
+                <span style={{ fontSize: "2em" }} className="pramod-threeD-text">Pramod</span>
+                <Typography variant="body2" sx={{ mt: 4 }}>
+                  Check out 3D Web projects
+                </Typography>
+              </Stack>
+            </Card>
           </Link>
 
         </Grid>
