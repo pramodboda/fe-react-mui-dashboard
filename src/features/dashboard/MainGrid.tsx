@@ -1,7 +1,7 @@
 // Key Metrics Summary: Showcases  cards with KPIs like Statics, Total users, revenue, Orders Active sessions and etc.
 // import * as React from "react";
 import Grid from "@mui/material/Grid";
-import {Button, Link, Box, Stack, Typography} from "@mui/material";
+import { Button, Link, Box, Stack, Typography } from "@mui/material";
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import ProUI_SearchInputField from "../../components/ProUI_Elements/ProUI_SearchInputField/ProUI_SearchInputField";
 
@@ -80,72 +80,41 @@ export default function MainGrid() {
         ))}
         {/* <Grid size={{ xs: 12, sm: 6, lg: 3 }}><HighlightedCard /></Grid> */}
         <Grid size={{ xs: 12, sm: 6, lg: 3 }}>
-          {/* <Link
-                href="https://pramodboda.github.io/3d-apple-watch-ultra-orange-v2/"
-                traget="_blank"
-                sx={{ textDecoration: "none" }}
-              >
-                <Stack
-                  sx={{
-                    justifyContent: "center",
-                    alignItems: "center",
-                    textAlign: "center",
-                    width: "100%",
-                    height: "200px",
-                    backgroundColor: "#eeeeee",
-                  }}
-                >
-                  <Typography
-                    className="text-pop-up-top"
-                    variant="h2"
-                    sx={{
-                      textAlign: "center",
-                      color: "#f9f9f9",
-                      fontWeight: 700,
-                    }}
-                  >
-                    P
-                  </Typography>
-                  <Typography variant="body2">
-                    Check out 3D Web projects
-                  </Typography>
-                </Stack>
-              </Link> */}
 
-<Link
-  href="https://pramodboda.github.io/3d-apple-watch-ultra-orange-v2/"
-  target="_blank"
-  rel="noopener noreferrer"
-  sx={{ textDecoration: "none" }}
->
-  <Stack
-    sx={{
-      justifyContent: "center",
-      alignItems: "center",
-      textAlign: "center",
-      width: "100%",
-      height: "200px",
-      backgroundColor: "#",
-      position: "relative"
-    }}
-  >
-    {/* Main Inspiration */}
-    {/* https://codepen.io/ryandsouza13/pen/yEBJQV */}
-     <span style={{fontSize: "2em"}} class="threeD-text">Pramod</span>
-    <Typography variant="body2">
-      Check out 3D Web projects
-    </Typography>
-  </Stack>
-</Link>
+          <Link
+            href="https://pramodboda.github.io/3d-apple-watch-ultra-orange-v2/"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ textDecoration: "none" }}
+          >
+            <Stack
+              sx={{
+                justifyContent: "center",
+                alignItems: "center",
+                textAlign: "center",
+                width: "100%",
+                height: "200px",
+                backgroundColor: "#ddd",
+                position: "relative"
+              }}
+            >
+              {/* Main Inspiration */}
+              {/* https://codepen.io/ryandsouza13/pen/yEBJQV */}
+              <span style={{ fontSize: "2em" }} className="pramod-threeD-text">Pramod</span>
+              <Typography variant="body2" sx={{ mt: 4 }}>
+                Check out 3D Web projects
+              </Typography>
+            </Stack>
+          </Link>
 
         </Grid>
-        <Grid size={{ xs: 12, md: 12, lg:12 }}>
+        <Grid size={{ xs: 12, md: 12, lg: 12 }}>
           <Typography variant="h6">
-          This is a Multi-Level Navigation Drawer with MUI
+            This is a Multi-Level Navigation Drawer with MUI
           </Typography>
-        
+
         </Grid>
-        
+
         <Grid size={{ xs: 12, md: 6 }}>
           <SessionsChart />
         </Grid>
@@ -158,12 +127,12 @@ export default function MainGrid() {
       </Typography>
       <Grid container spacing={2} columns={12}>
         <Grid size={{ xs: 12, lg: 9 }}>
-        <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{padding: "0.5rem 1rem", backgroundColor: "#f9f9f9"}}>
- 
- <ProUI_SearchInputField/>
-<Button variant="contained" size="small" startIcon={<FileDownloadIcon/>}>Export (.xls)</Button>
+          <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ padding: "0.5rem 1rem", backgroundColor: "#f9f9f9" }}>
 
-</Stack>
+            <ProUI_SearchInputField />
+            <Button variant="contained" size="small" startIcon={<FileDownloadIcon />}>Export (.xls)</Button>
+
+          </Stack>
           <CustomizedDataGrid />
         </Grid>
         <Grid size={{ xs: 12, lg: 3 }}>

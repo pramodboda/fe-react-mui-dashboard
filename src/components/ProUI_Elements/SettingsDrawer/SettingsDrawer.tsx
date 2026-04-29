@@ -40,7 +40,7 @@ const SettingsDrawer: React.FC = () => {
       }}
     >
       <Box
-        sx={{ width: 250, padding: "1rem 1rem" }}
+        sx={{ width: 280, padding: "1rem 1rem" }}
         role="presentation"
         // onClick={handleToggleSettingsDrawer}
       >
