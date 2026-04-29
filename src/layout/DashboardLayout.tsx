@@ -365,7 +365,7 @@ export default function DashboardLayout() {
                   variant="h6"
                   noWrap
                   component="div"
-                  sx={{ flexGrow: 1, fontSize: "1.5rem", fontFamily: "Warnes, cursive",
+                  sx={{ flexGrow: 1, fontSize: "1.4rem", fontFamily: "Warnes, cursive",
                   fontWeight: 600 }}
                 >
                   CodeVik
