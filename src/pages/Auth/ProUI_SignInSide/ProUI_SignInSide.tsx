@@ -14,7 +14,7 @@ const ProUI_SignInSide: React.FC = () => {
         <Box
           sx={{
             position: "relative",
-            width: "100%",
+            width: "90%",
             height: "100%",
             display: { xs: "none", md: "block" },
             backgroundImage: `url("https://plus.unsplash.com/premium_photo-1770747501164-d5968578eb3f?q=80&w=1032&auto=format&fit=crop")`,
@@ -35,7 +35,7 @@ const ProUI_SignInSide: React.FC = () => {
           sx={{
             justifyContent: "center",
             width: { xs: "100%", sm: "100%", md: "55%" },
-            padding: { xs: "1rem", sm: "12rem", md: "8rem", lg: "2rem" },
+            padding: { xs: "1rem", sm: "12rem", md: "8rem", lg: "6rem" },
             // gap: { xs: 6, sm: 12 },
           }}
         >
