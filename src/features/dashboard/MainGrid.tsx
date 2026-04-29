@@ -5,6 +5,9 @@ import { Button, Link, Box, Stack, Typography } from "@mui/material";
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import ProUI_SearchInputField from "../../components/ProUI_Elements/ProUI_SearchInputField/ProUI_SearchInputField";
 
+
+import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
+
 // import Copyright from "../internals/components/Copyright";
 import ChartUserByCountry from "../../components/ProUI_Elements/Charts/ChartUserByCountry/ChartUserByCountry";
 import CustomizedDataGrid from "../../components/ProUI_Elements/Charts/CustomizedDataGrid/CustomizedDataGrid";
@@ -62,6 +65,22 @@ const data: StatCardProps[] = [
 export default function MainGrid() {
   return (
     <Box sx={{ width: "100%", maxWidth: { sm: "100%", md: "1700px" } }}>
+            <Stack direction="row" alignItems="center" justifyContent="end" sx={{ gap: 2 }}>
+            <Typography
+                  sx={{ color: "#43a047", fontSize: ".9rem", fontWeight: 500 }}
+                >
+                  <Stack direction="row" alignItems="center" sx={{ gap: 1 }}>
+                    <FiberManualRecordIcon
+                      sx={{
+                        fontSize: ".8rem",
+                      }}
+                    />
+                    <span>Open to New Opportunities</span>
+                  </Stack>
+                </Typography>
+                <Button variant="contained">Get in Touch</Button>
+              
+              </Stack>
       {/* cards */}
       <Typography component="h2" variant="h6" sx={{ mb: 2 }}>
         Overview
@@ -122,6 +141,7 @@ export default function MainGrid() {
           <PageViewsBarChart />
         </Grid>
       </Grid>
+
       <Typography component="h2" variant="h6" sx={{ mb: 2 }}>
         A powerful data grid
       </Typography>

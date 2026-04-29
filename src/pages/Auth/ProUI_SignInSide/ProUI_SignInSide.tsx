@@ -8,7 +8,7 @@ const ProUI_SignInSide: React.FC = () => {
   return (
     <>
       <Stack
-        sx={{  height: "100vh", flexDirection: "row" }}
+        sx={{ height: "100vh", flexDirection: "row" }}
         className="login-container"
       >
         <Box
