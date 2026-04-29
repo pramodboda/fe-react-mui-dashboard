@@ -8,6 +8,7 @@ import ButtonsPage from "../pages/components/ButtonsPage";
 import ListsPage from "../pages/components/ListsPage";
 // import Timelines from "../pages/utils/Timelines";
 import TypographyPage from "../pages/components/TypographyPage";
+import ThreeDTextDemoPage from "../pages/components/ThreeDTextDemoPage";
 
 // Define your routes here
 const router = createBrowserRouter([
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
       { path: "/components/buttons", element: <ButtonsPage /> },
       { path: "/components/lists", element: <ListsPage /> },
       { path: "/components/typography", element: <TypographyPage /> },
+      { path: "/components/3dtextdemopage", element: <ThreeDTextDemoPage /> },
 
       { path: "/pages/sitemap", element: <SitemapPage /> },
       { path: "/pages/numbers", element: <NumbersPage /> },

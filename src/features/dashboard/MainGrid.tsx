@@ -125,20 +125,13 @@ export default function MainGrid() {
       textAlign: "center",
       width: "100%",
       height: "200px",
-      backgroundColor: "#eeeeee",
+      backgroundColor: "#",
+      position: "relative"
     }}
   >
-    <Typography
-      className="text-pop-up-top"
-      variant="h2"
-      sx={{
-        textAlign: "center",
-        color: "#f9f9f9",
-        fontWeight: 700,
-      }}
-    >
-      P
-    </Typography>
+    {/* Main Inspiration */}
+    {/* https://codepen.io/ryandsouza13/pen/yEBJQV */}
+     <span style={{fontSize: "2em"}} class="threeD-text">Pramod</span>
     <Typography variant="body2">
       Check out 3D Web projects
     </Typography>
