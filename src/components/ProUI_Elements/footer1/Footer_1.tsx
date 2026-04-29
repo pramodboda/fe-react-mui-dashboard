@@ -9,7 +9,7 @@ const Footer_1: React.FC = () => {
   return (
     <>
       <Stack
-        sx={{ bgcolor: "#fff", width: "100%", border: "1px solid red", p: 3 }}
+        sx={{ bgcolor: "#fff", width: "100%", p: 3 }}
       >
         <Typography variant="body2">
           {currentYear} © Developed by Pramod Boda Inc.

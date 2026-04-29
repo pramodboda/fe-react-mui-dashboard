@@ -201,6 +201,20 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
               },
             },
           },
+          MuiCard: {
+            styleOverrides: {
+              root: {
+                borderRadius: "1.5rem",
+                // CSS variable
+                // "--shadow-color": "hsl(220deg 60% 50%)",
+
+                // drop-shadow filter
+                // filter: "drop-shadow(1px 2px 8px var(--shadow-color))",
+                filter: "drop-shadow(1px 2px 10px #ccc)",
+               
+              }
+            }
+          }
         },
       }),
     [primaryColor, primaryFont]
