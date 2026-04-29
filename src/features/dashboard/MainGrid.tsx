@@ -1,6 +1,6 @@
 // Key Metrics Summary: Showcases  cards with KPIs like Statics, Total users, revenue, Orders Active sessions and etc.
 // import * as React from "react";
-import Grid from "@mui/material/GridGrid";
+import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import Link from "@mui/material/Link";
 import Box from "@mui/material/Box";
