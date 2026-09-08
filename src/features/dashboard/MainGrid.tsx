@@ -106,18 +106,7 @@ export default function MainGrid() {
                   textAlign: "center",
                   width: "100%",
                   height: "200px",
-                  // backgroundColor: "#ddd",
-                  // backgroundColor: "#BD9ED9",
-                  // background: "#000000",  /* fallback for old browsers */
-                  // background: "-webkit-linear-gradient(to left, #434343, #000000)",  /* Chrome 10-25, Safari 5.1-6 */
-                  // background: "linear-gradient(to left, #434343, #000000)", /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-                  // background: "#606c88",  /* fallback for old browsers */
-                  // background: "-webkit-linear-gradient(to right, #3f4c6b, #606c88)",  /* Chrome 10-25, Safari 5.1-6 */
-                  // background: "linear-gradient(to right, #3f4c6b, #606c88)", /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-                  // background: "linear-gradient(315deg, #05050a 0.000%, #090a0e 8.333%, #0d0e12 16.667%, #121316 25.000%, #16171a 33.333%, #1a1b1e 41.667%, #1e1f22 50.000%, #222326 58.333%, #26272a 66.667%, #292a2d 75.000%, #2c2d30 83.333%, #2e2f33 91.667%, #303135 100.000%)",
-                  // background: "linear-gradient(315deg, #121216 0.000%, #17161a 8.333%, #1b1a1f 16.667%, #201f23 25.000%, #242327 33.333%, #28272b 41.667%, #2c2b2f 50.000%, #302f33 58.333%, #333237 66.667%, #37363a 75.000%, #39383d 83.333%, #3c3b40 91.667%, #3e3d42 100.000%)",
                   background: "linear-gradient(315deg,hsl(0deg 0% 14%) 0%,hsl(344deg 0% 16%) 8%,hsl(344deg 0% 18%) 17%,hsl(344deg 0% 21%) 25%,hsl(344deg 0% 23%) 33%,hsl(344deg 0% 26%) 42%,hsl(344deg 0% 28%) 50%,hsl(344deg 0% 31%) 58%,hsl(344deg 0% 33%) 67%,hsl(344deg 0% 36%) 75%,hsl(344deg 0% 39%) 83%,hsl(344deg 0% 41%) 92%,hsl(0deg 0% 44%) 100%)",
                   position: "relative"
                 }}
@@ -126,7 +115,7 @@ export default function MainGrid() {
                 {/* https://codepen.io/ryandsouza13/pen/yEBJQV */}
                 <span style={{ fontSize: "2em" }} className="pramod-threeD-text">Apple Watch</span>
                 <Typography variant="body2" sx={{ mt: 12, color: "#f9f9f9" }}>
-                  Check out 3D Web projects
+                  Check out 3D web project
                 </Typography>
               </Stack>
             </Card>
