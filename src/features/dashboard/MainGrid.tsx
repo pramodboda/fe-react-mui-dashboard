@@ -74,14 +74,14 @@ const data: StatCardProps[] = [
 export default function MainGrid() {
   return (
     <Box sx={{ width: "100%", maxWidth: { sm: "100%", md: "1700px" } }}>
-      <ProUI_PageTitle />
+      <ProUI_PageTitle title="Dashboard" subText="Overview" />
       {/* cards */}
 
       <Grid
         container
-        spacing={2}
+        spacing={3}
         columns={12}
-        sx={{ mb: (theme) => theme.spacing(2) }}
+        sx={{ mb: (theme) => theme.spacing(3) }}
       >
         {data.map((card, index) => (
           <Grid key={index} size={{ xs: 12, sm: 6, lg: 3 }}>
@@ -162,7 +162,7 @@ export default function MainGrid() {
                   <Typography
                     sx={{ color: "#43a047", fontSize: ".9rem", fontWeight: 500 }}
                   >
-                    <Stack direction="row" sx={{ gap: 1 }}>
+                    <Stack sx={{ flexDirection: "row", alignItems: "center", gap: 1 }}>
                       <FiberManualRecordIcon
                         sx={{
                           fontSize: ".8rem",
