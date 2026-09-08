@@ -9,7 +9,7 @@ import {
   ThemeProvider as MuiThemeProvider,
   createTheme,
 } from "@mui/material/styles";
-import { deepPurple, blueGrey } from "@mui/material/colors";
+import { deepPurple, grey } from "@mui/material/colors";
 
 // Define the shape of the context's data
 interface ThemeContextProps {
@@ -112,12 +112,15 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
           },
           h4: {
             fontSize: "1.5rem", // 24px
+            fontWeight: 600,
           },
           h5: {
             fontSize: "1.25rem", // 20px
+            fontWeight: 600,
           },
           h6: {
             fontSize: "1rem", // 16px
+            fontWeight: 600,
           },
           subtitle1: {
             fontSize: "0.875rem", // 14px
@@ -127,9 +130,11 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
           },
           body1: {
             fontSize: "1rem", // 16px
+
           },
           body2: {
             fontSize: "0.875rem", // 14px
+            color: grey[600]
           },
           button: {
             fontSize: "0.875rem", // 14px
@@ -204,14 +209,13 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
           MuiCard: {
             styleOverrides: {
               root: {
+                border: 0,
                 borderRadius: "1.5rem",
-                // CSS variable
-                // "--shadow-color": "hsl(220deg 60% 50%)",
+                // boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px"
+                // boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
+                boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px"
 
-                // drop-shadow filter
-                // filter: "drop-shadow(1px 2px 8px var(--shadow-color))",
-                filter: "drop-shadow(1px 2px 10px #ccc)",
-               
+
               }
             }
           }

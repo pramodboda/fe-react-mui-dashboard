@@ -7,8 +7,11 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
 
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
+
+import ProUI_PageTitle from "../../components/ProUI_Elements/ProUI_PageTitle/ProUI_PageTitle";
 import ProUI_SearchInputField from "../../components/ProUI_Elements/ProUI_SearchInputField/ProUI_SearchInputField";
 
 
@@ -71,26 +74,9 @@ const data: StatCardProps[] = [
 export default function MainGrid() {
   return (
     <Box sx={{ width: "100%", maxWidth: { sm: "100%", md: "1700px" } }}>
-      <Stack direction="row" alignItems="center" justifyContent="end" sx={{ gap: 2 }}>
-        <Typography
-          sx={{ color: "#43a047", fontSize: ".9rem", fontWeight: 500 }}
-        >
-          <Stack direction="row" alignItems="center" sx={{ gap: 1 }}>
-            <FiberManualRecordIcon
-              sx={{
-                fontSize: ".8rem",
-              }}
-            />
-            <span>Open to New Opportunities</span>
-          </Stack>
-        </Typography>
-        <Button variant="contained">Get in Touch</Button>
-
-      </Stack>
+      <ProUI_PageTitle />
       {/* cards */}
-      <Typography component="h2" variant="h6" sx={{ mb: 2 }}>
-        Overview
-      </Typography>
+
       <Grid
         container
         spacing={2}
@@ -168,10 +154,33 @@ export default function MainGrid() {
           <Stack gap={2} direction={{ xs: "column", sm: "row", lg: "column" }}>
             {/* <CustomizedTreeView /> */}
             <ChartUserByCountry />
+            <Card>
+              <CardContent>
+                <Stack sx={{ alignItems: "center", justifyContent: "space-between", gap: 2 }}>
+                  <Typography variant="h4" component="h4" gutterBottom>Enterprise Operations Command Center</Typography>
+                  <Typography variant="body2" component="h4" gutterBottom>A highly interactive enterprise dashboard for monitoring multiple business operations in real time.<br />Include KPI cards, drill-down analytics, filters, saved views, configurable widgets, alerts and role-based dashboards.</Typography>
+                  <Typography
+                    sx={{ color: "#43a047", fontSize: ".9rem", fontWeight: 500 }}
+                  >
+                    <Stack direction="row" sx={{ gap: 1 }}>
+                      <FiberManualRecordIcon
+                        sx={{
+                          fontSize: ".8rem",
+                        }}
+                      />
+                      <span>Open to New Opportunities</span>
+                    </Stack>
+                  </Typography>
+                  <Button variant="contained">Get in Touch</Button>
+                </Stack>
+
+              </CardContent>
+
+            </Card>
           </Stack>
         </Grid>
       </Grid>
       {/* <Copyright sx={{ my: 4 }} /> */}
-    </Box>
+    </Box >
   );
 }

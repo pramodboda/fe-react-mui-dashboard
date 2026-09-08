@@ -1,4 +1,4 @@
-// Key Metrics Summary: Showcases  cards with KPIs like Statics, Total users, revenue, Orders Active sessions and etc.
+// Key Metrics Summary: Showcases cards with KPIs like Statics, Total users, revenue, Orders Active sessions and etc.
 
 // import React, { useState, useEffect } from "react";
 import { useTheme } from "@mui/material/styles";

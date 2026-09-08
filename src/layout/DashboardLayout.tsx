@@ -365,10 +365,12 @@ export default function DashboardLayout() {
                   variant="h6"
                   noWrap
                   component="div"
-                  sx={{ flexGrow: 1, fontSize: "1.4rem", fontFamily: "Warnes, cursive",
-                  fontWeight: 600 }}
+                  sx={{
+                    flexGrow: 1, fontSize: "1.4rem",
+                    fontWeight: 600
+                  }}
                 >
-                  CodeVik
+                  Codevik
                 </Typography>
                 <IconButton
                   aria-label="settings"
@@ -441,11 +443,11 @@ export default function DashboardLayout() {
                       },
                       open
                         ? {
-                            justifyContent: "initial",
-                          }
+                          justifyContent: "initial",
+                        }
                         : {
-                            justifyContent: "center",
-                          },
+                          justifyContent: "center",
+                        },
                     ]}
                   >
                     <ListItemIcon
@@ -456,11 +458,11 @@ export default function DashboardLayout() {
                         },
                         open
                           ? {
-                              mr: 3,
-                            }
+                            mr: 3,
+                          }
                           : {
-                              mr: "auto",
-                            },
+                            mr: "auto",
+                          },
                       ]}
                     >
                       {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
@@ -470,11 +472,11 @@ export default function DashboardLayout() {
                       sx={[
                         open
                           ? {
-                              opacity: 1,
-                            }
+                            opacity: 1,
+                          }
                           : {
-                              opacity: 0,
-                            },
+                            opacity: 0,
+                          },
                       ]}
                     />
                   </ListItemButton>
