@@ -11,11 +11,14 @@ import Typography from "@mui/material/Typography";
 import { SparkLineChart } from "@mui/x-charts/SparkLineChart";
 import { areaElementClasses } from "@mui/x-charts/LineChart";
 
+import type { IconType } from "react-icons";
+
 import ProUI_NumberSwitcher from "../ProUI_NumberSwitcher/ProUI_NumberSwitcher";
 
 export type StatCardProps = {
   title: string;
   value: number;
+  icon: IconType;
   sign: string;
   numUnit: string;
   interval: string;
@@ -52,6 +55,7 @@ function AreaGradient({ color, id }: { color: string; id: string }) {
 export default function ProUI_KPICard({
   title,
   value,
+  icon: Icon,
   sign,
   numUnit,
   interval,
@@ -87,65 +91,75 @@ export default function ProUI_KPICard({
   const trendValues = { up: "+25%", down: "-25%", neutral: "+5%" };
 
   return (
-    <Card variant="outlined" sx={{ height: "100%", flexGrow: 1 }}>
+    <Card variant="outlined" sx={{ position: "relative", height: "100%", flexGrow: 1, overflow: "hidden" }}>
       <CardContent>
+        <Box sx={{ position: "ab" }}>
+          <Icon />
+        </Box>
+
         <Typography component="h2" variant="subtitle2" gutterBottom>
           {title}
         </Typography>
         <Stack
           direction="column"
-          sx={{ justifyContent: "space-between", flexGrow: "1", gap: 1 }}
+          sx={{ justifyContent: "space-between", gap: 1 }}
         >
           <Stack sx={{ justifyContent: "space-between" }}>
             <Stack
               direction="row"
               sx={{ justifyContent: "space-between", alignItems: "center" }}
             >
-              {/* <Typography variant="h4" component="p">
-                {value}
-              </Typography> */}
-              <Typography
-                variant="h4"
-                component="p"
-                sx={{ fontWeight: "bold" }}
-              >
-                {sign && sign}
-                <ProUI_NumberSwitcher
-                  targetNumber={value}
-                  // duration={0.11}
-                  duration={0.075}
-                  increment={3}
-                  // symbol={}
-                  numUnit={numUnit}
-                />
-              </Typography>
-              <Chip size="small" color={color} label={trendValues[trend]} />
+              <Stack sx={{ width: "60%" }}>
+                <Typography
+                  variant="h3"
+                  component="p"
+                  sx={{ fontWeight: "bold" }}
+                >
+                  {sign && sign}
+                  <ProUI_NumberSwitcher
+                    targetNumber={value}
+                    // duration={0.11}
+                    duration={0.075}
+                    increment={3}
+                    // symbol={}
+                    numUnit={numUnit}
+                  />
+                </Typography>
+                <Typography variant="caption" sx={{ color: "text.secondary" }}>
+                  {interval}
+                </Typography>
+              </Stack>
+
+              <Stack sx={{ flexDirection: "column", justifyContent: "space-between" }}>
+                <Chip size="small" color={color} label={trendValues[trend]} />
+                <Box sx={{ width: "100%", height: 50 }}>
+                  <SparkLineChart
+                    // colors={[chartColor]}
+                    color={chartColor}
+                    data={data}
+                    area
+                    showHighlight
+                    showTooltip
+                    xAxis={{
+                      scaleType: "band",
+                      data: daysInWeek, // Use the correct property 'data' for xAxis
+                    }}
+                    sx={{
+                      [`& .${areaElementClasses.root}`]: {
+                        fill: `url(#area-gradient-${value})`,
+                      },
+                    }}
+                  >
+                    <AreaGradient color={chartColor} id={`area-gradient-${value}`} />
+                  </SparkLineChart>
+                </Box>
+              </Stack>
+
             </Stack>
-            <Typography variant="caption" sx={{ color: "text.secondary" }}>
-              {interval}
-            </Typography>
+
+
           </Stack>
-          <Box sx={{ width: "100%", height: 50 }}>
-            <SparkLineChart
-              // colors={[chartColor]}
-              color={chartColor}
-              data={data}
-              area
-              showHighlight
-              showTooltip
-              xAxis={{
-                scaleType: "band",
-                data: daysInWeek, // Use the correct property 'data' for xAxis
-              }}
-              sx={{
-                [`& .${areaElementClasses.root}`]: {
-                  fill: `url(#area-gradient-${value})`,
-                },
-              }}
-            >
-              <AreaGradient color={chartColor} id={`area-gradient-${value}`} />
-            </SparkLineChart>
-          </Box>
+
         </Stack>
       </CardContent>
     </Card>

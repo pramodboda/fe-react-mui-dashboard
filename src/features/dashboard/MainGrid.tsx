@@ -10,6 +10,12 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import {
+  BsBoxSeam, BsGraphDown,
+  BsCurrencyDollar
+} from "react-icons/bs";
+
+
 
 import ProUI_PageTitle from "../../components/ProUI_Elements/ProUI_PageTitle/ProUI_PageTitle";
 import ProUI_SearchInputField from "../../components/ProUI_Elements/ProUI_SearchInputField/ProUI_SearchInputField";
@@ -33,8 +39,11 @@ import type { StatCardProps } from "../../components/ProUI_Elements/ProUI_KPICar
 
 const data: StatCardProps[] = [
   {
-    title: "Users",
-    value: 14,
+    title: "Users Orders",
+    value: 1248,
+    icon: "BsBoxSeam",
+
+
     sign: "",
     numUnit: "k",
     interval: "Last 30 days",
@@ -46,9 +55,10 @@ const data: StatCardProps[] = [
   },
   {
     title: "Conversions",
-    value: 325,
+    value: 14,
+    icon: "BsGraphDown",
     sign: "",
-    numUnit: "",
+    numUnit: "k",
     interval: "Last 30 days",
     trend: "down",
     data: [
@@ -58,10 +68,11 @@ const data: StatCardProps[] = [
     ],
   },
   {
-    title: "Event count",
-    value: 200,
+    title: "Product Revenue",
+    value: 12.8,
+    icon: "BsCurrencyDollar",
     sign: "",
-    numUnit: "k",
+    numUnit: "L",
     interval: "Last 30 days",
     trend: "neutral",
     data: [
